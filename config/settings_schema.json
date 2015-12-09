@@ -26,7 +26,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Commerce mode enables purchasing. Brochure mode disables purchasing. Enquiries encourages contact."
+        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries provides contact (no cart)."
       },
       {
         "type": "select",
@@ -48,10 +48,9 @@
         ]
       },
       {
-        "type": "text",
+        "type": "page",
         "id": "enquiry_url",
-        "label": "Enquiry URL",
-        "default": "/pages/contact",
+        "label": "Enquiry Page",
         "info": "Page that enquiry buttons link to."
       },
       {

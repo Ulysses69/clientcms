@@ -6,7 +6,6 @@
       "cart_notes_enable": true,
       "searchbox_enable": true, 
       "store_mode": "commerce",
-      "enquiry_url": "/pages/contact",
       "color_body_bg": "#fff",
       "color_body_text": "#333333",
       "color_borders": "#e5e5e5",
