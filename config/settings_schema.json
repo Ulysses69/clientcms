@@ -53,6 +53,11 @@
         "label": "Enquiry URL",
         "default": "/pages/contact",
         "info": "Page that enquiry buttons link to."
+      },
+      {
+        "type": "checkbox",
+        "id": "searchbox_enable",
+        "label": "Search Box"
       }
     ]
   },

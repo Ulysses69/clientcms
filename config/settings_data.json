@@ -4,6 +4,7 @@
     "Default": {
       "ajax_cart_method": "drawer",
       "cart_notes_enable": true,
+      "searchbox_enable": true, 
       "store_mode": "commerce",
       "enquiry_url": "/pages/contact",
       "color_body_bg": "#fff",

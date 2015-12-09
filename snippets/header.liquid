@@ -36,7 +36,7 @@
                 - Documentation:  http://shopify.com/timber#ajax-cart
             {% endcomment %}
             {% if settings.store_mode == "commerce" %}
-            <div>
+            <div class="site-drawer">
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
                 <span class="icon icon-cart" aria-hidden="true"></span>
                 {{ 'layout.cart.title' | t }}
@@ -50,8 +50,9 @@
             {% comment %}
               If customer accounts are enabled, provide login and create account links
             {% endcomment %}
+
             {% if shop.customer_accounts_enabled %}
-              <div>
+              <div class="site-account">
                 {% if customer %}
                   {% if customer.first_name != blank %}
                     {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
@@ -69,10 +70,12 @@
               </div>
             {% endif %}
 
+            {% if settings.searchbox_enable %}
             <div class="site-header__search">
               {% include 'search-bar' %}
             </div>
-            
+            {% endif %}
+
           </div>
         </div>
 
