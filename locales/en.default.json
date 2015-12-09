@@ -58,7 +58,7 @@
       "remove": "Remove",
       "note": "Special instructions for seller",
       "subtotal": "Subtotal",
-      "shipping_at_checkout": "Shipping & taxes calculated at checkout",
+      "shipping_at_checkout": "Delivery & VAT calculated at checkout",
       "update": "Update Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
@@ -111,7 +111,7 @@
       "phone": "Phone Number",
       "message": "Message",
       "send": "Send",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      "post_success": "Thanks for contacting us. We will get back to you as soon as possible."
     }
   },
   "customer": {
@@ -140,9 +140,9 @@
       "address1": "Address1",
       "address2": "Address2",
       "city": "City",
+      "province": "County",
+      "zip": "Post Code",
       "country": "Country",
-      "province": "Province",
-      "zip": "Postal\/Zip Code",
       "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add Address",
@@ -177,11 +177,11 @@
       "cancelled_reason": "Reason: {{ reason }}",
       "billing_address": "Billing Address",
       "payment_status": "Payment Status",
-      "shipping_address": "Shipping Address",
+      "shipping_address": "Delivery Address",
       "fulfillment_status": "Fulfillment Status",
       "discount": "Discount",
-      "shipping": "Shipping",
-      "tax": "Tax",
+      "shipping": "Delivery",
+      "tax": "VAT",
       "product": "Product",
       "sku": "SKU",
       "price": "Price",
@@ -196,7 +196,7 @@
       "submit": "Submit",
       "cancel": "Cancel",
       "subtext": "We will send you an email to reset your password.",
-      "success": "We've sent you an email with a link to update your password."
+      "success": "We have sent you an email with a link to update your password."
     },
     "reset_password": {
       "title": "Reset account password",
@@ -280,8 +280,8 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "Here's your {{ value }} gift card for {{ shop }}!",
-      "subtext": "Here's your gift card!",
+      "title": "Here is your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here is your gift card!",
       "disabled": "Disabled",
       "expired": "Expired on {{ expiry }}",
       "active": "Expires on {{ expiry }}",
