@@ -5,11 +5,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "Timber Framework"
+        "content": "Client Theme (Timber Powered)"
       },
       {
         "type": "paragraph",
-        "content": "v2.1.0"
+        "content": "v1.0.0"
       },
       {
         "type": "paragraph",
@@ -22,11 +22,46 @@
     ]
   },
   {
+    "name": "Store Settings",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Commerce mode enables purchasing. Brochure mode disables purchasing. Enquiries encourages contact."
+      },
+      {
+        "type": "select",
+        "id": "store_mode",
+        "label": "Store Mode",
+        "options": [
+          {
+            "value": "commerce",
+            "label": "Commerce"
+          },
+          {
+            "value": "brochure",
+            "label": "Brochure"
+          },
+          {
+            "value": "enquiries",
+            "label": "Enquiries"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "enquiry_url",
+        "label": "Enquiry URL",
+        "default": "/pages/contact",
+        "info": "Page that enquiry buttons link to."
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
         "type": "paragraph",
-        "content": "Use class=\"color\" on a an input tag to bring up the color picker. Only a few colors have been included here as an example."
+        "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
       },
       {
         "type": "header",
@@ -171,7 +206,7 @@
     ]
   },
   {
-    "name": "Cart page",
+    "name": "Cart Page",
     "settings": [
       {
         "type": "checkbox",

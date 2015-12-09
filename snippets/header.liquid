@@ -35,6 +35,7 @@
                 - #cartCost updates the total cost of the cart
                 - Documentation:  http://shopify.com/timber#ajax-cart
             {% endcomment %}
+            {% if settings.store_mode == "commerce" %}
             <div>
               <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
                 <span class="icon icon-cart" aria-hidden="true"></span>
@@ -44,6 +45,7 @@
                 <span id="CartCost">{{ cart.total_price | money }}</span>)
               </a>
             </div>
+            {% endif %}
 
             {% comment %}
               If customer accounts are enabled, provide login and create account links
@@ -70,6 +72,7 @@
             <div class="site-header__search">
               {% include 'search-bar' %}
             </div>
+            
           </div>
         </div>
 
