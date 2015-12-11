@@ -2329,9 +2329,9 @@ label.error {
 /*============================================================================
   #Map
 ==============================================================================*/
+{% if settings.map_enable %}
 {% assign map_width = settings.map_width %}
 {% assign map_height = settings.map_height %}
-{% if map_width != blank and map_height != blank %}
 .map {
   position: relative;
   overflow: hidden;

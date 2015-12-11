@@ -266,12 +266,12 @@
       {
         "type": "text",
         "id": "map_width",
-        "label": "Map Width (px or %)"
+        "label": "Map Width"
       },
       {
         "type": "text",
         "id": "map_height",
-        "label": "Map Height (px or %)"
+        "label": "Map Height"
       },
       {
         "type": "select",
