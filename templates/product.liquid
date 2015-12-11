@@ -110,7 +110,7 @@
           {% endif %}
 
           {% if settings.store_mode == "enquiries" %} 
-          <a id="AddToCart" class="btn" href=""><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
+          <a id="AddToCart" class="btn" href="{{ settings.enquiry_url }}"><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
           {% endif %}
 
         </form>

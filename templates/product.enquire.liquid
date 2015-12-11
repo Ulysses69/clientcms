@@ -106,11 +106,11 @@
           <label for="Quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
 
-          <a id="AddToCart" class="btn" href=""><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
+          <a id="AddToCart" class="btn" href="{{ settings.enquiry_url }}"><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
           {% endif %}
 
           {% if settings.store_mode == "enquiries" %} 
-          <a id="AddToCart" class="btn" href=""><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
+          <a id="AddToCart" class="btn" href="{{ settings.enquiry_url }}"><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
           {% endif %}
 
         </form>
