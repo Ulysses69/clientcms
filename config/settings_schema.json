@@ -22,7 +22,7 @@
     ]
   },
   {
-    "name": "Store Settings",
+    "name": "Store Settings [NEW]",
     "settings": [
       {
         "type": "paragraph",
@@ -31,7 +31,7 @@
       {
         "type": "select",
         "id": "store_mode",
-        "label": "Store Mode",
+        "label": "Store Mode [NEW]",
         "options": [
           {
             "value": "commerce",
@@ -50,13 +50,13 @@
       {
         "type": "page",
         "id": "enquiry_url",
-        "label": "Enquiry Page",
+        "label": "Enquiry Page [NEW]",
         "info": "Page that enquiry buttons link to."
       },
       {
         "type": "checkbox",
         "id": "searchbox_enable",
-        "label": "Search Box"
+        "label": "Search Box [NEW]"
       }
     ]
   },
