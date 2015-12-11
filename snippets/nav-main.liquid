@@ -10,7 +10,9 @@
           {% endcomment %}
           <!-- begin site-nav -->
           <ul class="site-nav" id="AccessibleNav">
-          {% if linklists.main-menu.links.size > 2 %}
+          {% if linklists.main-menu.links.size == 2 %}
+            {% include 'nav-demo' %}
+           {% else %}                      
             {% for link in linklists.main-menu.links %}              
               {% comment %}
                 Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -39,8 +41,6 @@
                 </li>
               {% endif %}
             {% endfor %}
-          {% else %}
-            {% include 'nav-demo' %} 
           {% endif %}
           </ul>
           <!-- //site-nav -->
