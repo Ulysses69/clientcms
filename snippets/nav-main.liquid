@@ -34,7 +34,7 @@
                   </ul>
                 </li>
               {% else %}
-                <li {% if link.active %}class="site-nav--active"{% endif %}>
+                <li{% if link.active %} class="site-nav--active"{% endif %}>
                   <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
                 </li>
               {% endif %}
