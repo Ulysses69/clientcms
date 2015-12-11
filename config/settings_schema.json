@@ -61,6 +61,297 @@
     ]
   },
   {
+    "name": "Typography [NEW]",
+    "settings": [      
+      {
+        "type": "header",
+        "content": "Heading Typeface [NEW]"
+      },
+      {
+        "type": "radio",
+        "id": "heading_typeface",
+        "options": [
+          {
+            "value": "google_webfonts",
+            "label": "Google Web Font"
+          },
+          {
+            "value": "websafe",
+            "label": "Web Font"
+          }
+        ]
+      },    
+      {
+        "type": "checkbox",
+        "id": "heading1_typeface",
+        "label": "Heading 1"
+      },   
+      {
+        "type": "checkbox",
+        "id": "heading2_typeface",
+        "label": "Heading 2"
+      },   
+      {
+        "type": "checkbox",
+        "id": "heading3_typeface",
+        "label": "Heading 3"
+      },   
+      {
+        "type": "checkbox",
+        "id": "heading4_typeface",
+        "label": "Heading 4"
+      },
+      {
+        "type": "header",
+        "content": "Main Typeface [NEW]"
+      },
+      {
+        "type": "radio",
+        "id": "main_typeface",
+        "options": [
+          {
+            "value": "google_webfonts",
+            "label": "Google Web Font"
+          },
+          {
+            "value": "websafe",
+            "label": "Web Font"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "google_webfont_font",
+        "label": "Google Web Font [NEW]",
+        "options": [
+          {
+            "value": "Anton",
+            "label": "Anton"
+          },
+          {
+            "value": "Arvo",
+            "label": "Arvo"
+          },
+          {
+            "value": "Asap",
+            "label": "Asap"
+          },
+          {
+            "value": "Bevan",
+            "label": "Bevan"
+          },
+          {
+            "value": "Cabin",
+            "label": "Cabin"
+          },
+          {
+            "value": "Copse",
+            "label": "Copse"
+          },
+          {
+            "value": "Corben",
+            "label": "Corben"
+          },
+          {
+            "value": "Dancing+Script",
+            "label": "Dancing Script"
+          },
+          {
+            "value": "Droid+Sans",
+            "label": "Droid Sans"
+          },
+          {
+            "value": "Droid+Serif",
+            "label": "Droid Serif"
+          },
+          {
+            "value": "EB+Garamond",
+            "label": "EB Garamond"
+          },
+          {
+            "value": "Josefin+Slab",
+            "label": "Josefin Slab"
+          },
+          {
+            "value": "Josefin+Sans",
+            "label": "Josefin Sans"
+          },
+          {
+            "value": "Just+Another+Hand",
+            "label": "Just Another Hand"
+          },
+          {
+            "value": "Kaushan+Script",
+            "label": "Kaushan Script"
+          },
+          {
+            "value": "Kreon",
+            "label": "Kreon"
+          },
+          {
+            "value": "Lato",
+            "label": "Lato"
+          },
+          {
+            "value": "Lora",
+            "label": "Lora"
+          },
+          {
+            "value": "Merriweather",
+            "label": "Merriweather"
+          },
+          {
+            "value": "Montserrat",
+            "label": "Montserrat"
+          },
+          {
+            "value": "Molengo",
+            "label": "Molengo"
+          },
+          {
+            "value": "Muli",
+            "label": "Muli"
+          },
+          {
+            "value": "Neuton",
+            "label": "Neuton"
+          },
+          {
+            "value": "Old+Standard+TT",
+            "label": "Old Standard TT"
+          },
+          {
+            "value": "Open+Sans",
+            "label": "Open Sans"
+          },
+          {
+            "value": "Open+Sans+Condensed",
+            "label": "Open Sans Condensed"
+          },
+          {
+            "value": "Oswald",
+            "label": "Oswald"
+          },
+          {
+            "value": "Parisienne",
+            "label": "Parisienne"
+          },
+          {
+            "value": "Permanent+Marker",
+            "label": "Permanent Marker"
+          },
+          {
+            "value": "Philosopher",
+            "label": "Philosopher"
+          },
+          {
+            "value": "PT+Sans",
+            "label": "PT Sans"
+          },
+          {
+            "value": "PT+Sans+Narrow",
+            "label": "PT Sans Narrow"
+          },
+          {
+            "value": "Questrial",
+            "label": "Questrial"
+          },
+          {
+            "value": "Raleway",
+            "label": "Raleway"
+          },
+          {
+            "value": "Roboto",
+            "label": "Roboto"
+          },
+          {
+            "value": "Rokkitt",
+            "label": "Rokkitt"
+          },
+          {
+            "value": "Source+Sans+Pro",
+            "label": "Source Sans Pro"
+          },
+          {
+            "value": "Unica One",
+            "label": "Unica One"
+          },
+          {
+            "value": "Vibur",
+            "label": "Vibur"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "websafe_font",
+        "label": "Web Font [NEW]",
+        "options": [
+          {
+            "value": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+            "label": "Futura",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
@@ -251,32 +542,32 @@
     ]
   },
   {
-    "name": "Contact Page",
+    "name": "Contact Page [NEW]",
     "settings": [      
       {
         "type": "checkbox",
         "id": "map_enable",
-        "label": "Show map"
+        "label": "Show map [NEW]"
       },
       {
         "type": "text",
         "id": "contact_address",
-        "label": "Full Mailing Address"
+        "label": "Full Mailing Address [NEW]"
       },
       {
         "type": "text",
         "id": "map_width",
-        "label": "Map Width"
+        "label": "Map Width [NEW]"
       },
       {
         "type": "text",
         "id": "map_height",
-        "label": "Map Height"
+        "label": "Map Height [NEW]"
       },
       {
         "type": "select",
         "id": "map_align",
-        "label": "Map Alignment",
+        "label": "Map Alignment [NEW]",
         "options": [
           { "value": "full", "label": "Full Width"},
           { "value": "left", "label": "Align Left"},
@@ -286,7 +577,7 @@
       {
         "type": "select",
         "id": "zoom_level",
-        "label": "Map Zoom Level",
+        "label": "Map Zoom Level [NEW]",
         "options": [
           { "value": "1", "label": "1 Closest"},
           { "value": "2", "label": "2"},

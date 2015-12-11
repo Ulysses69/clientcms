@@ -144,10 +144,10 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headerFontStack: {% if settings.heading_typeface == 'websafe' %}{{ websafe_font }}{% else %}{{ google_webfont_font }}{% endif %};
 $headerFontWeight: 700;
 
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontStack: {% if settings.main_typeface == 'websafe' %}{{ websafe_font }}{% else %}{{ google_webfont_font }}{% endif %};
 $baseFontSize: 14px; // Henseforth known as 1em
 
 @font-face {
@@ -809,18 +809,38 @@ h1, h2, h3, h4, h5, h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
+  {% if settings.heading1_typeface == "google_webfonts" %}
+    font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
+  {% else %}
+    font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
+  {% endif %}
 }
 
 h2 {
   font-size: em(28px);
+  {% if settings.heading2_typeface == "google_webfonts" %}
+    font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
+  {% else %}
+    font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
+  {% endif %}  
 }
 
 h3 {
   font-size: em(22px);
+  {% if settings.heading3_typeface == "google_webfonts" %}
+    font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
+  {% else %}
+    font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
+  {% endif %} 
 }
 
 h4 {
   font-size: em(20px);
+  {% if settings.heading4_typeface == "google_webfonts" %}
+    font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
+  {% else %}
+    font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
+  {% endif %} 
 }
 
 h5 {
@@ -1715,6 +1735,7 @@ label.error {
   }
 }
 
+{% if settings.footer_social_enable %}
 .social-icons li {
   margin: 0 ($gutter / 2) ($gutter / 2);
   vertical-align: middle;
@@ -1736,6 +1757,7 @@ label.error {
     }
   }
 }
+{% endif %}
 
 /*============================================================================
   #Pagination
@@ -1811,6 +1833,7 @@ label.error {
   display: inline-block;
 }
 
+{% if settings.searchbox_enable %}
 .site-header__search {
   display: inline-block;
   max-width: 400px;
@@ -1826,6 +1849,7 @@ label.error {
     margin-right: auto;
   }
 }
+{% endif %}
 
 /*============================================================================
   #Site Nav and Dropdowns
@@ -1913,6 +1937,7 @@ label.error {
   }
 }
 
+{% if settings.searchbox_enable %}
 /*================ Search bar in header ================*/
 .nav-search {
   position: relative;
@@ -1924,6 +1949,7 @@ label.error {
     text-align: center;
   }
 }
+{% endif %}
 
 /*============================================================================
   #Mobile Nav
@@ -2338,16 +2364,18 @@ label.error {
   width: {{ map_width }};
   height: {{ map_height }};
   {% if map_align != 'full' and map_width != '100%' %}float: map_align; margin-{{ map_align }}: 2em; {% endif %}
-}
 
-.map iframe {
-  position: absolute;  
-  left: 0;
-  top: 0;
+  iframe {
+    position: absolute;  
+    left: 0;
+    top: 0;
+  }
+
 }
 {% endif %}
 
 
+{% if settings.store_mode == "commerce" %}
 /*============================================================================
   #Cart Page
 ==============================================================================*/
@@ -2562,3 +2590,4 @@ label.error {
 }
 
 {% endif %} // settings.ajax_cart_method
+{% endif %} // Cart
