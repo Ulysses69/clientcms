@@ -106,8 +106,9 @@ $colorBody: {{ settings.color_body_bg }};
 $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
-$colorNav: #f2f2f2;
-$colorNavText: #333;
+$colorNav: {{ settings.color_menu_bg }};
+$colorNavText: {{ settings.color_menu_link }};
+$colorNavTextActive: {{ settings.color_menu_link_active }};
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -1781,6 +1782,8 @@ label.error {
 ==============================================================================*/
 .site-header {
   padding: ($gutter / 2) 0;
+  background: {{ settings.color_header_bg }};
+  color: {{ settings.color_header_text }};
 
   .grid--table {
     display: table;
@@ -1851,6 +1854,20 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
+
+  a {
+    color: $colorNavText;
+
+    &:hover {
+      color: {{ settings.color_menu_link_hover }}($colorNavText, 15%);
+    }
+
+  }
+
+  .site-nav--active a {
+    color: $colorNavTextActive;
+  }
+
 }
 
 .site-nav {

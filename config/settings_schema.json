@@ -398,6 +398,59 @@
       },
       {
         "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "color_header_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_header_text",
+        "label": "Text",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Menu"
+      },
+      {
+        "type": "color",
+        "id": "color_menu_bg",
+        "label": "Background",
+        "default": "#f4f4f4"
+      },
+      {
+        "type": "color",
+        "id": "color_menu_link",
+        "label": "Link",
+        "default": "#333333"
+      },
+      {
+        "type": "select",
+        "id": "color_menu_link_hover",
+        "label": "Link (Hover)",
+        "options": [
+          {
+            "value": "lighten",
+            "label": "Lighten"
+          },
+          {
+            "value": "darken",
+            "label": "Darken"
+          }
+        ]
+      },      
+      {
+        "type": "color",
+        "id": "color_menu_link_active",
+        "label": "Link (Active)",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
         "content": "Body"
       },
       {
@@ -534,36 +587,6 @@
     ]
   },
   {
-    "name": "Cart Page",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "cart_notes_enable",
-        "label": "Enable cart notes"
-      },
-      {
-        "type": "checkbox",
-        "id": "cart_vendor_enable",
-        "label": "Show product vendor"
-      },
-      {
-        "type": "select",
-        "id": "ajax_cart_method",
-        "label": "Cart type",
-        "options": [
-          {
-            "value": "drawer",
-            "label": "Drawer"
-          },
-          {
-            "value": "page",
-            "label": "Page"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "Contact Page [NEW]",
     "settings": [      
       {
@@ -614,6 +637,36 @@
           { "value": "11", "label": "11"},
           { "value": "12", "label": "12 Furthest"}
        ]
+      }
+    ]
+  },
+  {
+    "name": "Cart Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_vendor_enable",
+        "label": "Show product vendor"
+      },
+      {
+        "type": "select",
+        "id": "ajax_cart_method",
+        "label": "Cart type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Drawer"
+          },
+          {
+            "value": "page",
+            "label": "Page"
+          }
+        ]
       }
     ]
   }

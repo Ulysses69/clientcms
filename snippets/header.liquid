@@ -69,12 +69,8 @@
                 {% endif %}
               </div>
             {% endif %}
-
-            {% if settings.searchbox_enable %}
-            <div class="site-header__search">
-              {% include 'search-bar' %}
-            </div>
-            {% endif %}
+            
+            {% include 'search-bar' %}
 
           </div>
         </div>
