@@ -144,10 +144,10 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: {% if settings.heading_typeface == 'websafe' %}{{ websafe_font }}{% else %}{{ google_webfont_font }}{% endif %};
+$headerFontStack: {% if settings.heading_typeface == 'websafe' %}{{ settings.websafe_font }}{% else %}{{ settings.google_webfont_font }}{% endif %};
 $headerFontWeight: 700;
 
-$bodyFontStack: {% if settings.main_typeface == 'websafe' %}{{ websafe_font }}{% else %}{{ google_webfont_font }}{% endif %};
+$bodyFontStack: {% if settings.main_typeface == 'websafe' %}{{ settings.websafe_font }}{% else %}{{ settings.google_webfont_font }}{% endif %};
 $baseFontSize: 14px; // Henseforth known as 1em
 
 @font-face {
