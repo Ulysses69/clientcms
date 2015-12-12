@@ -16,7 +16,9 @@
             {{ imageUrl | img_tag }}
           </a>
           <p class="h6"><a href="/admin/products">{{ 'homepage.onboarding.product_title' | t }}</a></p>
+          {% if settings.store_mode == "commerce" %}
           <p>$19.99</p>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
