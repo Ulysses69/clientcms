@@ -8,6 +8,9 @@
 {% endcomment %}
 
 {% if settings.store_mode == "commerce" %}
+
+{% include 'breadcrumb' %}
+
 {% if cart.item_count > 0 %}
 
   <h1>{{ 'cart.general.title' | t }}</h1>

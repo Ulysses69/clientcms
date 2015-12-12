@@ -143,11 +143,7 @@ $zindexNavDropdowns: 5;
 $zindexDrawer: 10;
 
 /*================ Typography ================*/
-
-$headerFontStack: {% if settings.heading_typeface == 'websafe' %}{{ settings.websafe_font }}{% else %}{{ settings.google_webfont_font }}{% endif %};
 $headerFontWeight: 700;
-
-$bodyFontStack: {% if settings.main_typeface == 'websafe' %}{{ settings.websafe_font }}{% else %}{{ settings.google_webfont_font }}{% endif %};
 $baseFontSize: 14px; // Henseforth known as 1em
 
 @font-face {
@@ -786,7 +782,7 @@ button,
 select {
   font-size: $baseFontSize;
   line-height: 1.6;
-  font-family: $bodyFontStack;
+  font-family: {% if settings.main_typeface == 'websafe' %}{{ settings.websafe_font }}{% else %}{{ settings.google_webfont_font }}{% endif %};
   color: $colorTextBody;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -795,7 +791,6 @@ select {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  font-family: $headerFontStack;
   font-weight: $headerFontWeight;
   margin: 0 0 0.5em;
   line-height: 1.4;
@@ -809,7 +804,7 @@ h1, h2, h3, h4, h5, h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
-  {% if settings.heading1_typeface == "google_webfonts" %}
+  {% if settings.heading_typeface == "google_webfonts" %}
     font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
   {% else %}
     font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
@@ -818,7 +813,7 @@ h1 {
 
 h2 {
   font-size: em(28px);
-  {% if settings.heading2_typeface == "google_webfonts" %}
+  {% if settings.heading_typeface == "google_webfonts" %}
     font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
   {% else %}
     font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
@@ -827,7 +822,7 @@ h2 {
 
 h3 {
   font-size: em(22px);
-  {% if settings.heading3_typeface == "google_webfonts" %}
+  {% if settings.heading_typeface == "google_webfonts" %}
     font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
   {% else %}
     font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};
@@ -836,7 +831,7 @@ h3 {
 
 h4 {
   font-size: em(20px);
-  {% if settings.heading4_typeface == "google_webfonts" %}
+  {% if settings.heading_typeface == "google_webfonts" %}
     font-family: "{{ settings.google_webfont_font | replace: '+', ' ' }}";
   {% else %}
     font-family: {{ settings.websafe_font | replace: '+', ' ' | replace: 'Helvetica', '"HelveticaNeue", "Helvetica Neue", Helvetica' }};

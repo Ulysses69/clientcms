@@ -25,8 +25,8 @@
     "name": "Store Settings [NEW]",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries provides contact (no cart)."
+        "type": "header",
+        "content": "General [NEW]"
       },
       {
         "type": "select",
@@ -57,7 +57,19 @@
         "type": "checkbox",
         "id": "searchbox_enable",
         "label": "Search Box [NEW]"
-      }
+      },
+      {
+        "type": "header",
+        "content": "Notes [NEW]"
+      },
+      {
+        "type": "paragraph",
+        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart."
+      } ,
+      {
+        "type": "paragraph",
+        "content": "Enquiries provides contact (no cart)."
+      }      
     ]
   },
   {
@@ -65,7 +77,7 @@
     "settings": [      
       {
         "type": "header",
-        "content": "Heading Typeface [NEW]"
+        "content": "Headings [NEW]"
       },
       {
         "type": "radio",
@@ -77,7 +89,7 @@
           },
           {
             "value": "websafe",
-            "label": "Web Font"
+            "label": "System Font"
           }
         ]
       },    
@@ -103,7 +115,7 @@
       },
       {
         "type": "header",
-        "content": "Main Typeface [NEW]"
+        "content": "Body [NEW]"
       },
       {
         "type": "radio",
@@ -115,14 +127,17 @@
           },
           {
             "value": "websafe",
-            "label": "Web Font"
+            "label": "System Font"
           }
         ]
       },
       {
+        "type": "header",
+        "content": "Google Web Font [NEW]"
+      },
+      {
         "type": "select",
         "id": "google_webfont_font",
-        "label": "Google Web Font [NEW]",
         "options": [
           {
             "value": "Anton",
@@ -283,9 +298,12 @@
         ]
       },
       {
+        "type": "header",
+        "content": "System Font [NEW]"
+      },
+      {
         "type": "select",
         "id": "websafe_font",
-        "label": "Web Font [NEW]",
         "options": [
           {
             "value": "Futura, 'Century Gothic', AppleGothic, sans-serif",
@@ -355,10 +373,6 @@
     "name": "Colors",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
-      },
-      {
         "type": "header",
         "content": "General colors"
       },
@@ -419,6 +433,14 @@
         "id": "color_footer_social_link",
         "label": "Social media icons",
         "default": "#bbbbbb"
+      },
+      {
+        "type": "header",
+        "content": "Notes [NEW]"
+      },
+      {
+        "type": "paragraph",
+        "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
       }
     ]
   },
@@ -552,7 +574,7 @@
       {
         "type": "text",
         "id": "contact_address",
-        "label": "Full Mailing Address [NEW]"
+        "label": "Postal Address [NEW]"
       },
       {
         "type": "text",

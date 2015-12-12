@@ -21,8 +21,11 @@
 
 {% comment %}
   Avoid accessing search.results before the opening paginate tag.
-  If you do, the pagination of results will be broken.
+  If you do, the pagination of results will be broken.  
 {% endcomment %}
+
+{% include 'breadcrumb' %}
+
 {% paginate search.results by 10 %}
 
   <div class="grid">
