@@ -7,22 +7,7 @@
             <div class="grid__item large--one-third medium--one-half">
               <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if settings.social_facebook_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
-                      </a>
-                    </li>
-                  {% endif %}
+                  {% include 'social-links' %}
                 </ul>
             </div>
           {% endif %}
@@ -75,11 +60,8 @@
       </div>
     </footer>
     <!-- //site-footer -->
-
-
     {{ 'fastclick.min.js' | asset_url | script_tag }}
     {{ 'timber.js' | asset_url | script_tag }}
-
     {% comment %}
       Template-specific js
     {% endcomment %}
@@ -90,7 +72,6 @@
         });
       {% endif %}
     </script>
-
     {% comment %}
       Ajaxify your cart with this plugin.
       Documentation:
@@ -111,7 +92,6 @@
             moneyFormat: {{ shop.money_format | json }}
           });
         });
-
         jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {
           // Bind to 'ajaxCart.afterCartLoad' to run any javascript after the cart has loaded in the DOM
           timber.RightDrawer.open();
