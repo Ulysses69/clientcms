@@ -571,6 +571,49 @@
       }
     ]
   },
+
+  {
+    "name": "Popup Newsletter [NEW]",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "pnewletter_enable",
+        "label": "Use Popup Newsletter",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_cookie",
+        "label": "Popup Time Cookie",
+        "default": "60",
+        "info": "Time to popup show again (Minutes)"
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_title",
+        "label": "Popup Newsletter Title",
+        "default": "NEWSLETTER SIGN UP"
+      },
+      {
+        "type": "textarea",
+        "id": "pnewletter_message",
+        "label": "Popup Newsletter Message"
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_form_action",
+        "label": "MailChimp Form Action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "image",
+        "id": "pnewletter_bg.png",
+        "label": "Popup Newletter Background",
+        "max-width": 2000,
+        "max-height": 2000
+      }
+    ]
+  },
   {
     "name": "Social Media",
     "settings": [

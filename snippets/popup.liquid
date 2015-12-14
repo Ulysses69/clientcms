@@ -1,0 +1,43 @@
+{% if settings.popup_form_action != blank %}
+    {% assign form_action = settings.popup_form_action %}
+{% else %}
+    {% assign form_action = '#' %}
+{% endif %}
+<div id="popup-newletter" class="hide">
+    <div class="pa-header">
+        <h3 class="">
+            {{ settings.popup_title }}
+        </h3>
+        <div class="pnewle-message">
+            {{ settings.popup_message }}
+        </div>
+        <div class="pnewle-form">
+      		<form action="{{ form_action }}" method="post" target="_blank">
+                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" class="newsletter-input form-control" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" >
+                <input type="submit" class="button_mini btn" value="{{ 'general.newsletter_form.submit' | t }}">
+            </form>
+      	</div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+      	var date = new Date();
+      	var minutes = {{ settings.popup_cookie }};
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        if (jQuery.cookie('popupNewLetterStatus') != 'closed') {
+            jQuery.fancybox.open({
+                padding : 0,
+        		'beforeLoad': function(){
+			        $("#popup-newletter").removeClass('hide');
+			        var Form = $("mc-embedded-subscribe-form").clone();
+			        //$('.pnewle-form',$("#popup-newletter")).html($("#mc-embedded-subscribe-form").clone().removeAttr("id"));
+			    },
+        		href: "#popup-newletter",
+        		afterClose : function(){
+        			$("#popup-newletter").addClass('hide');
+                    jQuery.cookie('popupNewLetterStatus', 'closed', {expires:date, path:'/'});
+           		}
+            });
+        }
+    });
+</script>

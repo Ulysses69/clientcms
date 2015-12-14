@@ -71,6 +71,9 @@
           timber.resetPasswordSuccess();
         });
       {% endif %}
+      {% if settings.popup_enable %}
+        {% include 'popup' %}
+      {% endif %}      
     </script>
     {% comment %}
       Ajaxify your cart with this plugin.
