@@ -571,7 +571,6 @@
       }
     ]
   },
-
   {
     "name": "Popup Newsletter [NEW]",
     "settings": [
@@ -611,6 +610,107 @@
         "label": "Popup Newletter Background",
         "max-width": 2000,
         "max-height": 2000
+      }
+    ]
+  },
+  {
+    "name": "Business Hours [NEW]",
+    "settings": [      
+      {
+        "type": "checkbox",
+        "id": "business_display_format",
+        "label": "Show as 12 hour",
+        "default": "12"
+      },
+      {
+        "type": "checkbox",
+        "id": "business_display_contact",
+        "label": "Show on contact page"
+      },
+      {
+        "type": "checkbox",
+        "id": "business_display_footer",
+        "label": "Show in footer"
+      },
+      {
+        "type": "header",
+        "content": "Open",
+        "info": "Enter 24 hour format"
+      },
+      {
+        "type": "text",
+        "id": "business_open_monday",
+        "label": "Monday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_tuesday",
+        "label": "Tuesday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_wednesday",
+        "label": "Wednesday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_thursday",
+        "label": "Thursday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_friday",
+        "label": "Friday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_saturday",
+        "label": "Saturday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_sunday",
+        "label": "Sunday"
+      },
+      {
+        "type": "header",
+        "content": "Close",
+        "info": "Enter 24 hour format"
+      },
+      {
+        "type": "text",
+        "id": "business_close_monday",
+        "label": "Monday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_tuesday",
+        "label": "Tuesday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_wednesday",
+        "label": "Wednesday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_thursday",
+        "label": "Thursday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_friday",
+        "label": "Friday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_saturday",
+        "label": "Saturday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_sunday",
+        "label": "Sunday"
       }
     ]
   },

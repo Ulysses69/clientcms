@@ -1,0 +1,74 @@
+{% if settings.business_display_format == 12 %}
+	{% assign am = '<small>am</small>' %}
+	{% assign pm = '<small>pm</small>' %}
+
+	/* Make all open and close times 0000 format */
+	{% assign mon_open = settings.business_open_monday | remove: ':' %}
+	{% assign tue_open = settings.business_open_tuesday | remove: ':' %}
+	{% assign wed_open = settings.business_open_wednesday | remove: ':' %}
+	{% assign thu_open = settings.business_open_thursday | remove: ':' %}
+	{% assign fri_open = settings.business_open_friday | remove: ':' %}
+	{% assign sat_open = settings.business_open_saturday | remove: ':' %}
+	{% assign sun_open = settings.business_open_sunday | remove: ':' %}
+	{% assign mon_close = settings.business_close_monday | remove: ':' %}
+	{% assign tue_close = settings.business_close_tuesday | remove: ':' %}
+	{% assign wed_close = settings.business_close_wednesday | remove: ':' %}
+	{% assign thu_close = settings.business_close_thursday | remove: ':' %}
+	{% assign fri_close = settings.business_close_friday | remove: ':' %}
+	{% assign sat_close = settings.business_close_saturday | remove: ':' %}
+	{% assign sun_close = settings.business_close_sunday | remove: ':' %}
+
+	/* Check if open or close is 1200 or higher to assign am or pm */
+	{% if mon_open > 1199 %}{% assign mon_open = mon_open ' ' pm %}{% endif %} {% if mon_close > 1199 %}{% assign mon_close = mon_close ' ' pm %}{% endif %}
+	{% if tue_open > 1199 %}{% assign tue_open = tue_open ' ' pm %}{% endif %} {% if tue_close > 1199 %}{% assign tue_close = tue_close ' ' pm %}{% endif %}
+	{% if wed_open > 1199 %}{% assign wed_open = wed_open ' ' pm %}{% endif %} {% if wed_close > 1199 %}{% assign wed_close = wed_close ' ' pm %}{% endif %}
+	{% if thu_open > 1199 %}{% assign thu_open = thu_open ' ' pm %}{% endif %} {% if thu_close > 1199 %}{% assign thu_close = thu_close ' ' pm %}{% endif %}
+	{% if fri_open > 1199 %}{% assign fri_open = fri_open ' ' pm %}{% endif %} {% if fri_close > 1199 %}{% assign fri_close = fri_close ' ' pm %}{% endif %}
+	{% if sat_open > 1199 %}{% assign sat_open = sat_open ' ' pm %}{% endif %} {% if sat_close > 1199 %}{% assign sat_close = sat_close ' ' pm %}{% endif %}
+	{% if sun_open > 1199 %}{% assign sun_open = sun_open ' ' pm %}{% endif %} {% if sun_close > 1199 %}{% assign sun_close = sun_close ' ' pm %}{% endif %}
+
+	/* Check for time, closed or appointment status */
+
+{% else %}
+	{% assign mon_open = settings.business_open_monday %}
+	{% assign tue_open = settings.business_open_tuesday %}
+	{% assign wed_open = settings.business_open_wednesday %}
+	{% assign thu_open = settings.business_open_thursday %}
+	{% assign fri_open = settings.business_open_friday %}
+	{% assign sat_open = settings.business_open_saturday %}
+	{% assign sun_open = settings.business_open_sunday %}
+	{% assign mon_close = settings.business_close_monday %}
+	{% assign tue_close = settings.business_close_tuesday %}
+	{% assign wed_close = settings.business_close_wednesday %}
+	{% assign thu_close = settings.business_close_thursday %}
+	{% assign fri_close = settings.business_close_friday %}
+	{% assign sat_close = settings.business_close_saturday %}
+	{% assign sun_close = settings.business_close_sunday %}	
+
+	{% assign monday = mon_open '<span>to</span>' mon_close %}
+	{% assign tuesday = tue_open '<span>to</span>' tue_close %}
+	{% assign wednesday = wed_open '<span>to</span>' wed_close %}
+	{% assign thursday = thu_open '<span>to</span>' thu_close %}
+	{% assign friday = fri_open '<span>to</span>' fri_close %}
+	{% assign saturday = sat_open '<span>to</span>' sat_close %}
+	{% assign sunday = sun_open '<span>to</span>' sun_close %}
+
+{% endif %}
+<div class="businessHours schema">
+	<ul class="open">
+		<h2>Open hours</h2>
+		<li><h3>Monday</h3>{{ monday }}</li>
+		<li><h3>Tuesday</h3>{{ tuseday }}</li>
+		<li><h3>Wednesday</h3>{{ wednesday }}</li>
+		<li><h3>Thursday</h3>{{ thursday }}</li>
+		<li><h3>Friday</h3>{{ friday }}</li>
+		<li><h3>Saturday</h3> by appointment</li>
+		<li><h3>Sunday</h3> Closed</li>
+	</ul>
+	</div>
+	<ul class="closed">
+		<h2>Closed for lunch</h2>
+		<li><h3>Monday</h3> 1:00 {{ am }}<span>to</span> 1:00 <small>am</small></li>
+		<li><h3>Tuesday</h3> 1:00 {{ am }}<span>to</span> 1:00 <small>am</small></li>
+	</ul>
+</div>
