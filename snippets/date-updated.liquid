@@ -1,0 +1,17 @@
+{% if settings.updated_enable %}
+{% if template contains 'collection' %}
+{% assign updated = collection.published_at | date:'%-d %B  %Y' %}
+{% endif %}
+{% if template contains 'product' %}
+{% assign updated = product.published_at | date:'%-d %B  %Y' %}
+{% endif %}
+{% if template contains 'page' %}
+{% assign updated = page.published_at | date:'%-d %B  %Y' %}
+{% endif %}
+{% if template contains 'article' %}
+{% assign updated = article.published_at | date:'%-d %B  %Y' %}
+{% endif %}
+{% if updated != blank %}
+<p class="updated">Page Last Updated: {{ updated }}</p>
+{% endif %}
+{% endif %}

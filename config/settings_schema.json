@@ -55,17 +55,22 @@
         "label": "Search Box [NEW]"
       },
       {
+        "type": "checkbox",
+        "id": "updated_enable",
+        "label": "Display Update Date [NEW]"
+      },
+      {
         "type": "header",
         "content": "Notes [NEW]"
       },
       {
         "type": "paragraph",
         "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart."
-      } ,
+      },
       {
         "type": "paragraph",
         "content": "Enquiries provides contact (no cart)."
-      }      
+      }    
     ]
   },
   {
