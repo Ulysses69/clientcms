@@ -57,7 +57,8 @@
       {
         "type": "checkbox",
         "id": "updated_enable",
-        "label": "Display Update Date [NEW]"
+        "label": "Display Update Date [NEW]",
+        "default": yes
       },
       {
         "type": "header",
