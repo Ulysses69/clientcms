@@ -45,12 +45,6 @@
         ]
       },
       {
-        "type": "page",
-        "id": "enquiry_url",
-        "label": "Enquiry Page [NEW]",
-        "info": "Page that enquiry buttons link to."
-      },
-      {
         "type": "checkbox",
         "id": "searchbox_enable",
         "label": "Search Box [NEW]",
@@ -61,6 +55,24 @@
         "id": "updated_enable",
         "label": "Display Update Date [NEW]",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "topbar_enable",
+        "label": "Top Bar [NEW]",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "topbar_content",
+        "label": "Top Bar Content [NEW]",
+        "default": "<span>Welcome</span> <span><a href='/account/login'>Login</a></span>"
+      },
+      {
+        "type": "page",
+        "id": "enquiry_url",
+        "label": "Enquiry Page [NEW]",
+        "info": "Page that enquiry buttons link to."
       },
       {
         "type": "header",
