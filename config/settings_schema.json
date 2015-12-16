@@ -28,6 +28,7 @@
         "type": "select",
         "id": "store_mode",
         "label": "Store Mode [NEW]",
+        "default": "commerce",
         "options": [
           {
             "value": "commerce",
@@ -52,13 +53,14 @@
       {
         "type": "checkbox",
         "id": "searchbox_enable",
-        "label": "Search Box [NEW]"
+        "label": "Search Box [NEW]",
+        "default": true
       },
       {
         "type": "checkbox",
         "id": "updated_enable",
         "label": "Display Update Date [NEW]",
-        "default": yes
+        "default": true
       },
       {
         "type": "header",
