@@ -1,10 +1,14 @@
 {
-  "current": {
+  "current": "Default",
+  "presets": {
+    "Default": {
       "ajax_cart_method": "drawer",
       "cart_notes_enable": true,
       "searchbox_enable": true, 
       "heading_typeface": "websafe", 
       "main_typeface": "websafe",
+      "websafe_font": "Verdana",
+      "google_webfont_font": "Lato",
       "heading1_typeface": true, 
       "heading2_typeface": true, 
       "heading3_typeface": true, 
@@ -19,6 +23,8 @@
       "color_body_bg": "#fff",
       "color_body_text": "#333333",
       "color_menu_bg": "rgba(0,0,0,0)",
+      "color_menu_link": "#333333",
+      "color_menu_link_active": "#000000",
       "color_borders": "#e5e5e5",
       "color_footer_bg": "#f2f2f2",
       "color_footer_social_link": "#bbbbbb",
@@ -31,5 +37,6 @@
       "logo_use_image": false,
       "social_facebook_link": "",
       "social_twitter_link": ""
+    }
   }
 }

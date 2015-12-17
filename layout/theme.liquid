@@ -40,8 +40,7 @@
     <main class="wrapper main-content" role="main">
       {% if sidebar == 'left' %}{% include 'sidebar' %}{% endif %}
       <div class="main-body">      
-      {{ content_for_layout }}
-      {% include 'date-updated' %}   
+      {{ content_for_layout }}   
       </div>   
       {% if sidebar == 'right' %}{% include 'sidebar' %}{% endif %}
     </main>

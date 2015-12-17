@@ -32,42 +32,7 @@
     {% endcomment %}
 
     {% for article in blog.articles %}
-      <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-      {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-      {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-      <p>{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</p>
-
-      {% comment %}
-        Add a surrounding div with class 'rte' to anything that will come from the rich text editor.
-        Since this is just a listing page, you can either use the excerpt or truncate the full article.
-      {% endcomment %}
-      <div class="rte">
-        {% if article.excerpt.size > 0 %}
-          {{ article.excerpt }}
-        {% else %}
-          <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-        {% endif %}
-      </div>
-
-      {% comment %}
-        Show off meta information like number of comments and tags.
-      {% endcomment %}
-      <ul class="inline-list">
-        {% if blog.comments_enabled? %}
-        <li>
-          <a href="{{ article.url }}#comments">
-            {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-          </a>
-        </li>
-        {% endif %}
-
-        {% include 'tags-article' %}
-      </ul>
-
-      <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
-
-      {% unless forloop.last %}<hr>{% endunless %}
-
+      {% include 'blog-item' %}
     {% endfor %}
 
     {% if paginate.pages > 1 %}
@@ -76,6 +41,8 @@
         {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
       </div>
     {% endif %}
+
+    {% include 'date-updated' %}
 
   </div>
 

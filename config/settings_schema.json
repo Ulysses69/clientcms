@@ -72,12 +72,12 @@
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content [NEW]",
-        "default": "<span>Welcome to our website.</span> <span><a href='/account/login'>Login</a></span>"
+        "default": "<span>Welcome to our website.</span> <span>Login</span>"
       },
       {
         "type": "select",
         "id": "breadcrumb_align",
-        "info": "Position of breadcrumb",
+        "label": "Position of breadcrumb",
         "options": [
           {
             "value": "nav",
@@ -88,7 +88,7 @@
             "label": "Within Content"
           }
         ]
-      },
+      },      
       {
         "type": "page",
         "id": "enquiry_url",
@@ -727,7 +727,7 @@
         "type": "checkbox",
         "id": "business_display_format",
         "label": "Show as 12 hour",
-        "default": "12"
+        "default": true
       },
       {
         "type": "checkbox",

@@ -5,8 +5,9 @@
   {% comment %}
     Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
   {% endcomment %}
-  {% unless template == 'index' %}
+  {% unless template == 'index' %}  
   <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+  <div class="wrapper">
     <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
 
     {% if template contains 'product' %}
@@ -61,7 +62,8 @@
      <span aria-hidden="true">&rsaquo;</span>
      <span>{{ page_title }}</span>
 
-    {% endif %}
+    {% endif %}  
+  </div>
   </nav>
   {% endunless %}
 

@@ -32,6 +32,9 @@
         {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
         {% include 'product-grid-item' %}
       {% endfor %}
+
+      {% include 'date-updated' %}
+      
     </div>
 
     {% unless forloop.last %}<hr>{% endunless %}

@@ -17,7 +17,7 @@
           </a>
           <p><a href="/admin/products">{{ 'homepage.onboarding.product_title' | t }}</a></p>
           {% if settings.store_mode == "commerce" %}
-          <p>$19.99</p>
+          <p>{% assign demoprice = 1999 %}{{ demoprice | money }}</p>
           {% endif %}
         </div>
       {% endfor %}

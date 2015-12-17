@@ -31,7 +31,7 @@
         <h1>{{ article.title }}</h1>
         {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
         {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-        <p>{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</p>
+        <p class="authored">{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</p>
       </div>
     </header>
 
@@ -156,15 +156,16 @@
 
               <input type="submit" class="btn" value="{{ 'blogs.comments.post' | t }}">
             {% endform %}
-          </div>
+          </div>          
 
         </div>
+
       {% endpaginate %}
+
     {% endif %}
+
+    {% include 'date-updated' %}
 
   </article>
 
-  <aside class="grid__item large--one-quarter" role="complementary">
-    {% include 'blog-sidebar' %}
-  </aside>
 </div>

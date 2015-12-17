@@ -83,6 +83,8 @@
 
     </div>
 
+    {% include 'date-updated' %}
+
     {% if paginate.pages > 1 %}
       <hr>
       <div class="pagination">
@@ -92,9 +94,10 @@
 
   </div>
 
-  <div class="grid__item large--one-quarter">
+  <!-- <div class="grid__item large--one-quarter">
     {% include 'collection-sidebar' %}
-  </div>
+  </div> -->
+
 </div>
 
 {% endpaginate %}
