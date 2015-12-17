@@ -24,6 +24,7 @@
     If you store has customer accounts disabled, you can remove the following JS file
   {% endcomment %}
   {% if template contains 'customers' %}{{ 'shopify_common.js' | shopify_asset_url | script_tag }}{% endif %}
+  {% assign sidebar = settings.sidebar_align %}
 </head>
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
@@ -34,9 +35,11 @@
   <div id="PageContainer" class="is-moved-by-drawer">
     {% include 'header' %}
     {% include 'nav-main' %}
-    <main class="wrapper main-content" role="main">
+    <main class="wrapper main-content" role="main">      
+      {% if sidebar == 'left' %}{% include 'sidebar' %}{% endif %}
       {{ content_for_layout }}
-      {% include 'date-updated' %}
+      {% include 'date-updated' %}      
+      {% if sidebar == 'right' %}{% include 'sidebar' %}{% endif %}
     </main>
   </div>
   {% include 'footer' %}

@@ -109,7 +109,7 @@
           <button type="submit" name="add" id="AddToCart" class="btn"><span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span></button>
           {% endif %}
 
-          {% if settings.store_mode == "enquiries" %} 
+          {% if settings.store_mode == "enquiries" and settings.enquiry_url != blank %}  
           <a id="AddToCart" class="btn" href="{{ settings.enquiry_url }}"><span id="AddToCartText">{{ 'products.product.enquire' | t }}</span></a>
           {% endif %}
 

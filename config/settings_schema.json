@@ -46,33 +46,57 @@
       },
       {
         "type": "checkbox",
+        "id": "sidebar_enable",
+        "label": "Show Sidebar [NEW]",
+        "default": true
+      },
+      {
+        "type": "checkbox",
         "id": "searchbox_enable",
-        "label": "Search Box [NEW]",
+        "label": "Show Search Box [NEW]",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "updated_enable",
-        "label": "Display Update Date [NEW]",
+        "label": "Show Update Date [NEW]",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "topbar_enable",
-        "label": "Top Bar [NEW]",
+        "label": "Show Top Bar [NEW]",
         "default": true
       },
       {
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content [NEW]",
-        "default": "<span>Welcome to our website</span> <span><a href='/account/login'>Login</a></span>"
+        "default": "<span>Welcome to our website.</span> <span><a href='/account/login'>Login</a></span>"
       },
       {
         "type": "page",
         "id": "enquiry_url",
-        "label": "Enquiry Page [NEW]",
-        "info": "Page that enquiry buttons link to."
+        "label": "Enquiry Link [NEW]",
+        "info": "Page that product enquiry links to (optional)."
+      },
+      {
+        "type": "header",
+        "content": "Sidebar Alignment [NEW]"
+      },
+      {
+        "type": "select",
+        "id": "sidebar_align",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
       },
       {
         "type": "header",
@@ -80,11 +104,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart."
-      },
-      {
-        "type": "paragraph",
-        "content": "Enquiries provides contact (no cart)."
+        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (adds product enquiry link)."
       }    
     ]
   },
