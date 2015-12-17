@@ -81,11 +81,11 @@
         "options": [
           {
             "value": "nav",
-            "label": "Below Menu"
+            "label": "Within Header"
           },
           {
             "value": "content",
-            "label": "Above Content"
+            "label": "Within Content"
           }
         ]
       },
