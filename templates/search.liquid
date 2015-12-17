@@ -24,7 +24,7 @@
   If you do, the pagination of results will be broken.  
 {% endcomment %}
 
-{% include 'breadcrumb' %}
+{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 {% paginate search.results by 10 %}
 

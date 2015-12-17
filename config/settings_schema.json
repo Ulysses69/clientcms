@@ -75,6 +75,21 @@
         "default": "<span>Welcome to our website.</span> <span><a href='/account/login'>Login</a></span>"
       },
       {
+        "type": "select",
+        "id": "breadcrumb_align",
+        "info": "Position of breadcrumb",
+        "options": [
+          {
+            "value": "nav",
+            "label": "Below Menu"
+          },
+          {
+            "value": "content",
+            "label": "Above Content"
+          }
+        ]
+      },
+      {
         "type": "page",
         "id": "enquiry_url",
         "label": "Enquiry Link [NEW]",
@@ -82,8 +97,17 @@
       },
       {
         "type": "header",
-        "content": "Sidebar Alignment [NEW]"
+        "content": "Notes [NEW]"
       },
+      {
+        "type": "paragraph",
+        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (adds product enquiry link)."
+      }    
+    ]
+  },
+  {
+    "name": "Sidebar Settings [NEW]",
+    "settings": [      
       {
         "type": "select",
         "id": "sidebar_align",
@@ -99,13 +123,45 @@
         ]
       },
       {
-        "type": "header",
-        "content": "Notes [NEW]"
+        "type": "checkbox",
+        "id": "collection_sidebar",
+        "label": "Collection Sidebar Enabled"
       },
       {
-        "type": "paragraph",
-        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (adds product enquiry link)."
-      }    
+        "type": "page",
+        "id": "collection_sidebar_page",
+        "label": "Collection Sidebar Content Page"
+      },      
+      {
+        "type": "link_list",
+        "id": "collection_sidebar_linklist",
+        "label": "Collection Sidebar Link List"
+      },
+      {
+        "type": "link_list",
+        "id": "collection_sidebar_linklist2",
+        "label": "Sidebar Link List 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "filter_by_category",
+        "label": "Collection Sidebar List of Collections"
+      },
+      {
+        "type": "checkbox",
+        "id": "filter_by_tag",
+        "label": "Sidebar List of Tags"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sidebar_products",
+        "label": "Collection Sidebar Product Types"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sidebar_vendors",
+        "label": "Collection Sidebar Vendors"
+      }   
     ]
   },
   {

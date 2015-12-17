@@ -9,7 +9,7 @@
 
 {% endcomment %}
 
-{% include 'breadcrumb' %}
+{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 <div class="grid">
 

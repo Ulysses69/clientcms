@@ -19,7 +19,7 @@
   {% endcomment %}
   {% assign current_variant = product.selected_or_first_available_variant %}
 
-  {% include 'breadcrumb' %}
+  {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
   <div class="grid product-single">
     <div class="grid__item large--one-half text-center">
@@ -47,6 +47,8 @@
     </div>
 
     <div class="grid__item large--one-half">
+
+      {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
       <h1 itemprop="name">{{ product.title }}</h1>
 

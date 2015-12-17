@@ -6,7 +6,7 @@
 
 {% endcomment %}
 
-{% include 'breadcrumb' %}
+{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 {% paginate collection.products by 12 %}
 
