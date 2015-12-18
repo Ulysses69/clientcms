@@ -254,6 +254,9 @@
       "log_in": "Log in",
       "create_account": "Create account"
     },
+    "header": {
+      "phone_title": "Call"
+    },
     "footer": {
       "social_title": "Get Connected",
       "newsletter_title": "Newsletter",

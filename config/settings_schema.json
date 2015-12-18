@@ -46,6 +46,12 @@
       }, 
       {
         "type": "checkbox",
+        "id": "phone_enable",
+        "label": "Show Phone Number [NEW]",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
         "id": "sidebar_enable",
         "label": "Show Sidebar [NEW]",
         "default": true
