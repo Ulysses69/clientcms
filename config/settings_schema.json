@@ -153,7 +153,64 @@
     ]
   },
   {
-    "name": "Sidebar Settings [NEW]",
+    "name": "Header [NEW]",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_use_image",
+        "label": "Use custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Custom logo",
+        "max-width": 450,
+        "max-height": 200,
+        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "text",
+        "id": "logo_max_width",
+        "label": "Max logo width",
+        "default": "450",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "checkbox",
+        "id": "favicon_enable",
+        "label": "Use custom icon"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "16 x 16px png",
+        "max-width": 16,
+        "max-height": 16
+      }, 
+      {
+        "type": "checkbox",
+        "id": "header_phone_enable",
+        "label": "Show Phone Number [NEW]",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
+        "id": "header_phone_icon",
+        "label": "Show Phone Icon",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Sidebar [NEW]",
     "settings": [      
       {
         "type": "select",
@@ -209,6 +266,193 @@
         "id": "collection_sidebar_vendors",
         "label": "Collection Sidebar Vendors"
       }   
+    ]
+  },
+  {
+    "name": "Footer [NEW]",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show social media icons"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter URL",
+        "info": "Example: https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook URL",
+        "info": "Example: https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Show newsletter field"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_form_action",
+        "label": "MailChimp form action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      }
+    ]
+  },
+  {
+    "name": "Popup Newsletter [NEW]",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "pnewletter_enable",
+        "label": "Use Popup Newsletter",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_cookie",
+        "label": "Popup Time Cookie",
+        "default": "60",
+        "info": "Time to popup show again (Minutes)"
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_title",
+        "label": "Popup Newsletter Title",
+        "default": "NEWSLETTER SIGN UP"
+      },
+      {
+        "type": "textarea",
+        "id": "pnewletter_message",
+        "label": "Popup Newsletter Message"
+      },
+      {
+        "type": "text",
+        "id": "pnewletter_form_action",
+        "label": "MailChimp Form Action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "image",
+        "id": "pnewletter_bg.png",
+        "label": "Popup Newletter Background",
+        "max-width": 2000,
+        "max-height": 2000
+      }
+    ]
+  },
+  {
+    "name": "Business Hours [NEW]",
+    "settings": [      
+      {
+        "type": "checkbox",
+        "id": "business_display_format",
+        "label": "Show as 12 hour",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "business_display_contact",
+        "label": "Show on contact page"
+      },
+      {
+        "type": "checkbox",
+        "id": "business_display_footer",
+        "label": "Show in footer"
+      },
+      {
+        "type": "header",
+        "content": "Open",
+        "info": "Enter 24 hour format"
+      },
+      {
+        "type": "text",
+        "id": "business_open_monday",
+        "label": "Monday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_tuesday",
+        "label": "Tuesday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_wednesday",
+        "label": "Wednesday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_thursday",
+        "label": "Thursday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_friday",
+        "label": "Friday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_saturday",
+        "label": "Saturday"
+      },
+      {
+        "type": "text",
+        "id": "business_open_sunday",
+        "label": "Sunday"
+      },
+      {
+        "type": "header",
+        "content": "Close",
+        "info": "Enter 24 hour format"
+      },
+      {
+        "type": "text",
+        "id": "business_close_monday",
+        "label": "Monday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_tuesday",
+        "label": "Tuesday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_wednesday",
+        "label": "Wednesday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_thursday",
+        "label": "Thursday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_friday",
+        "label": "Friday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_saturday",
+        "label": "Saturday"
+      },
+      {
+        "type": "text",
+        "id": "business_close_sunday",
+        "label": "Sunday"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "twittercard_handle",
+        "label": "Twitter handle",
+        "info": "Example: @shopify"
+      }
     ]
   },
   {
@@ -633,250 +877,6 @@
       {
         "type": "paragraph",
         "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
-      }
-    ]
-  },
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_use_image",
-        "label": "Use custom logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Custom logo",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
-      },
-      {
-        "type": "text",
-        "id": "logo_max_width",
-        "label": "Max logo width",
-        "default": "450",
-        "info": "Defined in pixels. Do not add the 'px' unit."
-      },
-      {
-        "type": "header",
-        "content": "Favicon"
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use custom icon"
-      },
-      {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "16 x 16px png",
-        "max-width": 16,
-        "max-height": 16
-      }, 
-      {
-        "type": "checkbox",
-        "id": "header_phone_enable",
-        "label": "Show Phone Number [NEW]",
-        "default": true
-      }, 
-      {
-        "type": "checkbox",
-        "id": "header_phone_icon",
-        "label": "Show Phone Icon",
-        "default": true
-      }
-    ]
-  },
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "footer_social_enable",
-        "label": "Show social media icons"
-      },
-      {
-        "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter URL",
-        "info": "Example: https:\/\/twitter.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook URL",
-        "info": "Example: https:\/\/www.facebook.com\/shopify"
-      },
-      {
-        "type": "checkbox",
-        "id": "footer_newsletter_enable",
-        "label": "Show newsletter field"
-      },
-      {
-        "type": "text",
-        "id": "newsletter_form_action",
-        "label": "MailChimp form action URL",
-        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
-      }
-    ]
-  },
-  {
-    "name": "Popup Newsletter [NEW]",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "pnewletter_enable",
-        "label": "Use Popup Newsletter",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "pnewletter_cookie",
-        "label": "Popup Time Cookie",
-        "default": "60",
-        "info": "Time to popup show again (Minutes)"
-      },
-      {
-        "type": "text",
-        "id": "pnewletter_title",
-        "label": "Popup Newsletter Title",
-        "default": "NEWSLETTER SIGN UP"
-      },
-      {
-        "type": "textarea",
-        "id": "pnewletter_message",
-        "label": "Popup Newsletter Message"
-      },
-      {
-        "type": "text",
-        "id": "pnewletter_form_action",
-        "label": "MailChimp Form Action URL",
-        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
-      },
-      {
-        "type": "image",
-        "id": "pnewletter_bg.png",
-        "label": "Popup Newletter Background",
-        "max-width": 2000,
-        "max-height": 2000
-      }
-    ]
-  },
-  {
-    "name": "Business Hours [NEW]",
-    "settings": [      
-      {
-        "type": "checkbox",
-        "id": "business_display_format",
-        "label": "Show as 12 hour",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "business_display_contact",
-        "label": "Show on contact page"
-      },
-      {
-        "type": "checkbox",
-        "id": "business_display_footer",
-        "label": "Show in footer"
-      },
-      {
-        "type": "header",
-        "content": "Open",
-        "info": "Enter 24 hour format"
-      },
-      {
-        "type": "text",
-        "id": "business_open_monday",
-        "label": "Monday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_tuesday",
-        "label": "Tuesday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_wednesday",
-        "label": "Wednesday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_thursday",
-        "label": "Thursday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_friday",
-        "label": "Friday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_saturday",
-        "label": "Saturday"
-      },
-      {
-        "type": "text",
-        "id": "business_open_sunday",
-        "label": "Sunday"
-      },
-      {
-        "type": "header",
-        "content": "Close",
-        "info": "Enter 24 hour format"
-      },
-      {
-        "type": "text",
-        "id": "business_close_monday",
-        "label": "Monday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_tuesday",
-        "label": "Tuesday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_wednesday",
-        "label": "Wednesday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_thursday",
-        "label": "Thursday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_friday",
-        "label": "Friday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_saturday",
-        "label": "Saturday"
-      },
-      {
-        "type": "text",
-        "id": "business_close_sunday",
-        "label": "Sunday"
-      }
-    ]
-  },
-  {
-    "name": "Social Media",
-    "settings": [
-      {
-        "type": "text",
-        "id": "twittercard_handle",
-        "label": "Twitter handle",
-        "info": "Example: @shopify"
       }
     ]
   },

@@ -27,13 +27,14 @@
             {% endif %}
           </div>
 
-          {% if settings.header_phone_enable %}
-          <div class="service-number">
-          {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' }} {{ shop.phone }}
-          </div>
-          {% endif %}
-
           <div class="grid__item large--one-half large--text-right medium-down--hide">
+
+            {% if settings.header_phone_enable %}
+            <span class="service-number">
+            {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' | t }} {{ shop.phone }}
+            </span>
+            {% endif %}
+                   
             {% comment %}
               Show number of items in the cart and total cost in the /cart link
 
