@@ -23,7 +23,7 @@
       {
         "type": "header",
         "content": "General [NEW]"
-      },
+      }, 
       {
         "type": "select",
         "id": "store_mode",
@@ -43,43 +43,43 @@
             "label": "Enquiries"
           }
         ]
-      },
+      }, 
       {
         "type": "checkbox",
         "id": "sidebar_enable",
         "label": "Show Sidebar [NEW]",
         "default": true
-      },
+      }, 
       {
         "type": "checkbox",
         "id": "searchbox_enable",
         "label": "Show Search Box [NEW]",
         "default": true
-      },
+      }, 
       {
         "type": "checkbox",
         "id": "updated_enable",
         "label": "Show Update Date [NEW]",
         "default": true
-      },
+      }, 
       {
         "type": "checkbox",
         "id": "topbar_enable",
         "label": "Show Top Bar [NEW]",
         "default": true
-      },
+      }, 
       {
         "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb [NEW]",
         "default": true
-      },
+      }, 
       {
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content [NEW]",
         "default": "<span>Welcome to our website.</span> <span>Login</span>"
-      },
+      }, 
       {
         "type": "select",
         "id": "breadcrumb_align",
@@ -94,12 +94,42 @@
             "label": "Within Content"
           }
         ]
-      },      
+      }, 
       {
         "type": "page",
         "id": "enquiry_url",
         "label": "Enquiry Link [NEW]",
         "info": "Page that product enquiry links to (optional)."
+      }, 
+      {
+        "type": "header",
+        "content": "Cart Status [NEW]"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "cart_status_total",
+        "label": "Show Cart Total",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
+        "id": "cart_status_icon",
+        "label": "Show Cart Icon",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
+        "id": "cart_status_label",
+        "label": "Show Cart Title",
+        "default": true,
+        "info": "[Cart Title](..\/language\/?category=cart)."
+      }, 
+      {
+        "type": "checkbox",
+        "id": "cart_status_count",
+        "label": "Show Cart Count",
+        "default": true,
+        "info": "[Count Title](..\/language\/?category=layout)."
       },
       {
         "type": "header",
