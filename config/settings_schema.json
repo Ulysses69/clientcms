@@ -69,6 +69,12 @@
         "default": true
       },
       {
+        "type": "checkbox",
+        "id": "breadcrumb_enable",
+        "label": "Show Breadcrumb [NEW]",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content [NEW]",
