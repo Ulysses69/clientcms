@@ -43,13 +43,7 @@
             "label": "Enquiries"
           }
         ]
-      }, 
-      {
-        "type": "checkbox",
-        "id": "phone_enable",
-        "label": "Show Phone Number [NEW]",
-        "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "sidebar_enable",
@@ -684,6 +678,18 @@
         "label": "16 x 16px png",
         "max-width": 16,
         "max-height": 16
+      }, 
+      {
+        "type": "checkbox",
+        "id": "header_phone_enable",
+        "label": "Show Phone Number [NEW]",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
+        "id": "header_phone_icon",
+        "label": "Show Phone Icon",
+        "default": true
       }
     ]
   },
