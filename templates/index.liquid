@@ -126,21 +126,7 @@
   {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
   {% if demo == 'homecatalogblogabout-us' %}
 
-    {% for article in blogs['news'].articles limit:3 %}
-      <div class="grid__item large--one-third">
-        {% include 'blog-item' %}
-      </div>
-    {% endfor %}
-    {% for article in blogs['news'].articles limit:3 %}
-      <div class="grid__item large--one-third">
-        {% include 'blog-item' %}
-      </div>
-    {% endfor %}
-    {% for article in blogs['news'].articles limit:3 %}
-      <div class="grid__item large--one-third">
-        {% include 'blog-item' %}
-      </div>
-    {% endfor %}
+    {% include 'onboarding-featured-blog' %}
     
   {% else %}
 
