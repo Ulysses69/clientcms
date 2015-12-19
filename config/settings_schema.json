@@ -22,12 +22,12 @@
     "settings": [
       {
         "type": "header",
-        "content": "General [NEW]"
+        "content": "General"
       }, 
       {
         "type": "select",
         "id": "store_mode",
-        "label": "Store Mode [NEW]",
+        "label": "Store Mode",
         "default": "commerce",
         "options": [
           {
@@ -47,49 +47,49 @@
       {
         "type": "checkbox",
         "id": "sidebar_enable",
-        "label": "Show Sidebar [NEW]",
+        "label": "Show Sidebar",
         "default": true
       }, 
       {
         "type": "checkbox",
         "id": "searchbox_enable",
-        "label": "Show Search Box [NEW]",
+        "label": "Show Search Box",
         "default": true
       }, 
       {
         "type": "checkbox",
         "id": "searchbox_autocomplete_enable",
-        "label": "Show Autocomplete Search [NEW]",
+        "label": "Show Autocomplete Search",
         "default": true
       }, 
       {
         "type": "checkbox",
         "id": "updated_enable",
-        "label": "Show Update Date [NEW]",
+        "label": "Show Update Date",
         "default": true
       }, 
       {
         "type": "checkbox",
         "id": "topbar_enable",
-        "label": "Show Top Bar [NEW]",
+        "label": "Show Top Bar",
         "default": true
       }, 
       {
         "type": "checkbox",
         "id": "breadcrumb_enable",
-        "label": "Show Breadcrumb [NEW]",
+        "label": "Show Breadcrumb",
         "default": true
       }, 
       {
         "type": "text",
         "id": "topbar_content",
-        "label": "Top Bar Content [NEW]",
+        "label": "Top Bar Content",
         "default": "<span>Welcome to our website.</span> <span>Login</span>"
       }, 
       {
         "type": "select",
         "id": "breadcrumb_align",
-        "label": "Position of breadcrumb",
+        "label": "Breadcrumb Placement",
         "options": [
           {
             "value": "nav",
@@ -100,16 +100,31 @@
             "label": "Within Content"
           }
         ]
-      }, 
+      },      
+      {
+        "type": "select",
+        "id": "sidebar_align",
+        "label": "Sidebar Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
       {
         "type": "page",
         "id": "enquiry_url",
-        "label": "Enquiry Link [NEW]",
-        "info": "Page that product enquiry links to (optional)."
+        "label": "Product Enquiry Link",
+        "info": "Page that product enquiry links to."
       }, 
       {
         "type": "header",
-        "content": "Cart Status [NEW]"
+        "content": "Cart Status"
       }, 
       {
         "type": "checkbox",
@@ -127,19 +142,17 @@
         "type": "checkbox",
         "id": "cart_status_label",
         "label": "Show Cart Title",
-        "default": true,
-        "info": "[Cart Title](..\/language\/?category=cart)."
+        "default": true
       }, 
       {
         "type": "checkbox",
         "id": "cart_status_count",
         "label": "Show Cart Count",
-        "default": true,
-        "info": "[Count Title](..\/language\/?category=layout)."
+        "default": true
       },
       {
         "type": "header",
-        "content": "Legal [NEW]"
+        "content": "Legal"
       },
       {
         "type": "text",
@@ -150,7 +163,7 @@
       },      
       {
         "type": "header",
-        "content": "Notes [NEW]"
+        "content": "Notes"
       },
       {
         "type": "paragraph",
@@ -204,7 +217,7 @@
       {
         "type": "checkbox",
         "id": "header_phone_enable",
-        "label": "Show Phone Number [NEW]",
+        "label": "Show Phone Number",
         "default": true
       }, 
       {
@@ -219,23 +232,9 @@
     "name": "Sidebar [NEW]",
     "settings": [      
       {
-        "type": "select",
-        "id": "sidebar_align",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          }
-        ]
-      },
-      {
         "type": "checkbox",
         "id": "collection_sidebar",
-        "label": "Collection Sidebar Enabled"
+        "label": "Enable Collection Sidebar"
       },
       {
         "type": "page",
@@ -255,22 +254,22 @@
       {
         "type": "checkbox",
         "id": "filter_by_category",
-        "label": "Collection Sidebar List of Collections"
+        "label": "Show List of Collections"
       },
       {
         "type": "checkbox",
         "id": "filter_by_tag",
-        "label": "Sidebar List of Tags"
+        "label": "Show List of Tags"
       },
       {
         "type": "checkbox",
         "id": "collection_sidebar_products",
-        "label": "Collection Sidebar Product Types"
+        "label": "Show Product Types"
       },
       {
         "type": "checkbox",
         "id": "collection_sidebar_vendors",
-        "label": "Collection Sidebar Vendors"
+        "label": "Show Vendors"
       }   
     ]
   },
