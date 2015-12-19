@@ -70,12 +70,19 @@
 
         {% else %}
 
-          {% comment %}
-            If collection exists but is empty, display message
-          {% endcomment %}
-          <div class="grid__item">
-            <p>{{ 'collections.general.no_matches' | t }}</p>
-          </div>
+          {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
+          {% if demo == 'homecatalogblogabout-us' %}
+            {% include 'onboarding-empty-collection' %}
+          {% else %}
+          
+            {% comment %}
+              If collection exists but is empty, display message
+            {% endcomment %}
+            <div class="grid__item">
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+            </div>
+
+          {% endif %}
 
         {% endif %}
 
