@@ -58,6 +58,12 @@
       }, 
       {
         "type": "checkbox",
+        "id": "searchbox_autocomplete_enable",
+        "label": "Show Autocomplete Search [NEW]",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
         "id": "updated_enable",
         "label": "Show Update Date [NEW]",
         "default": true
