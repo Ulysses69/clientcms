@@ -8,7 +8,7 @@
 	{% if template contains 'blog' or template contains 'article' %}
 
 		<h4>{{ 'blogs.sidebar.recent_articles' | t }}</h4>
-		<ul class="no-bullets">
+		<ul class="blog_list no-bullets">
 		  {% for article in blogs[blog.handle].articles limit:6 %}
 		    <li>
 		      <a href="{{ article.url }}">{{ article.title }}</a>
@@ -22,7 +22,7 @@
 		{% endcomment %}
 		{% if blog.all_tags.size > 0 %}
 		  <h4>{{ 'blogs.sidebar.categories' | t }}</h4>
-		  <ul class="no-bullets">
+		  <ul class="blog_list no-bullets">
 		    {% for tag in blog.all_tags %}
 		      {% if current_tags contains tag %}
 		      <li>{{ tag }}</li>
@@ -34,6 +34,17 @@
 		{% endif %}
 
 	{% else %}
+
+
+        {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
+        {% if demo == 'homecatalogblogabout-us' %}            
+			<h4>Side Menu</h4>
+			<ul class="blog_list no-bullets">
+				{% assign liclass = '' %}
+			    {% include 'nav-demo' %}
+			</ul>
+		{% endif %}
+
 
 		{% if template contains 'collection' and settings.collection_sidebar_linklist == blank and settings.collection_sidebar_linklist2 == blank and settings.collection_sidebar_page == blank %}
 

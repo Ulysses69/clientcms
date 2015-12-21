@@ -8,6 +8,8 @@
 
 {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
+{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
+
 {% paginate blog.articles by 5 %}
 
 {% comment %}
@@ -16,7 +18,7 @@
 {% endcomment %}
 <div class="grid--rev">
 
-  <div class="grid__item large--three-quarters">
+  <div class="grid__item{{ quarters }}">
 
     {% if current_tags %}
       <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>

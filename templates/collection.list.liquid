@@ -17,13 +17,15 @@
 
 {% paginate collection.products by 12 %}
 
+{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
+
 {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
 {% endcomment %}
 <div class="grid--rev">
-  <div class="grid__item large--three-quarters">
+  <div class="grid__item{{ quarters }}">
 
     {% comment %}
       Different markup if a collection description exists

@@ -1,10 +1,12 @@
 
 {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
-<!-- /templates/page.liquid -->
-<div class="grid">
+{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
-  <div class="grid__item large--two-thirds push--large--one-sixth">
+<!-- /templates/page.liquid -->
+<div class="grid--rev">
+
+  <div class="grid__item{{ quarters }}">
 
     <h1>{{ page.title }}</h1>
 
