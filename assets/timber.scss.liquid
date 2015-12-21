@@ -2657,3 +2657,10 @@ label.error {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+@include at-query ($max, $large) {
+  .sidebar {
+    display: block;
+    width: auto;
+  }
+}
