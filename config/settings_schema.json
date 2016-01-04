@@ -84,7 +84,7 @@
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content",
-        "default": "<span>Welcome to our website.</span> <span>Login</span>"
+        "default": "<span>Welcome to our website.<\/span> <a href='\/account\/login'>Login<\/a>"
       }, 
       {
         "type": "select",
