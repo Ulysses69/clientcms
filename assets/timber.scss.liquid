@@ -975,6 +975,7 @@ hr {
   .section-header {
     display: table;
     width: 100%;
+    position: relative;
   }
 
   .section-header__title {
@@ -997,6 +998,10 @@ hr {
     vertical-align: middle;
     text-align: right;
     width: 335px;
+    width: 345px;
+    float: right;
+    position: absolute;
+    right: 0;
 
     @include at-query ($max, $medium) {
       margin-bottom: $gutter;
