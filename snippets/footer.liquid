@@ -40,6 +40,7 @@
             {% comment %}
               Loop through available payment methods and show their icons.
             {% endcomment %}
+            {% if settings.payment_cards_enable %}
             {% unless shop.enabled_payment_types == empty %}
               <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
               <ul class="inline-list payment-icons">
@@ -53,6 +54,7 @@
                 {% endfor %}
               </ul>
             {% endunless %}
+            {% endif %}
             {% if settings.copyright %}<small>{{ settings.copyright }}</small>{% endif %}
           </div>
         </div>

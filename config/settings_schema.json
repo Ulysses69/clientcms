@@ -81,10 +81,16 @@
         "default": true
       }, 
       {
+        "type": "checkbox",
+        "id": "payment_cards_enable",
+        "label": "Show Payment Cards",
+        "default": true
+      }, 
+      {
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content",
-        "default": "<span>Welcome to our website.<\/span> <a href='\/account\/login'>Login<\/a>"
+        "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
       }, 
       {
         "type": "select",
