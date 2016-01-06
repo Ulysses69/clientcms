@@ -326,7 +326,7 @@
         "id": "pnewletter_cookie",
         "label": "Popup Time Cookie",
         "default": "60",
-        "info": "Time to popup show again (Minutes)"
+        "info": "Time to show popup again (Minutes)"
       },
       {
         "type": "text",
