@@ -892,6 +892,41 @@
     ]
   },
   {
+    "name": "Password Page [NEW]",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Setting"
+      },
+      {
+        "type": "color",
+        "id": "password_bg_color",
+        "label": "Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "password_text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Background Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "password_bg_image",
+        "label": "Enable Background Image"
+      },
+      {
+        "type": "image",
+        "id": "pwBackground.jpg",
+        "label": "Background Image"
+      }
+    ]
+  },
+  {
     "name": "Contact Page [NEW]",
     "settings": [      
       {
