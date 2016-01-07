@@ -13,7 +13,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Review [documentation](http:\/\/shopify.github.io\/Timber\/) for any Timber help."
+        "content": "Read [documentation](http:\/\/shopify.github.io\/Timber\/) for any Timber help."
       }
     ]
   },
@@ -164,7 +164,7 @@
         "type": "text",
         "id": "copyright",
         "label": "Copyright",
-        "default": "Copyright &copy; 2015",
+        "default": "&copy; Copyright 2015",
         "info": "As displayed in footer."
       },      
       {
