@@ -164,7 +164,7 @@
         "type": "text",
         "id": "copyright",
         "label": "Copyright",
-        "default": "&copy; Copyright {{ shop.name }} {{ year }}",
+        "default": "&copy; Copyright [shop] [year]",
         "info": "As displayed in footer."
       },      
       {
@@ -297,7 +297,49 @@
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook URL",
-        "info": "Example: https:\/\/www.facebook.com\/shopify"
+        "info": "Example: https:\/\/facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn URL",
+        "info": "Example: https:\/\/linkedin.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_google_link",
+        "label": "Google+ URL",
+        "info": "Example: https:\/\/plus.google.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL",
+        "info": "Example: https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr URL",
+        "info": "Example: https:\/\/tumblr.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo URL",
+        "info": "Example: https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo URL",
+        "info": "Example: https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube URL",
+        "info": "Example: https:\/\/youtube.com\/shopify"
       },
       {
         "type": "checkbox",
