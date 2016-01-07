@@ -55,7 +55,7 @@
               </ul>
             {% endunless %}
             {% endif %}
-            {% if settings.copyright %}<small>{{ settings.copyright }}</small>{% endif %}
+            {% if settings.copyright %}<small>{{ settings.copyright | replace: "{{ shop.name }}", shop.name | replace: "{{ year }}", "2016" }}</small>{% endif %}
           </div>
         </div>
       </div>
