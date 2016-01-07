@@ -331,12 +331,6 @@
       },
       {
         "type": "text",
-        "id": "social_vimeo_link",
-        "label": "Vimeo URL",
-        "info": "Example: https:\/\/vimeo.com\/shopify"
-      },
-      {
-        "type": "text",
         "id": "social_youtube_link",
         "label": "YouTube URL",
         "info": "Example: https:\/\/youtube.com\/shopify"
