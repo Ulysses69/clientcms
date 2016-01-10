@@ -436,6 +436,10 @@
         "type": "checkbox",
         "id": "gallery_alt",
         "label": "Display Captions from Alt Text"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: To setup a gallery, add images to a page, then set the page template to page.gallery"
       }
     ]
   },
