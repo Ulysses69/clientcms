@@ -2647,56 +2647,33 @@ label.error {
 {% assign margin = '0 0 0 0' %}
 {% assign gallerywidth = '' %}
 {% assign gallerymargin = '' %}
-
 {% if settings.gallery_spacing %}
-  {% assign percent2col = 45 %}{% assign percent2colMargin = '0 0 5% 5%' %}{% assign percent2colWidth = 'width: 105%;' %}{% assign percent2colLeft = 'left: -5%;' %}
-  {% assign percent3col = 30.3 %}{% assign percent3colMargin = '0 0 3% 3%' %}{% assign percent3colWidth = 'width: 103%;' %}{% assign percent3colLeft = 'left: -3%;' %}
-  {% assign percent4col = 23 %}{% assign percent4colMargin = '0 0 2% 2%' %}{% assign percent4colWidth = 'width: 102%;' %}{% assign percent4colLeft = 'left: -2%;' %}
-  {% assign percent5col = 18 %}{% assign percent5colMargin = '0 0 2% 2%' %}{% assign percent5colWidth = 'width: 102%;' %}{% assign percent5colLeft = 'left: -2%;' %}
-  {% assign percent6col = 15.65 %}{% assign percent6colMargin = '0 0 1% 1%' %}{% assign percent6colWidth = 'width: 101%;' %}{% assign percent6colLeft = 'left: -1%;' %}
-  {% if columns == '1' %}
-  {% assign percent = 100 %}{% assign margin = '0 0 2% 0' %}{% endif %}
-  {% if columns == '2' %}
-    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}{% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
-  {% endif %}
-  {% if columns == '3' %}
-    {% assign percent = percent3col %}{% assign margin = percent3colMargin %}{% assign gallerywidth = percent3colWidth %}{% assign gallerymargin = percent3colLeft %}
-  {% endif %}
-  {% if columns == '4' %}
-    {% assign percent = percent4col %}{% assign margin = percent4colMargin %}{% assign gallerywidth = percent4colWidth %}{% assign gallerymargin = percent4colLeft %}
-  {% endif %}
-  {% if columns == '5' %}
-    {% assign percent = percent5col %}{% assign margin = percent5colMargin %}{% assign gallerywidth = percent5colWidth %}{% assign gallerymargin = percent5colLeft %}
-  {% endif %}
-  {% if columns == '6' %}
-    {% assign percent = percent6col %}{% assign margin = percent6colMargin %}{% assign gallerywidth = percent6colWidth %}{% assign gallerymargin = percent6colLeft %}
-  {% endif %}  
+  {% assign col2percent = 45 %}{% assign col2percentMargin = '0 0 5% 5%' %}{% assign col2width = 'width: 105%;' %}{% assign col2percentLeft = 'left: -5%;' %}
+  {% assign col3percent = 30.3 %}{% assign col3percentMargin = '0 0 3% 3%' %}{% assign col3width = 'width: 103%;' %}{% assign col3percentLeft = 'left: -3%;' %}
+  {% assign col4percent = 23 %}{% assign col4percentMargin = '0 0 2% 2%' %}{% assign col4width = 'width: 102%;' %}{% assign col4percentLeft = 'left: -2%;' %}
+  {% assign col5percent = 18 %}{% assign col5percentMargin = '0 0 2% 2%' %}{% assign col5width = 'width: 102%;' %}{% assign col5percentLeft = 'left: -2%;' %}
+  {% assign col6percent = 15.65 %}{% assign col6percentMargin = '0 0 1% 1%' %}{% assign col6width = 'width: 101%;' %}{% assign col6percentLeft = 'left: -1%;' %}
+  {% if columns == '1' %}{% assign percent = 100 %}{% assign margin = '0 0 2% 0' %}{% endif %}
+  {% if columns == '2' %}{% assign percent = col2percent %}{% assign margin = col2percentMargin %}{% assign gallerywidth = col2width %}{% assign gallerymargin = col2percentLeft %}{% endif %}
+  {% if columns == '3' %}{% assign percent = col3percent %}{% assign margin = col3percentMargin %}{% assign gallerywidth = col3width %}{% assign gallerymargin = col3percentLeft %}{% endif %}
+  {% if columns == '4' %}{% assign percent = col4percent %}{% assign margin = col4percentMargin %}{% assign gallerywidth = col4width %}{% assign gallerymargin = col4percentLeft %}{% endif %}
+  {% if columns == '5' %}{% assign percent = col5percent %}{% assign margin = col5percentMargin %}{% assign gallerywidth = col5width %}{% assign gallerymargin = col5percentLeft %}{% endif %}
+  {% if columns == '6' %}{% assign percent = col6percent %}{% assign margin = col6percentMargin %}{% assign gallerywidth = col6width %}{% assign gallerymargin = col6percentLeft %}{% endif %}  
 {% else %}
-  {% assign percent2col = 50 %}
-  {% assign percent3col = 33.33 %}
-  {% assign percent4col = 25 %}
-  {% assign percent5col = 20 %}
-  {% assign percent6col = 17 %}
-  {% if columns == '1' %}
-    {% assign percent = 100 %}
-  {% endif %}
-  {% if columns == '2' %}
-    {% assign percent = percent2col %}
-  {% endif %}
-  {% if columns == '3' %}
-    {% assign percent = percent3col %}
-  {% endif %}
-  {% if columns == '4' %}
-    {% assign percent = percent4col %}
-  {% endif %}
-  {% if columns == '5' %}
-    {% assign percent = percent5col %}
-  {% endif %}
-  {% if columns == '6' %}
-    {% assign percent = percent6col %}
-  {% endif %}
+  {% assign col2percent = 50 %}
+  {% assign col3percent = 33.33 %}
+  {% assign col4percent = 25 %}
+  {% assign col5percent = 20 %}
+  {% assign col6percent = 17 %}
+  {% if columns == '1' %}{% assign percent = 100 %}{% endif %}
+  {% if columns == '2' %}{% assign percent = col2percent %}{% endif %}
+  {% if columns == '3' %}{% assign percent = col3percent %}{% endif %}
+  {% if columns == '4' %}{% assign percent = col4percent %}{% endif %}
+  {% if columns == '5' %}{% assign percent = col5percent %}{% endif %}
+  {% if columns == '6' %}{% assign percent = col6percent %}{% endif %}
 {% endif %}
 
+/*================ Gallery ================*/
 .gallery .thumbnails img {
   width: {{ percent }}%;
   margin: {{ margin }};
@@ -2716,24 +2693,24 @@ label.error {
 {% if columns > '1' and columns < '5' %}
 @include at-query ($max, $large) {
   .gallery .thumbnails {
-    {% assign gallerywidth = percent3colWidth %}{% assign gallerymargin = percent3colLeft %}
+    {% assign gallerywidth = col3width %}{% assign gallerymargin = col3percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = percent3col %}{% assign margin = percent3colMargin %}
+    {% assign percent = col3percent %}{% assign margin = col3percentMargin %}
     width: {{ percent }}%;
     margin: {{ margin }};
   }  
 }
 @include at-query ($max, $small) {
   .gallery .thumbnails {
-    {% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
+    {% assign gallerywidth = col2width %}{% assign gallerymargin = col2percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}
+    {% assign percent = col2percent %}{% assign margin = col2percentMargin %}
     width: {{ percent }}%;
     margin: {{ margin }};
   }  
@@ -2741,24 +2718,24 @@ label.error {
 {% else %}
 @include at-query ($max, $large) {
   .gallery .thumbnails {
-    {% assign gallerywidth = percent4colWidth %}{% assign gallerymargin = percent4colLeft %}
+    {% assign gallerywidth = col4width %}{% assign gallerymargin = col4percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = percent4col %}{% assign margin = percent4colMargin %}
+    {% assign percent = col4percent %}{% assign margin = col4percentMargin %}
     width: {{ percent }}%;
     margin: {{ margin }};
   }  
 }
 @include at-query ($max, $small) {
   .gallery .thumbnails {
-    {% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
+    {% assign gallerywidth = col2width %}{% assign gallerymargin = col2percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}
+    {% assign percent = col2percent %}{% assign margin = col2percentMargin %}
     width: {{ percent }}%;
     margin: {{ margin }};
   }  
