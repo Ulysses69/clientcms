@@ -391,6 +391,55 @@
     ]
   },
   {
+    "name": "Gallery [NEW]",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Columns"
+      },
+      {
+        "type": "select",
+        "id": "gallery_columns",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_spacing",
+        "label": "Enable Gallery Spacing"
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_alt",
+        "label": "Display Captions from Alt Text"
+      }
+    ]
+  },
+  {
     "name": "Business Hours [NEW]",
     "settings": [      
       {

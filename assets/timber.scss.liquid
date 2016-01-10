@@ -2642,6 +2642,129 @@ label.error {
 .sidebar {
   /* border: solid 1px #ccc; */
 }
+
+{% assign columns = settings.gallery_columns %}
+{% assign margin = '0 0 0 0' %}
+{% assign gallerywidth = '' %}
+{% assign gallerymargin = '' %}
+
+{% if settings.gallery_spacing %}
+  {% assign percent2col = 45 %}{% assign percent2colMargin = '0 0 5% 5%' %}{% assign percent2colWidth = 'width: 105%;' %}{% assign percent2colLeft = 'left: -5%;' %}
+  {% assign percent3col = 30.3 %}{% assign percent3colMargin = '0 0 3% 3%' %}{% assign percent3colWidth = 'width: 103%;' %}{% assign percent3colLeft = 'left: -3%;' %}
+  {% assign percent4col = 23 %}{% assign percent4colMargin = '0 0 2% 2%' %}{% assign percent4colWidth = 'width: 102%;' %}{% assign percent4colLeft = 'left: -2%;' %}
+  {% assign percent5col = 18 %}{% assign percent5colMargin = '0 0 2% 2%' %}{% assign percent5colWidth = 'width: 102%;' %}{% assign percent5colLeft = 'left: -2%;' %}
+  {% assign percent6col = 15.65 %}{% assign percent6colMargin = '0 0 1% 1%' %}{% assign percent6colWidth = 'width: 101%;' %}{% assign percent6colLeft = 'left: -1%;' %}
+  {% if columns == '1' %}
+  {% assign percent = 100 %}{% assign margin = '0 0 2% 0' %}{% endif %}
+  {% if columns == '2' %}
+    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}{% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
+  {% endif %}
+  {% if columns == '3' %}
+    {% assign percent = percent3col %}{% assign margin = percent3colMargin %}{% assign gallerywidth = percent3colWidth %}{% assign gallerymargin = percent3colLeft %}
+  {% endif %}
+  {% if columns == '4' %}
+    {% assign percent = percent4col %}{% assign margin = percent4colMargin %}{% assign gallerywidth = percent4colWidth %}{% assign gallerymargin = percent4colLeft %}
+  {% endif %}
+  {% if columns == '5' %}
+    {% assign percent = percent5col %}{% assign margin = percent5colMargin %}{% assign gallerywidth = percent5colWidth %}{% assign gallerymargin = percent5colLeft %}
+  {% endif %}
+  {% if columns == '6' %}
+    {% assign percent = percent6col %}{% assign margin = percent6colMargin %}{% assign gallerywidth = percent6colWidth %}{% assign gallerymargin = percent6colLeft %}
+  {% endif %}  
+{% else %}
+  {% assign percent2col = 50 %}
+  {% assign percent3col = 33.33 %}
+  {% assign percent4col = 25 %}
+  {% assign percent5col = 20 %}
+  {% assign percent6col = 17 %}
+  {% if columns == '1' %}
+    {% assign percent = 100 %}
+  {% endif %}
+  {% if columns == '2' %}
+    {% assign percent = percent2col %}
+  {% endif %}
+  {% if columns == '3' %}
+    {% assign percent = percent3col %}
+  {% endif %}
+  {% if columns == '4' %}
+    {% assign percent = percent4col %}
+  {% endif %}
+  {% if columns == '5' %}
+    {% assign percent = percent5col %}
+  {% endif %}
+  {% if columns == '6' %}
+    {% assign percent = percent6col %}
+  {% endif %}
+{% endif %}
+
+.gallery .thumbnails img {
+  width: {{ percent }}%;
+  margin: {{ margin }};
+  padding: 0 0 0 0;
+  float: left !important;
+  position: relative;
+}
+
+.gallery .thumbnails {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  {{ gallerywidth }}
+  {{ gallerymargin }}
+}
+
+{% if columns > '1' and columns < '5' %}
+@include at-query ($max, $large) {
+  .gallery .thumbnails {
+    {% assign gallerywidth = percent3colWidth %}{% assign gallerymargin = percent3colLeft %}
+    {{ gallerywidth }}
+    {{ gallerymargin }}
+  }
+  .gallery .thumbnails img {
+    {% assign percent = percent3col %}{% assign margin = percent3colMargin %}
+    width: {{ percent }}%;
+    margin: {{ margin }};
+  }  
+}
+@include at-query ($max, $small) {
+  .gallery .thumbnails {
+    {% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
+    {{ gallerywidth }}
+    {{ gallerymargin }}
+  }
+  .gallery .thumbnails img {
+    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}
+    width: {{ percent }}%;
+    margin: {{ margin }};
+  }  
+}
+{% else %}
+@include at-query ($max, $large) {
+  .gallery .thumbnails {
+    {% assign gallerywidth = percent4colWidth %}{% assign gallerymargin = percent4colLeft %}
+    {{ gallerywidth }}
+    {{ gallerymargin }}
+  }
+  .gallery .thumbnails img {
+    {% assign percent = percent4col %}{% assign margin = percent4colMargin %}
+    width: {{ percent }}%;
+    margin: {{ margin }};
+  }  
+}
+@include at-query ($max, $small) {
+  .gallery .thumbnails {
+    {% assign gallerywidth = percent2colWidth %}{% assign gallerymargin = percent2colLeft %}
+    {{ gallerywidth }}
+    {{ gallerymargin }}
+  }
+  .gallery .thumbnails img {
+    {% assign percent = percent2col %}{% assign margin = percent2colMargin %}
+    width: {{ percent }}%;
+    margin: {{ margin }};
+  }  
+}
+{% endif %}
+
 .sidebar {
   display: inline-block;
   width: 20%;
