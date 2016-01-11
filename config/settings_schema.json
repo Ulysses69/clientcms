@@ -433,6 +433,34 @@
         "label": "Enable Gallery Spacing"
       },
       {
+        "type": "select",
+        "id": "gallery_thumb_link",
+        "label": "Link Thumbnails",
+        "default": "",
+        "options": [
+          {
+            "value": "",
+            "label": "Do not Link"
+          },
+          {
+            "value": "grande",
+            "label": "Link to 600px Image"
+          },
+          {
+            "value": "1024x1024",
+            "label": "Link to 1024px Image"
+          },
+          {
+            "value": "2048x2048",
+            "label": "Link to 2048px Image"
+          },
+          {
+            "value": "master",
+            "label": "Link to Largest Image"
+          }
+        ]
+      },
+      {
         "type": "checkbox",
         "id": "gallery_alt",
         "label": "Display Captions from Alt Text"
