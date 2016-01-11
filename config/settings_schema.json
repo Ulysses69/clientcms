@@ -433,6 +433,11 @@
         "label": "Enable Gallery Spacing"
       },
       {
+        "type": "checkbox",
+        "id": "gallery_alt",
+        "label": "Display Captions from Alt Text"
+      },
+      {
         "type": "select",
         "id": "gallery_thumb_link",
         "label": "Link Thumbnails",
@@ -459,11 +464,6 @@
             "label": "Link to Largest Image"
           }
         ]
-      },
-      {
-        "type": "checkbox",
-        "id": "gallery_alt",
-        "label": "Display Captions from Alt Text"
       },
       {
         "type": "paragraph",
