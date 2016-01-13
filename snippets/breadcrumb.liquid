@@ -5,7 +5,7 @@
   {% comment %}
     Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
   {% endcomment %}
-  {% unless template == 'index' %}  
+  {% unless template == 'index' and settings.sidebar_home_enable == false %}  
   <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
   <div class="wrapper">
     <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
@@ -55,6 +55,10 @@
     {% elsif template contains 'page' %}
 
      <span aria-hidden="true">&rsaquo;</span>
+     <span>{{ page.title }}</span>
+
+    {% elsif template == 'index' %}
+
      <span>{{ page.title }}</span>
 
     {% else %}

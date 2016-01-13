@@ -52,6 +52,12 @@
       }, 
       {
         "type": "checkbox",
+        "id": "sidebar_home_enable",
+        "label": "Show Sidebar on Home Page",
+        "default": false
+      }, 
+      {
+        "type": "checkbox",
         "id": "searchbox_enable",
         "label": "Show Search Box",
         "default": true

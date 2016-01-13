@@ -1,6 +1,6 @@
 
-{% if settings.sidebar_enable %}
-{% if template != 'index' %}
+{% if settings.sidebar_enable or settings.sidebar_home_enable %}
+{% if template != 'index' or settings.sidebar_home_enable %}
 <!-- Sidebar | Align: {{ sidebar }} -->
 <div class="sidebar {{ sidebar }}">
 <aside class="grid__item large--one-quarter" role="complementary">
