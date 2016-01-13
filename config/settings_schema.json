@@ -191,7 +191,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (adds product enquiry link)."
+        "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (but adds product enquiry link)."
       }    
     ]
   },
