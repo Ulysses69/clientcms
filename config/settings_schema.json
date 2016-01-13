@@ -306,54 +306,6 @@
         "label": "Show social media icons"
       },
       {
-        "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter URL",
-        "info": "Example: https:\/\/twitter.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook URL",
-        "info": "Example: https:\/\/facebook.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_linkedin_link",
-        "label": "LinkedIn URL",
-        "info": "Example: https:\/\/linkedin.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_google_link",
-        "label": "Google+ URL",
-        "info": "Example: https:\/\/plus.google.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "Instagram URL",
-        "info": "Example: https:\/\/instagram.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_tumblr_link",
-        "label": "Tumblr URL",
-        "info": "Example: https:\/\/tumblr.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_vimeo_link",
-        "label": "Vimeo URL",
-        "info": "Example: https:\/\/vimeo.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_youtube_link",
-        "label": "YouTube URL",
-        "info": "Example: https:\/\/youtube.com\/shopify"
-      },
-      {
         "type": "checkbox",
         "id": "footer_newsletter_enable",
         "label": "Show newsletter field"
@@ -595,9 +547,51 @@
     "settings": [
       {
         "type": "text",
-        "id": "twittercard_handle",
-        "label": "Twitter handle",
-        "info": "Example: @shopify"
+        "id": "social_twitter_link",
+        "label": "Twitter URL",
+        "info": "Example: https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook URL",
+        "info": "Example: https:\/\/facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn URL",
+        "info": "Example: https:\/\/linkedin.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_google_link",
+        "label": "Google+ URL",
+        "info": "Example: https:\/\/plus.google.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL",
+        "info": "Example: https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr URL",
+        "info": "Example: https:\/\/tumblr.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo URL",
+        "info": "Example: https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube URL",
+        "info": "Example: https:\/\/youtube.com\/shopify"
       }
     ]
   },
