@@ -32,15 +32,15 @@
         "options": [
           {
             "value": "commerce",
-            "label": "Commerce"
+            "label": "Commerce (Cart)"
           },
           {
             "value": "brochure",
-            "label": "Brochure"
+            "label": "Brochure (No Cart)"
           },
           {
             "value": "enquiries",
-            "label": "Enquiries"
+            "label": "Enquiries (No Cart)"
           }
         ]
       },
