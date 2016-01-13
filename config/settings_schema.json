@@ -60,13 +60,13 @@
         "type": "checkbox",
         "id": "banner_home_enable",
         "label": "Show Banner on Home Page",
-        "default": false
+        "default": true
       },
       {
         "type": "checkbox",
         "id": "banner_enable",
         "label": "Show Banner on Other Pages",
-        "default": true
+        "default": false
       },  
       {
         "type": "checkbox",

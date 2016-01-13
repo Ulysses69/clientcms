@@ -38,9 +38,13 @@
     {% include 'nav-main' %}
     {% if breadcrumb == 'nav' %}{% include 'breadcrumb' %}{% endif %}
     <main class="wrapper main-content" role="main">
+      {% if template == 'index' and settings.banner_home_enable %}
+      {% include 'banner' %}  
+      {% elsif template != 'index' and settings.banner_enable %}
+      {% include 'banner' %}  
+      {% endif %}      
       {% if sidebar == 'left' %}{% include 'sidebar' %}{% endif %}      
-      <div class="main-body">
-      {% include 'banner' %}    
+      <div class="main-body">     
       {{ content_for_layout }}   
       </div>   
       {% if sidebar == 'right' %}{% include 'sidebar' %}{% endif %}
