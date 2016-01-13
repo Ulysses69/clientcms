@@ -15,7 +15,7 @@
   {% if settings.heading_typeface == "google_webfonts" or settings.main_typeface == "google_webfonts" %}
   <link href='//fonts.googleapis.com/css?family={{ settings.google_webfont_font | replace: '+', ' ' }}:light,normal,bold' rel='stylesheet' type='text/css'>
   {% endif %}  
-  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
   {% include 'oldIE-js' %}
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}

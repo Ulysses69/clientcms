@@ -5,7 +5,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Client Theme (Timber Powered)"
+        "content": "Client Theme"
       },
       {
         "type": "paragraph",
@@ -13,7 +13,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Read [documentation](http:\/\/shopify.github.io\/Timber\/) for any Timber help."
+        "content": "Read [Responsive documentation](http:\/\/support.outofthesandbox.com) and [Timber documentation](http:\/\/shopify.github.io\/Timber\/) for help."
       }
     ]
   },
