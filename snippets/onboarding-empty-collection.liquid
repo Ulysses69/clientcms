@@ -22,7 +22,7 @@
             {% capture imageUrl %}//cdn.shopify.com/s/images/themes/product-{{ index }}.png{% endcapture %}
             {{ imageUrl | img_tag }}
           </a>
-          <p class="h6"><a href="/admin/products">{{ 'homepage.onboarding.product_title' | t }}</a></p>
+          <p><a href="/admin/products">{{ 'homepage.onboarding.product_title' | t }}</a></p>
           {% if settings.store_mode == "commerce" %}
           <p>{% assign demoprice = 1999 %}{{ demoprice | money }}</p>
           {% endif %}
