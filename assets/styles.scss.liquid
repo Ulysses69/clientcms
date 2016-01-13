@@ -9,7 +9,7 @@ Description: Shopify Theme (http://www.shopify.com/?ref=out-of-the-sandbox)
 
 /* Table of Content
 ==================================================
-  #Reset & Basics
+  #Reset and Basics
   #Breakpoint and Grid Variables
   #General Variables
   #Sass Mixins
@@ -46,9 +46,8 @@ Description: Shopify Theme (http://www.shopify.com/?ref=out-of-the-sandbox)
   #Ajax Cart Styles
 
   
-/* #Reset & Basics
+/* #Reset and Basics
 ================================================== */
-
 
 
 /* #Breakpoint and Grid Variables
@@ -73,6 +72,7 @@ $breakpoints: (
 $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
 $breakpoint-has-push:  ('medium', 'medium-down', 'large');
 $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+
 
 /* #General Variables
 ==============================================================================*/
@@ -287,6 +287,7 @@ $max: max-width;
   }
 }
 
+
 /* #Normalize
 ==============================================================================*/
 *, input, :before, :after {
@@ -366,9 +367,8 @@ $class-type: unquote(".");
   }
 }
 
-
 /* Drop relative positioning into silent classes which can't take advantage of
-  the `[class*="push--"]` and `[class*="pull--"]` selectors.
+   the `[class*="push--"]` and `[class*="pull--"]` selectors.
 ==============================================================================*/
 @mixin silent-relative() {
   @if $use-silent-classes == true {
@@ -376,7 +376,8 @@ $class-type: unquote(".");
   }
 }
 
-/* Grid Setup
+
+/* #Grid Setup
     1. Allow the grid system to be used on lists.
     2. Remove any margins and paddings that might affect the grid system.
     3. Apply a negative `margin-left` to negate the columns' gutters.
@@ -700,6 +701,7 @@ $class-type: unquote(".");
   }
 }
 
+
 /* #Basic Styles
 ==============================================================================*/
 html {
@@ -730,6 +732,7 @@ body {
   margin-top: $gutter;
   padding-bottom: $gutter * 2;
 }
+
 
 /* #Helper Classes
 ==============================================================================*/
@@ -771,6 +774,7 @@ body {
   height: 1px; width: 1px;
   margin: -1px; padding: 0; border: 0;
 }
+
 
 /* #Typography
 ==============================================================================*/
@@ -844,7 +848,6 @@ h5 {
 h6 {
   font-size: em(14px);
 }
-
 
 .h1 { @extend h1; }
 .h2 { @extend h2; }
@@ -977,7 +980,6 @@ hr {
       margin-bottom: 0;
     }
   }
-
   .section-header__right {
     display: table-cell;
     vertical-align: middle;
@@ -993,7 +995,6 @@ hr {
     }
   }
 }
-
 .section-header__right {
   .form-horizontal,
   .collection-view {
@@ -1008,7 +1009,6 @@ hr {
     }
   }
 }
-
 .collection-view {
   display: inline-block;
   border: 1px solid $colorBorder;
@@ -1042,6 +1042,7 @@ hr {
   cursor: default;
   color: $colorPrimary;
 }
+
 
 /* #Rich Text Editor
 ==============================================================================*/
@@ -1077,6 +1078,7 @@ hr {
 .rte--header {
   margin-bottom: 0;
 }
+
 
 /* #Links and Buttons
 ==============================================================================*/
@@ -1183,6 +1185,7 @@ html input[disabled] {
   margin: 0;
 }
 
+
 /* #Lists
 ==============================================================================*/
 ul, ol {
@@ -1212,6 +1215,7 @@ ol.alpha { list-style: lower-alpha outside; }
     margin-bottom: 0;
   }
 }
+
 
 /* #Tables
 ==============================================================================*/
@@ -1584,7 +1588,6 @@ label.error {
   color: $errorRed;
 }
 
-
 /*================ Input Group ================*/
 .input-group {
   position: relative;
@@ -1637,6 +1640,7 @@ label.error {
   width: 1%;
   padding: 0;
 }
+
 
 /* #Icons
 ==============================================================================*/
@@ -1758,6 +1762,7 @@ label.error {
 }
 {% endif %}
 
+
 /* #Pagination
 ==============================================================================*/
 .pagination {
@@ -1778,6 +1783,7 @@ label.error {
     padding: 8px;
   }
 }
+
 
 /* #Site Header
 ==============================================================================*/
@@ -1855,6 +1861,8 @@ label.error {
   }
 }
 {% endif %}
+
+
 
 /* #Site Nav and Dropdowns
 ==============================================================================*/
@@ -1968,6 +1976,7 @@ label.error {
   }
 }
 {% endif %}
+
 
 /* #Mobile Nav
    - List of items inside the mobile drawer
@@ -2096,6 +2105,7 @@ label.error {
   }
 }
 
+
 /* #Drawers
 ==============================================================================*/
 .js-drawer-open {
@@ -2218,6 +2228,7 @@ label.error {
   }
 }
 
+
 /* #Site Footer
 ==============================================================================*/
 .site-footer {
@@ -2229,6 +2240,7 @@ label.error {
     padding: ($gutter * 2) 0;
   }
 }
+
 
 /* #Product and Collection Grids
 ==============================================================================*/
@@ -2242,11 +2254,13 @@ label.error {
   }
 }
 
+
 /* #Collection Filters
 ==============================================================================*/
 .filter--active {
   font-weight: bold;
 }
+
 
 /* #Breadcrumbs
 ==============================================================================*/
@@ -2488,7 +2502,6 @@ label.error {
 {% endif %}
 
 
-
 /* #Banner
 ==============================================================================*/
 #banner {
@@ -2498,7 +2511,6 @@ label.error {
   text-align: center;
   font-size: 130%;
 }
-
 
 
 /* #Sidebar
@@ -2511,6 +2523,7 @@ label.error {
   left: 0 important;
   right: 0 !important; 
 }
+
 .sidebar * {
   positiopn: relative !important;
   display: block !important;
@@ -2526,7 +2539,6 @@ label.error {
     width: auto;
   }
 }
-
 
 
 /* #Cart Page
@@ -2604,7 +2616,6 @@ label.error {
 .cart__remove {
   display: block;
 }
-
 
 
 /* #Ajax Cart Styles (conditionally loaded)
