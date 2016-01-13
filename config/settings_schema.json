@@ -82,12 +82,6 @@
       }, 
       {
         "type": "checkbox",
-        "id": "updated_enable",
-        "label": "Show Update Date",
-        "default": true
-      }, 
-      {
-        "type": "checkbox",
         "id": "topbar_enable",
         "label": "Show Top Bar",
         "default": true
@@ -96,6 +90,12 @@
         "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
+        "default": true
+      }, 
+      {
+        "type": "checkbox",
+        "id": "updated_enable",
+        "label": "Show Update Date",
         "default": true
       }, 
       {
