@@ -2400,7 +2400,7 @@ label.error {
 
 
 {% assign columns = settings.gallery_columns %}
-{% assign margin = '0 0 0 0' %}
+{% assign margin = '' %}
 {% assign gallerywidth = '' %}
 {% assign gallerymargin = '' %}
 {% if settings.gallery_spacing %}
@@ -2435,8 +2435,8 @@ label.error {
 ==============================================================================*/
 .gallery .thumbnails img {
   width: {{ percent }}%;
-  margin: {{ margin }};
-  padding: 0 0 0 0;
+  {% if margin != '' %}margin: {{ margin }};{% endif %}
+  padding: 0;
   float: left !important;
   position: relative;
 }
@@ -2452,51 +2452,59 @@ label.error {
 {% if columns > '1' and columns < '5' %}
 @include at-query ($max, $large) {
   .gallery .thumbnails {
-    {% assign gallerywidth = col3width %}{% assign gallerymargin = col3percentLeft %}
+    {% assign gallerywidth = col3width %}
+    {% assign gallerymargin = col3percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = col3percent %}{% assign margin = col3percentMargin %}
+    {% assign percent = col3percent %}
+    {% assign margin = col3percentMargin %}
     width: {{ percent }}%;
-    margin: {{ margin }};
+    {% if margin != '' %}margin: {{ margin }};{% endif %}
   }  
 }
 @include at-query ($max, $small) {
   .gallery .thumbnails {
-    {% assign gallerywidth = col2width %}{% assign gallerymargin = col2percentLeft %}
+    {% assign gallerywidth = col2width %}
+    {% assign gallerymargin = col2percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = col2percent %}{% assign margin = col2percentMargin %}
+    {% assign percent = col2percent %}
+    {% assign margin = col2percentMargin %}
     width: {{ percent }}%;
-    margin: {{ margin }};
+    {% if margin != '' %}margin: {{ margin }};{% endif %}
   }  
 }
 {% else %}
 @include at-query ($max, $large) {
   .gallery .thumbnails {
-    {% assign gallerywidth = col4width %}{% assign gallerymargin = col4percentLeft %}
+    {% assign gallerywidth = col4width %}
+    {% assign gallerymargin = col4percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = col4percent %}{% assign margin = col4percentMargin %}
+    {% assign percent = col4percent %}
+    {% assign margin = col4percentMargin %}
     width: {{ percent }}%;
-    margin: {{ margin }};
+    {% if margin != '' %}margin: {{ margin }};{% endif %}
   }  
 }
 @include at-query ($max, $small) {
   .gallery .thumbnails {
-    {% assign gallerywidth = col2width %}{% assign gallerymargin = col2percentLeft %}
+    {% assign gallerywidth = col2width %}
+    {% assign gallerymargin = col2percentLeft %}
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
   .gallery .thumbnails img {
-    {% assign percent = col2percent %}{% assign margin = col2percentMargin %}
+    {% assign percent = col2percent %}
+    {% assign margin = col2percentMargin %}
     width: {{ percent }}%;
-    margin: {{ margin }};
+    {% if margin != '' %}margin: {{ margin }};{% endif %}
   }  
 }
 {% endif %}
