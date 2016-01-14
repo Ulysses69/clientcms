@@ -202,6 +202,174 @@
     ]
   },
   {
+    "name": "Colour & Logo [NEW]",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_use_image",
+        "label": "Use custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Custom logo",
+        "max-width": 450,
+        "max-height": 200,
+        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "text",
+        "id": "logo_max_width",
+        "label": "Max logo width",
+        "default": "450",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "checkbox",
+        "id": "favicon_enable",
+        "label": "Use custom icon"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "16 x 16px png",
+        "max-width": 16,
+        "max-height": 16
+      }, 
+      {
+        "type": "header",
+        "content": "Colours"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary",
+        "default": "#204a80",
+        "info": "Used for text links, and primary buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary",
+        "default": "#dcdcdc",
+        "info": "Used for secondary buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Borders",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "color_header_bg",
+        "label": "Background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "color_header_text",
+        "label": "Text",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Menu"
+      },
+      {
+        "type": "color",
+        "id": "color_menu_bg",
+        "label": "Background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "color_menu_link",
+        "label": "Link",
+        "default": "#333333"
+      },
+      {
+        "type": "select",
+        "id": "color_menu_link_hover",
+        "label": "Link (Hover)",
+        "options": [
+          {
+            "value": "lighten",
+            "label": "Lighten"
+          },
+          {
+            "value": "darken",
+            "label": "Darken"
+          }
+        ]
+      },      
+      {
+        "type": "color",
+        "id": "color_menu_link_active",
+        "label": "Link (Active)",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "color",
+        "id": "color_body_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Text",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_bg",
+        "label": "Background",
+        "default": "#f2f2f2"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Text",
+        "default": "#636363"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_social_link",
+        "label": "Social media icons",
+        "default": "#bbbbbb"
+      },
+      {
+        "type": "header",
+        "content": "Notes [NEW]"
+      },
+      {
+        "type": "paragraph",
+        "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
+      }
+    ]
+  },
+  {
     "name": "Header [NEW]",
     "settings": [
       {
@@ -402,7 +570,7 @@
     ]
   },
   {
-    "name": "Slides",
+    "name": "Slides [NEW]",
     "settings": [
       {
         "type": "checkbox",
@@ -863,174 +1031,6 @@
     ]
   },
   {
-    "name": "Colour & Logo [NEW]",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_use_image",
-        "label": "Use custom logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Custom logo",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
-      },
-      {
-        "type": "text",
-        "id": "logo_max_width",
-        "label": "Max logo width",
-        "default": "450",
-        "info": "Defined in pixels. Do not add the 'px' unit."
-      },
-      {
-        "type": "header",
-        "content": "Favicon"
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use custom icon"
-      },
-      {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "16 x 16px png",
-        "max-width": 16,
-        "max-height": 16
-      }, 
-      {
-        "type": "header",
-        "content": "Colours"
-      },
-      {
-        "type": "color",
-        "id": "color_primary",
-        "label": "Primary",
-        "default": "#204a80",
-        "info": "Used for text links, and primary buttons"
-      },
-      {
-        "type": "color",
-        "id": "color_secondary",
-        "label": "Secondary",
-        "default": "#dcdcdc",
-        "info": "Used for secondary buttons"
-      },
-      {
-        "type": "color",
-        "id": "color_borders",
-        "label": "Borders",
-        "default": "#e5e5e5"
-      },
-      {
-        "type": "header",
-        "content": "Header"
-      },
-      {
-        "type": "color",
-        "id": "color_header_bg",
-        "label": "Background",
-        "default": "rgba(0,0,0,0)"
-      },
-      {
-        "type": "color",
-        "id": "color_header_text",
-        "label": "Text",
-        "default": "#333333"
-      },
-      {
-        "type": "header",
-        "content": "Menu"
-      },
-      {
-        "type": "color",
-        "id": "color_menu_bg",
-        "label": "Background",
-        "default": "rgba(0,0,0,0)"
-      },
-      {
-        "type": "color",
-        "id": "color_menu_link",
-        "label": "Link",
-        "default": "#333333"
-      },
-      {
-        "type": "select",
-        "id": "color_menu_link_hover",
-        "label": "Link (Hover)",
-        "options": [
-          {
-            "value": "lighten",
-            "label": "Lighten"
-          },
-          {
-            "value": "darken",
-            "label": "Darken"
-          }
-        ]
-      },      
-      {
-        "type": "color",
-        "id": "color_menu_link_active",
-        "label": "Link (Active)",
-        "default": "#000000"
-      },
-      {
-        "type": "header",
-        "content": "Body"
-      },
-      {
-        "type": "color",
-        "id": "color_body_bg",
-        "label": "Background",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "Text",
-        "default": "#333333"
-      },
-      {
-        "type": "header",
-        "content": "Footer"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_bg",
-        "label": "Background",
-        "default": "#f2f2f2"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_text",
-        "label": "Text",
-        "default": "#636363"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_social_link",
-        "label": "Social media icons",
-        "default": "#bbbbbb"
-      },
-      {
-        "type": "header",
-        "content": "Notes [NEW]"
-      },
-      {
-        "type": "paragraph",
-        "content": "Use class=\"color\" on an input tag to bring up the color picker. Only a few colors have been included here as an example."
-      }
-    ]
-  },
-  {
     "name": "Testimonials [NEW]",
     "settings": [
       {
@@ -1055,7 +1055,8 @@
       {
         "type": "text",
         "id": "testimonials_title",
-        "label": "Heading"
+        "label": "Heading",
+        "default": "Testimonials"
       },
       {
         "type": "checkbox",
@@ -1083,7 +1084,7 @@
       },
       {
         "type": "header",
-        "content": "Testimonies"
+        "content": "Testimonial 1"
       },
       {
         "type": "checkbox",
@@ -1111,9 +1112,8 @@
         "label": "Testimony 1 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item1_link",
-        "label": "Testimony 1 Link"
+        "type": "header",
+        "content": "Testimonial 2"
       },
       {
         "type": "checkbox",
@@ -1141,9 +1141,8 @@
         "label": "Testimony 2 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item2_link",
-        "label": "Testimony 2 Link"
+        "type": "header",
+        "content": "Testimonial 3"
       },
       {
         "type": "checkbox",
@@ -1171,9 +1170,8 @@
         "label": "Testimony 3 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item3_link",
-        "label": "Testimony 3 Link"
+        "type": "header",
+        "content": "Testimonial 4"
       },
       {
         "type": "checkbox",
@@ -1201,9 +1199,8 @@
         "label": "Testimony 4 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item4_link",
-        "label": "Testimony 4 Link"
+        "type": "header",
+        "content": "Testimonial 5"
       },
       {
         "type": "checkbox",
@@ -1231,9 +1228,8 @@
         "label": "Testimony 5 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item5_link",
-        "label": "Testimony 5 Link"
+        "type": "header",
+        "content": "Testimonial 6"
       },
       {
         "type": "checkbox",
@@ -1261,9 +1257,8 @@
         "label": "Testimony 6 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item6_link",
-        "label": "Testimony 6 Link"
+        "type": "header",
+        "content": "Testimonial 7"
       },
       {
         "type": "checkbox",
@@ -1291,9 +1286,8 @@
         "label": "Testimony 7 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item7_link",
-        "label": "Testimony 7 Link"
+        "type": "header",
+        "content": "Testimonial 8"
       },
       {
         "type": "checkbox",
@@ -1321,9 +1315,8 @@
         "label": "Testimony 8 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item8_link",
-        "label": "Testimony 8 Link"
+        "type": "header",
+        "content": "Testimonial 9"
       },
       {
         "type": "checkbox",
@@ -1351,9 +1344,8 @@
         "label": "Testimony 9 Review"
       },
       {
-        "type": "text",
-        "id": "testimonials_item9_link",
-        "label": "Testimony 9 Link"
+        "type": "header",
+        "content": "Testimonial 10"
       },
       {
         "type": "checkbox",
@@ -1379,11 +1371,6 @@
         "type": "textarea",
         "id": "testimonials_item10_review",
         "label": "Testimony 10 Review"
-      },
-      {
-        "type": "text",
-        "id": "testimonials_item20_link",
-        "label": "Testimony 10 Link"
       }
     ]
   },
