@@ -303,12 +303,12 @@
       {
         "type": "checkbox",
         "id": "footer_social_enable",
-        "label": "Show social media icons"
+        "label": "Show Social Media Icons"
       },
       {
         "type": "checkbox",
         "id": "footer_newsletter_enable",
-        "label": "Show newsletter field"
+        "label": "Show Newsletter Signup"
       }
     ]
   },
@@ -324,15 +324,15 @@
       {
         "type": "text",
         "id": "pnewletter_cookie",
-        "label": "Popup Time Cookie",
+        "label": "Popup Re-Show Delay",
         "default": "60",
-        "info": "Time to show popup again (Minutes)"
+        "info": "Defer time to show popup again (Minutes)"
       },
       {
         "type": "text",
         "id": "pnewletter_title",
         "label": "Popup Newsletter Title",
-        "default": "NEWSLETTER SIGN UP"
+        "default": "Newsletter Sign Up"
       },
       {
         "type": "textarea",
