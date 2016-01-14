@@ -4,10 +4,13 @@
       <div class="wrapper">
         <div class="grid">
           {% if settings.footer_social_enable %}
+            {% capture links %}
+            {% include 'social-links' %}
+            {% endcapture %}
             <div class="grid__item large--one-third medium--one-half">
               <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
-                  {% include 'social-links' %}
+                  {{ links }}
                 </ul>
             </div>
           {% endif %}
