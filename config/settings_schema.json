@@ -100,9 +100,15 @@
       }, 
       {
         "type": "checkbox",
+        "id": "testimonials_enable",
+        "label": "Show Testimonials",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "payment_cards_enable",
         "label": "Show Payment Cards",
-        "default": true
+        "default": false
       }, 
       {
         "type": "text",
@@ -857,7 +863,7 @@
     ]
   },
   {
-    "name": "Colour & Logo",
+    "name": "Colour & Logo [NEW]",
     "settings": [
       {
         "type": "header",
@@ -901,7 +907,7 @@
       }, 
       {
         "type": "header",
-        "content": "Colors"
+        "content": "Colours"
       },
       {
         "type": "color",
@@ -1025,21 +1031,16 @@
     ]
   },
   {
-    "name": "Testimonials",
+    "name": "Testimonials [NEW]",
     "settings": [
       {
         "type": "header",
-        "content": "General Setting"
-      },
-      {
-        "type": "checkbox",
-        "id": "testimonials_enable",
-        "label": "Enable"
+        "content": "Settings"
       },
       {
         "type": "select",
         "id": "testimonials_align",
-        "label": "Testimonials Placement",
+        "label": "Page Placement",
         "options": [
           {
             "value": "footer",
@@ -1052,607 +1053,337 @@
         ]
       },
       {
-        "type": "color",
-        "id": "testimonials_background",
-        "label": "Background Color",
-        "default": "#FFFFFF"
-      },
-      {
         "type": "text",
         "id": "testimonials_title",
-        "label": "Testimonials Title"
+        "label": "Heading"
       },
       {
         "type": "checkbox",
         "id": "testimonials_autoplay",
-        "label": "Testimonials Auto Play Carousel",
+        "label": "Autoplay Carousel",
         "default": true
       },
       {
         "type": "text",
         "id": "testimonials_speed",
-        "label": "Testimonials Speed Carousel",
+        "label": "Carousel Speed",
         "default": "8000",
         "info": "Default: 8000ms."
       },
       {
+        "type": "color",
+        "id": "testimonials_background",
+        "label": "Background Colour",
+        "default": "#FFFFFF"
+      },
+      {
         "type": "checkbox",
         "id": "testimonials_useavatar",
-        "label": "Use Avatar"
+        "label": "Show Photos"
       },
       {
         "type": "header",
-        "content": "Testimonial Items"
+        "content": "Testimonies"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item1_enable",
-        "label": "Item 1 Enable"
+        "label": "Testimony 1 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_1.png",
-        "label": "Item 1 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item1_star",
-        "label": "Item 1 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 1 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item1_name",
-        "label": "Customer Name 1"
+        "label": "Testimony 1 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item1_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 1 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item1_review",
-        "label": "Content Review 1"
+        "label": "Testimony 1 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item1_link",
-        "label": "Review Link To"
+        "label": "Testimony 1 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item2_enable",
-        "label": "Item 2 Enable"
+        "label": "Testimony 2 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_2.png",
-        "label": "Item 2 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item2_star",
-        "label": "Item 2 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 2 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item2_name",
-        "label": "Customer Name 2"
+        "label": "Testimony 2 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item2_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 2 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item2_review",
-        "label": "Content Review 2"
+        "label": "Testimony 2 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item2_link",
-        "label": "Review Link To"
+        "label": "Testimony 2 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item3_enable",
-        "label": "Item 3 Enable"
+        "label": "Testimony 3 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_3.png",
-        "label": "Item 3 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item3_star",
-        "label": "Item 3 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 3 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item3_name",
-        "label": "Customer Name 3"
+        "label": "Testimony 3 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item3_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 3 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item3_review",
-        "label": "Content Review 3"
+        "label": "Testimony 3 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item3_link",
-        "label": "Review Link To"
+        "label": "Testimony 3 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item4_enable",
-        "label": "Item 4 Enable"
+        "label": "Testimony 4 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_4.png",
-        "label": "Item 4 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item4_star",
-        "label": "Item 4 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 4 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item4_name",
-        "label": "Customer Name 4"
+        "label": "Testimony 4 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item4_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 4 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item4_review",
-        "label": "Content Review 4"
+        "label": "Testimony 4 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item4_link",
-        "label": "Review Link To"
+        "label": "Testimony 4 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item5_enable",
-        "label": "Item 5 Enable"
+        "label": "Testimony 5 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_5.png",
-        "label": "Item 5 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item5_star",
-        "label": "Item 5 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 5 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item5_name",
-        "label": "Customer Name 5"
+        "label": "Testimony 5 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item5_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 5 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item5_review",
-        "label": "Content Review 5"
+        "label": "Testimony 5 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item5_link",
-        "label": "Review Link To"
+        "label": "Testimony 5 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item6_enable",
-        "label": "Item 6 Enable"
+        "label": "Testimony 6 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_6.png",
-        "label": "Item 6 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item6_star",
-        "label": "Item 6 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 6 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item6_name",
-        "label": "Customer Name 6"
+        "label": "Testimony 6 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item6_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 6 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item6_review",
-        "label": "Content Review 6"
+        "label": "Testimony 6 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item6_link",
-        "label": "Review Link To"
+        "label": "Testimony 6 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item7_enable",
-        "label": "Item 7 Enable"
+        "label": "Testimony 7 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_7.png",
-        "label": "Item 7 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item7_star",
-        "label": "Item 7 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 7 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item7_name",
-        "label": "Customer Name 7"
+        "label": "Testimony 7 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item7_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 7 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item7_review",
-        "label": "Content Review 7"
+        "label": "Testimony 7 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item7_link",
-        "label": "Review Link To"
+        "label": "Testimony 7 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item8_enable",
-        "label": "Item 8 Enable"
+        "label": "Testimony 8 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_8.png",
-        "label": "Item 8 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item8_star",
-        "label": "Item 8 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 8 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item8_name",
-        "label": "Customer Name 8"
+        "label": "Testimony 8 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item8_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 8 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item8_review",
-        "label": "Content Review 8"
+        "label": "Testimony 8 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item8_link",
-        "label": "Review Link To"
+        "label": "Testimony 8 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item9_enable",
-        "label": "Item 9 Enable"
+        "label": "Testimony 9 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_9.png",
-        "label": "Item 9 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item9_star",
-        "label": "Item 9 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 9 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item9_name",
-        "label": "Customer Name 9"
+        "label": "Testimony 9 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item9_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 9 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item9_review",
-        "label": "Content Review 9"
+        "label": "Testimony 9 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item9_link",
-        "label": "Review Link To"
+        "label": "Testimony 9 Link"
       },
       {
         "type": "checkbox",
         "id": "testimonials_item10_enable",
-        "label": "Item 10 Enable"
+        "label": "Testimony 10 Enable"
       },
       {
         "type": "image",
         "id": "testimonial_10.png",
-        "label": "Item 10 Avatar"
-      },
-      {
-        "type": "select",
-        "id": "testimonials_item10_star",
-        "label": "Item 10 Rating",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-          },
-          {
-            "value": "4",
-            "label": "4"
-          },
-          {
-            "value": "5",
-            "label": "5"
-          }
-        ]
+        "label": "Testimony 10 Photo"
       },
       {
         "type": "text",
         "id": "testimonials_item10_name",
-        "label": "Customer name 10"
+        "label": "Testimony 10 Name"
       },
       {
         "type": "text",
         "id": "testimonials_item10_readmore",
-        "label": "Customer Info"
+        "label": "Testimony 10 Info"
       },
       {
         "type": "textarea",
         "id": "testimonials_item10_review",
-        "label": "Content Review 10"
+        "label": "Testimony 10 Review"
       },
       {
         "type": "text",
         "id": "testimonials_item20_link",
-        "label": "Review Link To"
+        "label": "Testimony 10 Link"
       }
     ]
   },
@@ -1662,13 +1393,13 @@
       {
         "type": "color",
         "id": "password_bg_color",
-        "label": "Background Color",
+        "label": "Background Colour",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "password_text_color",
-        "label": "Text Color",
+        "label": "Text Colour",
         "default": "#FFFFFF"
       },
       {

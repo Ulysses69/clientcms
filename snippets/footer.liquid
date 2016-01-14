@@ -2,11 +2,11 @@
     <!-- begin site-footer -->
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
-
         {% if settings.testimonials_enable and settings.testimonials_align == 'footer' %}
+        <div class="grid">
           {% include 'testimonials' %}
+        </div>
         {% endif %}
-
         <div class="grid">
           {% if settings.footer_social_enable %}
             {% capture links %}
