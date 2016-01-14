@@ -431,7 +431,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Note: To setup a gallery, add images to a page, then set the page template to page.gallery"
+        "content": "Note: To setup a gallery, add images to a page, set the page template to page.gallery and save. Done."
       }
     ]
   },
