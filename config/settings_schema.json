@@ -199,46 +199,6 @@
     "name": "Header [NEW]",
     "settings": [
       {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_use_image",
-        "label": "Use custom logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Custom logo",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
-      },
-      {
-        "type": "text",
-        "id": "logo_max_width",
-        "label": "Max logo width",
-        "default": "450",
-        "info": "Defined in pixels. Do not add the 'px' unit."
-      },
-      {
-        "type": "header",
-        "content": "Favicon"
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use custom icon"
-      },
-      {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "16 x 16px png",
-        "max-width": 16,
-        "max-height": 16
-      }, 
-      {
         "type": "checkbox",
         "id": "header_phone_enable",
         "label": "Show Phone Number",
@@ -326,7 +286,7 @@
         "id": "pnewletter_cookie",
         "label": "Popup Re-Show Delay",
         "default": "60",
-        "info": "Defer time to show popup again (Minutes)"
+        "info": "Defer time to re-show popup (Minutes)"
       },
       {
         "type": "text",
@@ -432,6 +392,16 @@
       {
         "type": "paragraph",
         "content": "Note: To setup a gallery, add images to a page, set the page template to page.gallery and save. Done."
+      }
+    ]
+  },
+  {
+    "name": "Slides",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "slides_autostart_enable",
+        "label": "Autostart"
       }
     ]
   },
@@ -887,11 +857,51 @@
     ]
   },
   {
-    "name": "Colors",
+    "name": "Colour & Logo",
     "settings": [
       {
         "type": "header",
-        "content": "General colors"
+        "content": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_use_image",
+        "label": "Use custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Custom logo",
+        "max-width": 450,
+        "max-height": 200,
+        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "text",
+        "id": "logo_max_width",
+        "label": "Max logo width",
+        "default": "450",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "checkbox",
+        "id": "favicon_enable",
+        "label": "Use custom icon"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "16 x 16px png",
+        "max-width": 16,
+        "max-height": 16
+      }, 
+      {
+        "type": "header",
+        "content": "Colors"
       },
       {
         "type": "color",
