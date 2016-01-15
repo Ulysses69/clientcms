@@ -5,7 +5,8 @@
               	{% if settings[itemLink] != blank %}
               		<a href="{{ settings[itemLink] }}">
               	{% endif %}
-                	<img src="{{ itemAvatar | asset_url }}" alt="{{ settings[itemName] }}">
+                  {% capture src %}{{ itemAvatar | asset_url }}{% endcapture %}
+                	<img src="{{ src }}" alt="{{ settings[itemName] }}">
               	{% if settings[itemLink] != blank %}
               		</a>
               	{% endif %}
