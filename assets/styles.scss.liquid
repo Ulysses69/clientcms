@@ -145,9 +145,9 @@ $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
 $siteWidth: {{ settings.site_width_max | remove: 'px' }}px;
-$gutter: 30px;
-$gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
-$radius: 3px;
+$gutter: {{ settings.site_gutter | remove: 'px' }}px;
+$gridGutter: {{ settings.site_grid_gutter | remove: 'px' }}px; // can be a %, but nested grids will have smaller margins because of it
+$radius: {{ settings.site_radius | remove: 'px' }}px;
 
 // Z-index
 $zindexNavDropdowns: 5;

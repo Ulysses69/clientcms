@@ -187,6 +187,24 @@
         "default": "1180"
       },
       {
+        "type": "text",
+        "id": "site_gutter",
+        "label": "Site Gutter",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "site_grid_gutter",
+        "label": "Site Grid Gutter",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "site_radius",
+        "label": "Curved Radius",
+        "default": "3px"
+      },
+      {
         "type": "header",
         "content": "Legal"
       },
