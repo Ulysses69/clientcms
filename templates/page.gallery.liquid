@@ -13,8 +13,12 @@
     {% comment %}
       Regular page content goes here.
     {% endcomment %}
-    <div class="rte gallery">    
+    <div class="rte gallery">
     {% assign gallery = page.content %}
+    {% assign page_has_image = false %}  
+    {% if gallery contains '<img ' %}
+        {% assign page_has_image = true %}
+    {% endif %}
     {% assign gallery = gallery | replace: '"><img', '">||<img' %}
     {% assign gallery = gallery | replace: '">', '">||' %}
     {% assign gallery = gallery | replace: '<img', '||<img' %}
@@ -32,7 +36,7 @@
     {% endcomment %}    
     {% capture galleryMeta %}
     {% for item in pageArray %}
-      {% unless item contains '<img' %}{{ item }}{% endunless %}
+        {% unless item contains '<img' %}{{ item }}{% endunless %}
     {% endfor %}
     {% endcapture %}
 
