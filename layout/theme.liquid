@@ -46,7 +46,10 @@
       {% if sidebar == 'left' %}{% include 'sidebar' %}{% endif %}      
       <div class="main-body">     
       {{ content_for_layout }}   
-      </div>   
+      </div>
+      {% comment %}
+        TO DO: Right aligned sidebar not working
+      {% endcomment %}      
       {% if sidebar == 'right' %}{% include 'sidebar' %}{% endif %}
     </main>
   </div>
