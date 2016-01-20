@@ -184,7 +184,7 @@
         "type": "text",
         "id": "site_width_max",
         "label": "Maximum Site Width",
-        "default": "1180px"
+        "default": "1180"
       },
       {
         "type": "header",
