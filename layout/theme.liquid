@@ -24,7 +24,12 @@
     If you store has customer accounts disabled, you can remove the following JS file
   {% endcomment %}
   {% if template contains 'customers' %}{{ 'shopify_common.js' | shopify_asset_url | script_tag }}{% endif %}
-  {% assign sidebar = settings.sidebar_align %}
+  {% assign sidebar = 'nosidebar' %}
+  {% if settings.sidebar_enable or settings.sidebar_home_enable %}
+  {% if template != 'index' or settings.sidebar_home_enable %}
+    {% assign sidebar = settings.sidebar_align %}
+  {% endif %}
+  {% endif %}  
   {% assign breadcrumb = settings.breadcrumb_align %}
 </head>
 {% comment %}
@@ -38,24 +43,17 @@
     {% include 'nav-main' %}
     {% if breadcrumb == 'nav' %}{% include 'breadcrumb' %}{% endif %}
     <main class="wrapper main-content {{ sidebar }}" role="main">
-      {% if template == 'index' and settings.banner_home_enable %}
-      {% include 'banner' %}  
-      {% elsif template != 'index' and settings.banner_enable %}
-      {% include 'banner' %}  
-      {% endif %}  
-
-
-
-      {% include 'sidebar' %}
-
-      <div class="main-body">     
-      {{ content_for_layout }}   
+      <div class="{{ sidebar }}">
+        {% if template == 'index' and settings.banner_home_enable %}
+        {% include 'banner' %}  
+        {% elsif template != 'index' and settings.banner_enable %}
+        {% include 'banner' %}  
+        {% endif %}
+        {% include 'sidebar' %}
+        <div class="main-body">     
+        {{ content_for_layout }}   
+        </div>
       </div>
-      {% comment %}
-        TO DO: Right aligned sidebar not working
-      {% endcomment %}  
-
-
     </main>
   </div>
   {% include 'footer' %}
