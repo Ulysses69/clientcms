@@ -37,20 +37,25 @@
     {% include 'header' %}
     {% include 'nav-main' %}
     {% if breadcrumb == 'nav' %}{% include 'breadcrumb' %}{% endif %}
-    <main class="wrapper main-content" role="main">
+    <main class="wrapper main-content {{ sidebar }}" role="main">
       {% if template == 'index' and settings.banner_home_enable %}
       {% include 'banner' %}  
       {% elsif template != 'index' and settings.banner_enable %}
       {% include 'banner' %}  
-      {% endif %}      
-      {% if sidebar == 'left' %}{% include 'sidebar' %}{% endif %}      
+      {% endif %}  
+
+
+
+      {% include 'sidebar' %}
+
       <div class="main-body">     
       {{ content_for_layout }}   
       </div>
       {% comment %}
         TO DO: Right aligned sidebar not working
-      {% endcomment %}      
-      {% if sidebar == 'right' %}{% include 'sidebar' %}{% endif %}
+      {% endcomment %}  
+
+
     </main>
   </div>
   {% include 'footer' %}

@@ -410,6 +410,9 @@ $class-type: unquote(".");
     width: 100%;
   }
 }
+.right #{$class-type}grid__item {
+  float: right;
+}
 
 /* Reversed grids allow you to structure your source in the opposite
    order to how your rendered layout will appear.
@@ -423,6 +426,11 @@ $class-type: unquote(".");
     direction: ltr;
     text-align: left;
     float: right;
+  }
+}
+.right #{$class-type}grid--rev {
+  > #{$class-type}grid__item {
+    float: left;
   }
 }
 
