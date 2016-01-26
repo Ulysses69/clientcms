@@ -2661,10 +2661,17 @@ label.error {
 }
 .profile.columns .pic,
 .profile.columns .txt {
-  width: 50%;
+  width: 48%;
   float: left !important;
   position: relative;
   overflow: hidden;
+}
+.profile.columns .txt {
+  margin-left: 4%;
+}
+/* Force images in pic column to fill width */
+.profile.columns .pic img {
+  width: 100%;
 }
 
 
