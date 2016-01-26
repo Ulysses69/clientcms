@@ -88,6 +88,12 @@
       },
       {
         "type": "checkbox",
+        "id": "top_of_page_enable",
+        "label": "Show Top Of Page Link",
+        "default": true
+      },
+      {
+        "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
         "default": true
@@ -467,6 +473,25 @@
         "type": "checkbox",
         "id": "footer_newsletter_enable",
         "label": "Show Newsletter Signup"
+      },
+      {
+        "type": "select",
+        "id": "top_of_page_align",
+        "label": "Top Of Page Alignment [NEW]",
+        "options": [
+          {
+            "value": "bottom_center",
+            "label": "Bottom Center"
+          },
+          {
+            "value": "content_left",
+            "label": "Left of Content"
+          },
+          {
+            "value": "content_right",
+            "label": "Right of Content"
+          }
+        ]
       }
     ]
   },
@@ -537,7 +562,7 @@
         "type": "checkbox",
         "id": "team_profile_h1_inline",
         "label": "Inline Heading"
-      },      
+      },
       {
         "type": "paragraph",
         "content": "Note: To setup a team profile, set the page template to page.person (optionally add profile image) and save. Done."

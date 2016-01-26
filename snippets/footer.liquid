@@ -9,15 +9,17 @@
         {% endif %}
         <div class="grid">
           {% if settings.footer_social_enable %}
-            {% capture links %}
+            {% capture links | strip %}
             {% include 'social-links' %}
             {% endcapture %}
+            {% if links != blank %}
             <div class="grid__item large--one-third medium--one-half">
               <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
                   {{ links }}
                 </ul>
-            </div>
+            </div>          
+            {% endif %}          
           {% endif %}
           {% if settings.footer_newsletter_enable %}
             <div class="grid__item large--one-third push--large--one-third medium--one-half">
@@ -47,8 +49,12 @@
             {% if settings.copyright %}<small>{% assign year = 'now' | date: '%Y' %}{{ settings.copyright | replace: "[shop]", shop.name | replace: "[year]", year }}</small>{% endif %}
           </div>
         </div>
-      </div>
+      </div>  
+      {% if settings.top_of_page_enable and settings.top_of_page_align == 'bottom_center' %}{% include 'top-link' %}{% endif %}  
     </footer>
+
+
+
     <!-- //site-footer -->
     {{ 'fastclick.min.js' | asset_url | script_tag }}
     {{ 'timber.js' | asset_url | script_tag }}

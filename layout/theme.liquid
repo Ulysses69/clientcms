@@ -11,7 +11,7 @@
   {% include 'social-meta-tags' %}
   <title>{% if template == 'index' %}{{ page_title }}{% elsif template == '404' %}Page Not Found{% else %}{{ page_title }}{% endif %}</title>
   <link rel="canonical" href="{{ canonical_url }}">
-  {% if settings.favicon_enable %}<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />{% endif %}
+  {% if settings.favicon_enable %}<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />{% endif %} 
   {% include 'head-css' %}
   {{ content_for_header }}
   {% include 'oldIE-js' %}
@@ -20,7 +20,7 @@
   {% comment %}
     If you store has customer accounts disabled, you can remove the following JS file
   {% endcomment %}
-  {% if template contains 'customers' %}{{ 'shopify_common.js' | shopify_asset_url | script_tag }}{% endif %}
+  {% if template contains 'customers' %}{{ 'shopify_common.js' | shopify_asset_url | script_tag }}{% endif %}  
   {% assign sidebar = 'nosidebar' %}
   {% if settings.sidebar_enable or settings.sidebar_home_enable %}
   {% if template != 'index' or settings.sidebar_home_enable %}
@@ -39,16 +39,17 @@
     {% include 'header' %}
     {% include 'nav-main' %}
     {% if breadcrumb == 'nav' %}{% include 'breadcrumb' %}{% endif %}
-    <main class="wrapper main-content {{ sidebar }}" role="main">
+    <main class="wrapper main-content" role="main">
       <div class="{{ sidebar }}">
         {% if template == 'index' and settings.banner_home_enable %}
-        {% include 'banner' %}  
+        {% include 'banner' %}
         {% elsif template != 'index' and settings.banner_enable %}
-        {% include 'banner' %}  
+        {% include 'banner' %}
         {% endif %}
         {% include 'sidebar' %}
-        <div class="main-body">     
-        {{ content_for_layout }}   
+        <div class="main-body">
+        {{ content_for_layout }}
+        {% if settings.top_of_page_enable and settings.top_of_page_align != 'bottom_center' %}{% include 'top-link' %}{% endif %}  
         </div>
       </div>
     </main>
