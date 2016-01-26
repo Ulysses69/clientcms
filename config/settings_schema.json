@@ -23,7 +23,7 @@
       {
         "type": "header",
         "content": "General"
-      }, 
+      },
       {
         "type": "select",
         "id": "store_mode",
@@ -55,7 +55,7 @@
         "id": "sidebar_enable",
         "label": "Show Sidebar on Other Pages",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "banner_home_enable",
@@ -67,37 +67,37 @@
         "id": "banner_enable",
         "label": "Show Banner on Other Pages",
         "default": false
-      },  
+      },
       {
         "type": "checkbox",
         "id": "searchbox_enable",
         "label": "Show Search Box",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "searchbox_autocomplete_enable",
         "label": "Enabled Search Autocomplete",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "topbar_enable",
         "label": "Show Top Bar",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "updated_enable",
         "label": "Show Update Date",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "testimonials_enable",
@@ -109,13 +109,13 @@
         "id": "payment_cards_enable",
         "label": "Show Payment Cards",
         "default": false
-      }, 
+      },
       {
         "type": "text",
         "id": "topbar_content",
         "label": "Top Bar Content",
         "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
-      }, 
+      },
       {
         "type": "select",
         "id": "breadcrumb_align",
@@ -130,7 +130,7 @@
             "label": "Within Content"
           }
         ]
-      },      
+      },
       {
         "type": "select",
         "id": "sidebar_align",
@@ -151,29 +151,29 @@
         "id": "enquiry_url",
         "label": "Product Enquiry Link",
         "info": "Page that product enquiry links to."
-      }, 
+      },
       {
         "type": "header",
         "content": "Cart Status"
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "cart_status_total",
         "label": "Show Cart Total",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "cart_status_icon",
         "label": "Show Cart Icon",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "cart_status_label",
         "label": "Show Cart Title",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "cart_status_count",
@@ -214,7 +214,7 @@
         "label": "Copyright",
         "default": "&copy; Copyright [shop] [year]",
         "info": "As displayed in footer."
-      },      
+      },
       {
         "type": "header",
         "content": "Notes"
@@ -222,7 +222,7 @@
       {
         "type": "paragraph",
         "content": "Commerce mode enables purchasing and cart. Brochure mode disables purchasing and cart. Enquiries mode disables purchasing and cart (but adds product enquiry link)."
-      }    
+      }
     ]
   },
   {
@@ -267,7 +267,7 @@
         "label": "16 x 16px png",
         "max-width": 16,
         "max-height": 16
-      }, 
+      },
       {
         "type": "header",
         "content": "Colours"
@@ -338,7 +338,7 @@
             "label": "Darken"
           }
         ]
-      },      
+      },
       {
         "type": "color",
         "id": "color_menu_link_active",
@@ -401,7 +401,7 @@
         "id": "header_phone_enable",
         "label": "Show Phone Number",
         "default": true
-      }, 
+      },
       {
         "type": "checkbox",
         "id": "header_phone_icon",
@@ -412,7 +412,7 @@
   },
   {
     "name": "Sidebar [NEW]",
-    "settings": [      
+    "settings": [
       {
         "type": "checkbox",
         "id": "collection_sidebar",
@@ -422,7 +422,7 @@
         "type": "page",
         "id": "collection_sidebar_page",
         "label": "Collection Sidebar Content Page"
-      },      
+      },
       {
         "type": "link_list",
         "id": "collection_sidebar_linklist",
@@ -452,7 +452,7 @@
         "type": "checkbox",
         "id": "collection_sidebar_vendors",
         "label": "Show Vendors"
-      }   
+      }
     ]
   },
   {
@@ -516,11 +516,6 @@
     "name": "Team Profiles [NEW]",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "team_profile_h1_inline",
-        "label": "Inline Heading"
-      },
-      {
         "type": "header",
         "content": "Profile Page"
       },
@@ -539,8 +534,13 @@
         ]
       },
       {
+        "type": "checkbox",
+        "id": "team_profile_h1_inline",
+        "label": "Inline Heading"
+      },      
+      {
         "type": "paragraph",
-        "content": "Note: To setup a team profile, add profile image to page (optional) and set the page template to page.person and save. Done."
+        "content": "Note: To setup a team profile, set the page template to page.person (optionally add profile image) and save. Done."
       }
     ]
   },
@@ -637,7 +637,7 @@
   },
   {
     "name": "Business Hours [NEW]",
-    "settings": [      
+    "settings": [
       {
         "type": "checkbox",
         "id": "business_display_format",
@@ -791,7 +791,7 @@
   },
   {
     "name": "Typography [NEW]",
-    "settings": [      
+    "settings": [
       {
         "type": "header",
         "content": "Headings [NEW]"
@@ -809,22 +809,22 @@
             "label": "System Font"
           }
         ]
-      },    
+      },
       {
         "type": "checkbox",
         "id": "heading1_typeface",
         "label": "Heading 1"
-      },   
+      },
       {
         "type": "checkbox",
         "id": "heading2_typeface",
         "label": "Heading 2"
-      },   
+      },
       {
         "type": "checkbox",
         "id": "heading3_typeface",
         "label": "Heading 3"
-      },   
+      },
       {
         "type": "checkbox",
         "id": "heading4_typeface",
@@ -1459,7 +1459,7 @@
   },
   {
     "name": "Contact Page [NEW]",
-    "settings": [      
+    "settings": [
       {
         "type": "checkbox",
         "id": "map_enable",
@@ -1485,29 +1485,74 @@
         "id": "map_align",
         "label": "Map Alignment [NEW]",
         "options": [
-          { "value": "full", "label": "Full Width"},
-          { "value": "left", "label": "Align Left"},
-          { "value": "right", "label": "Align Right"}
-       ]
+          {
+            "value": "full",
+            "label": "Full Width"
+          },
+          {
+            "value": "left",
+            "label": "Align Left"
+          },
+          {
+            "value": "right",
+            "label": "Align Right"
+          }
+        ]
       },
       {
         "type": "select",
         "id": "zoom_level",
         "label": "Map Zoom Level [NEW]",
         "options": [
-          { "value": "1", "label": "1 Closest"},
-          { "value": "2", "label": "2"},
-          { "value": "3", "label": "3"},
-          { "value": "4", "label": "4"},
-          { "value": "5", "label": "5"},
-          { "value": "6", "label": "6"},
-          { "value": "7", "label": "7"},
-          { "value": "8", "label": "8"},
-          { "value": "9", "label": "9"},
-          { "value": "10", "label": "10"},
-          { "value": "11", "label": "11"},
-          { "value": "12", "label": "12 Furthest"}
-       ]
+          {
+            "value": "1",
+            "label": "1 Closest"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "11",
+            "label": "11"
+          },
+          {
+            "value": "12",
+            "label": "12 Furthest"
+          }
+        ]
       }
     ]
   },
