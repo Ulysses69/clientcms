@@ -26,7 +26,7 @@
     "password_page": {
       "opening_soon": "Opening Soon",
       "spread_the_word": "Spread the word:",
-      "login_form_heading": "Enter store using password:",
+      "login_form_heading": "Enter store using password",
       "login_form_password_label": "Password",
       "login_form_password_placeholder": "Your password",
       "login_form_submit": "Enter",

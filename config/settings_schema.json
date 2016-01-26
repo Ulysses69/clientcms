@@ -1447,6 +1447,11 @@
       },
       {
         "type": "checkbox",
+        "id": "enable_password_newsletter",
+        "label": "Enable Newsletter Signup"
+      },
+      {
+        "type": "checkbox",
         "id": "password_bg_image",
         "label": "Enable Background Image"
       },
