@@ -1,0 +1,4 @@
+  {% if settings.heading_typeface == "google_webfonts" or settings.main_typeface == "google_webfonts" %}
+  <link href='//fonts.googleapis.com/css?family={{ settings.google_webfont_font | replace: '+', ' ' }}:light,normal,bold' rel='stylesheet' type='text/css'>
+  {% endif %}  
+  {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
