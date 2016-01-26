@@ -434,6 +434,7 @@ $class-type: unquote(".");
   }
 }
 
+
 /* Gutterless grids have all the properties of regular grids, minus any spacing. */
 #{$class-type}grid--full {
   @extend #{$class-type}grid;
@@ -750,7 +751,10 @@ body {
   margin-top: $gutter;
   padding-bottom: $gutter * 2;
 }
-
+.main-content > .left,
+.main-content > .right {
+  width: 100%;
+}
 
 /* #Helper Classes
 ==============================================================================*/
