@@ -598,7 +598,7 @@
       {
         "type": "checkbox",
         "id": "team_spacing",
-        "label": "Enable Gallery Spacing"
+        "label": "Enable Team Spacing"
       },
       {
         "type": "paragraph",
