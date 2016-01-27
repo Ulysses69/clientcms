@@ -52,12 +52,14 @@
           {% comment %}
             For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
           {% endcomment %}
-          {% unless emptyState %}
-            {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-            {% assign emptyState = true %}
-          {% endunless %}
 
-          {% include 'onboarding-featured-products' %}
+          {% if settings.demo_content_enable %}
+              {% unless emptyState %}
+                {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+                {% assign emptyState = true %}
+              {% endunless %}
+              {% include 'onboarding-featured-products' %}
+          {% endif %}
 
         {% endfor %}
 
@@ -116,6 +118,7 @@
           For onboarding new users to your theme, we add some default collections and onboarding tutorials to help populate their store
         {% endcomment %}
 
+        {% if settings.demo_content_enable %}
         {% if isEmpty %}
           {% unless emptyState %}
             {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
@@ -123,6 +126,7 @@
           {% endunless %}
 
           {% include 'onboarding-featured-collections' %}
+        {% endif %}
         {% endif %}
 
       </div>
@@ -143,7 +147,9 @@
         {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
         {% if demo == 'homecatalogblogabout-us' %}
 
+          {% if settings.demo_content_enable %}
           {% include 'onboarding-featured-blog' %}
+          {% endif %}
           
         {% else %}
 

@@ -118,8 +118,8 @@
       },
       {
         "type": "checkbox",
-        "id": "setup_hints_enable",
-        "label": "Show Setup Hints",
+        "id": "demo_content_enable",
+        "label": "Show Demo Content",
         "default": true
       },
       {
