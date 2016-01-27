@@ -23,10 +23,16 @@
           {% assign gallery = gallery | replace: '<img', '||<img' %}
           {% assign gallery = gallery | replace: '||||', '||' %}
           {% assign pageArray = gallery | split: "||" %} 
+          {% comment %}
+            Check if item is image
+          {% endcomment %}            
           {% capture portrait %}
           {% for item in pageArray %}{% if item contains '<img' %}{{ item }}{% endif %}
           {% endfor %}
           {% endcapture %} 
+          {% comment %}
+            Check if item is not image
+          {% endcomment %}            
           {% capture profile %}
           {% for item in pageArray %}
             {% unless item contains '<img' %}{{ item }}{% endunless %}

@@ -1,4 +1,3 @@
-
 {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
@@ -23,14 +22,14 @@
       {% assign gallery = gallery | replace: '||||', '||' %}
       {% assign pageArray = gallery | split: "||" %}
       {% comment %}
-        Check if array item is image
+        Check if item is image
       {% endcomment %}    
       {% capture portrait %}
       {% for item in pageArray %}{% if item contains '<img' %}{{ item }}{% endif %}
       {% endfor %}
       {% endcapture %}
       {% comment %}
-        Check if array item is not image
+        Check if item is not image
       {% endcomment %}    
       {% capture profile %}
       {% for item in pageArray %}
