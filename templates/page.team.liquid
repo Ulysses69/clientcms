@@ -33,10 +33,33 @@
         {% for item in pageArray %}
             {% unless item contains '<img' %}{{ item }}{% endunless %}
         {% endfor %}
-        {% endcapture %}       
+        {% endcapture %} 
+
+        {% assign headings = profile | replace: '<h2', '||<h2' %}
+        {% assign headings = headings | replace: '/h2>', '/h2>||' %}
+        {% assign headings = headings | replace: '<h3', '||<h3' %}
+        {% assign headings = headings | replace: '/h3>', '/h3>||' %}
+        {% assign headingArray = headings | split: "||" %} 
+        {% assign heading2 = link.title %}
+        {% capture heading3 %}
+        {% for heading in headingArray %}{% if heading contains '<h2' %}{{ heading | strip_html }}{% endif %}
+        {% endfor %}
+        {% endcapture %} 
+        {% capture heading4 %}
+        {% for heading in headingArray %}{% if heading contains '<h3' %}{{ heading | strip_html }}{% endif %}
+        {% endfor %}
+        {% endcapture %}  
+
+        {% if heading3 != blank %}
+        {% assign heading3 = '<h3>' | append: heading3 | append: '</h3>' %}
+        {% endif %}
+
+        {% if heading4 != blank %}
+        {% endif %}
+
         <a href="{{ link.url }}">          
-          {{ portrait }}
-          <span><h2>{{ link.title }}</h2> {{ profile | replace: 'h3', 'h4' | replace: 'h2', 'h3' }}</span>
+          {{ portrait }}          
+          <span><h2>{{ heading2 }}</h2> {{ heading3 }}</span>
         </a>
     </li>
     {% endfor %}

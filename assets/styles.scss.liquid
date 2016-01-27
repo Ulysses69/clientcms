@@ -2695,6 +2695,7 @@ label.error {
 
 /* #Team
 ==============================================================================*/
+/* Person Profile */
 .profile.columns {
   position: relative;
   overflow: hidden;
@@ -2714,22 +2715,63 @@ label.error {
   padding-top: 0;
 }
 
+/* Team */
+{% assign columns = settings.team_columns %}
+{% if columns == '2' %}
+    {% assign percent = 48 %}
+    {% assign margin = 2 %}
+    {% assign nudge = '3' %}
+{% elsif columns == '3' %}
+    {% assign percent = 30 %}
+    {% assign margin = 3.3 %}    
+    {% assign nudge = '4' %}
+{% elsif columns == '4' %}
+    {% assign percent = 22 %}
+    {% assign margin = 3 %}
+    {% assign nudge = '5' %}
+{% else %}
+    {% assign percent = 100 %}
+    {% assign margin = 0 %}
+    {% assign nudge = '' %}
+{% endif %}
 .people {
   position: relative;
   overflow: hidden;
   list-style: none;
   padding: 0;
-  margin: 0 0 0 -2%;
-  width: 102%;
+  margin: 0 0 0 -{{ margin }}%;
+  width: {{ margin | plus: 100 }}%;
 }
 .people > li {
-  width: 48%;
+  width: {{ percent }}%;
   float: left !important;
   position: relative;
   overflow: hidden;
   padding: 0;
-  margin: 0 0 0 2%;
+  margin: 0 0 {{ margin }}% {{ margin }}%;
 }
+.people > li a {
+  display: inline-block;
+  /*
+  float: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  */
+  background: url('{{ "blank.gif" | asset_url }}');
+  text-decoration: none;
+}
+.people > li a h2,
+.people > li a h3 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+{% if nudge != '' %}
+.people > li:nth-child({{ nudge }}n) {
+  clear: left;
+}
+{% endif %}
 
 /* Force images in pic column to fill width */
 .profile.columns .pic img,
