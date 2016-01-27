@@ -2709,10 +2709,34 @@ label.error {
 .profile.columns .txt {
   margin-left: 4%;
 }
+.profile.columns .txt h2 {
+  margin-top: -0.7em;
+  padding-top: 0;
+}
+
+.people {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 -2%;
+  width: 102%;
+}
+.people > li {
+  width: 48%;
+  float: left !important;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 0 0 2%;
+}
+
 /* Force images in pic column to fill width */
-.profile.columns .pic img {
+.profile.columns .pic img,
+.people > li img {
   width: 100%;
 }
+  
 
 
 /* #Banner
