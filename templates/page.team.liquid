@@ -9,11 +9,30 @@
 
     <h1>{{ page.title }}</h1>
 
-    {{ pages }}
-
     {% for getpage in pages %}
         {{ getpage.handle }}
     {% endfor %}
+    
+    {% capture teamlinks %}
+    {% for link in linklists.team-menu.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+    {% endcapture %}
+    
+    {% if setup_hints_enable %}
+    {% if teamlinks == blank %}
+    <p>To automatically display your team on this page, please do the following:</p>
+    <ol>
+      <li>Set layout for each staff page to <strong>page.person</strong></li>
+      <li><a href="/admin/link_lists/new">Create a new menu</a></li>
+      <li>Name it <strong>Team menu</strong></li>
+      <li>Handle must be <strong>team-menu</strong> (change if required)</li>
+      <li>Add your staff page links</li>
+      <li>Save menu</li>
+      <li>Done</li>
+    </ol>
+    {% endif %}
+    {% endif %}
 
     <!--
 

@@ -816,6 +816,7 @@ body {
 ==============================================================================*/
 body,
 input,
+time,
 textarea,
 button,
 select {
@@ -1926,7 +1927,7 @@ label.error {
 {% if settings.searchbox_enable %}
 .site-header__search {
   display: inline-block;
-  max-width: 400px;
+  max-width: 250px;
   margin-top: $gutter / 2;
   width: 100%;
 }
@@ -2743,6 +2744,11 @@ label.error {
   float: none !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.sidebar .blog_list time {
+  display: block;
+  font-size: 80%;
 }
 
 @include at-query ($max, $large) {
