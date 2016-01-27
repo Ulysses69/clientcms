@@ -9,31 +9,54 @@
 
     <h1>{{ page.title }}</h1>
 
-    {% for getpage in pages %}
-        {{ getpage.handle }}
-    {% endfor %}
-    
     {% capture teamlinks %}
     {% for link in linklists.team-menu.links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    <li>      
+          {% assign mypage = link.url %}     
+          {% assign parts = mypage | split: '/' %}
+          {% for part in parts %}
+          {% assign mypage = part %} 
+          {% endfor %}
+          {% assign gallery = pages[mypage].content %}
+          {% assign gallery = gallery | replace: '"><img', '">||<img' %}
+          {% assign gallery = gallery | replace: '">', '">||' %}
+          {% assign gallery = gallery | replace: '<img', '||<img' %}
+          {% assign gallery = gallery | replace: '||||', '||' %}
+          {% assign pageArray = gallery | split: "||" %} 
+          {% capture portrait %}
+          {% for item in pageArray %}{% if item contains '<img' %}{{ item }}{% endif %}
+          {% endfor %}
+          {% endcapture %} 
+          {% capture profile %}
+          {% for item in pageArray %}
+            {% unless item contains '<img' %}{{ item }}{% endunless %}
+          {% endfor %}
+          {% endcapture %}       
+      <a href="{{ link.url }}">{{ link.title }} {{ portrait }} <span>{{ profile }}</span></a>
+    </li>
     {% endfor %}
     {% endcapture %}
-    
+  
     {% if settings.demo_content_enable %}
     {% if teamlinks == blank %}
     <p>To automatically display your team on this page, please do the following:</p>
     <ol>
-      <li>Set layout for each staff page to <strong>page.person</strong></li>
+      <li>Set layout for all people to <strong>page.person</strong></li>
       <li><a href="/admin/link_lists/new">Create a new menu</a></li>
       <li>Name it <strong>Team menu</strong></li>
       <li>Handle must be <strong>team-menu</strong> (change if required)</li>
-      <li>Add your staff page links</li>
+      <li>Add people page links</li>
       <li>Save menu</li>
       <li>Done</li>
     </ol>
+    {% else %}
+    <ul class="people">
+    {{ teamlinks }}
+    </ul>
     {% endif %}
-    {% endif %}
-
+    {% endif %}    
+    
+    
     <!--
 
     {% comment %}

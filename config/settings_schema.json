@@ -548,7 +548,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Profile Page"
+        "content": "Person Profile Page"
       },
       {
         "type": "select",
