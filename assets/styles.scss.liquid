@@ -2770,7 +2770,7 @@ label.error {
   {% if columns == '4' %}{% assign percent = col4percent %}{% endif %}
 {% endif %}
 
-.people li {
+.people > li {
   width: {{ percent }}%;
   {% if margin != '' %}margin: {{ margin }};{% endif %}
   padding: 0;
@@ -2794,7 +2794,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col3percent %}
     {% assign margin = col3percentMargin %}
     width: {{ percent }}%;
@@ -2808,7 +2808,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col2percent %}
     {% assign margin = col2percentMargin %}
     width: {{ percent }}%;
@@ -2823,7 +2823,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col4percent %}
     {% assign margin = col4percentMargin %}
     width: {{ percent }}%;
@@ -2838,7 +2838,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col5percent %}
     {% assign margin = col5percentMargin %}
     width: {{ percent }}%;
@@ -2853,7 +2853,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col4percent %}
     {% assign margin = col4percentMargin %}
     width: {{ percent }}%;
@@ -2867,7 +2867,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col2percent %}
     {% assign margin = col2percentMargin %}
     width: {{ percent }}%;
@@ -2882,7 +2882,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col5percent %}
     {% assign margin = col5percentMargin %}
     width: {{ percent }}%;
@@ -2897,7 +2897,7 @@ label.error {
     {{ gallerywidth }}
     {{ gallerymargin }}
   }
-  .people li {
+  .people > li {
     {% assign percent = col6percent %}
     {% assign margin = col6percentMargin %}
     width: {{ percent }}%;
