@@ -548,7 +548,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Person Profile Page"
+        "content": "Profile Layout"
       },
       {
         "type": "select",
@@ -556,18 +556,49 @@
         "options": [
           {
             "value": "1",
-            "label": "1 Column"
+            "label": "Standard"
           },
           {
             "value": "2",
-            "label": "2 Columns"
+            "label": "Photo to Left"
+          }
+        ]
+      },      
+      {
+        "type": "checkbox",
+        "id": "team_profile_h1_inline",
+        "label": "Inline Heading"
+      },
+      {
+        "type": "header",
+        "content": "Team Layout"
+      },
+      {
+        "type": "select",
+        "id": "team_columns",
+        "options": [
+          {
+            "value": "1",
+            "label": "One Column"
+          },
+          {
+            "value": "2",
+            "label": "Two Columns"
+          },
+          {
+            "value": "3",
+            "label": "Three Columns"
+          },
+          {
+            "value": "4",
+            "label": "Four Columns"
           }
         ]
       },
       {
         "type": "checkbox",
-        "id": "team_profile_h1_inline",
-        "label": "Inline Heading"
+        "id": "team_spacing",
+        "label": "Enable Gallery Spacing"
       },
       {
         "type": "paragraph",
