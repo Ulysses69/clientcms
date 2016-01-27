@@ -2322,6 +2322,45 @@ label.error {
   @include at-query ($min, $xlarge) {
     padding: ($gutter * 2) 0;
   }
+
+  // Top of page
+  .toplink {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .toplink a {
+    position: relative;
+    display: inline-block;
+    margin: 4em 0 0 0;
+    margin-bottom: -($gutter * 2);
+    bottom: -1em;
+  }
+  .toplink a:before {
+    content: '^';
+    display: block;
+    text-align: center;
+    font-size: 700%;
+    line-height: 0;
+    margin: 0.45em 0 0 0;
+    font-family: 'comic sans ms';
+    transform : scale(1,0.9);
+    -webkit-transform: scale(1,0.9);
+    -moz-transform: scale(1,0.9);
+    -ms-transform: scale(1,0.9);
+    -o-transform: scale(1,0.9);
+    position: relative;
+  }
+  .toplink a {
+    background: #666;
+    padding: 0.6em 0.7em;
+    overflow: hidden;
+  }
+  .toplink a,
+  .toplink a:before {
+    color: #fff;
+  }
+
 }
 
 
@@ -2958,41 +2997,4 @@ label.error {
 .main-body > .grid > .grid__item,
 .sidebar {
   /* border: solid 1px #ccc; */
-}
-
-.site-footer .toplink {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-.site-footer .toplink a {
-  position: relative;
-  display: inline-block;
-  margin: 4em 0 0 0;
-  margin-bottom: -($gutter * 2);
-  bottom: -1em;
-}
-.site-footer .toplink a:before {
-  content: '^';
-  display: block;
-  text-align: center;
-  font-size: 700%;
-  line-height: 0;
-  margin: 0.5em 0 0 0;
-  font-family: 'comic sans ms';
-  transform : scale(1,0.9);
-  -webkit-transform: scale(1,0.9);
-  -moz-transform: scale(1,0.9);
-  -ms-transform: scale(1,0.9);
-  -o-transform: scale(1,0.9);
-  position: relative;
-}
-.site-footer .toplink a {
-  background: #666;
-  padding: 0.6em 0.7em;
-  overflow: hidden;
-}
-.site-footer .toplink a,
-.site-footer .toplink a:before {
-  color: #fff;
 }
