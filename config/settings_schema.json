@@ -440,10 +440,6 @@
             "label": "Within Main Menu"
           },
           {
-            "value": "search",
-            "label": "Next to Search"
-          },
-          {
             "value": "sidebar",
             "label": "Top of Sidebar"
           }
