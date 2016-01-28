@@ -2742,7 +2742,7 @@ label.error {
   margin: 0 0 0 -{{ margin }}%;
   width: {{ margin | plus: 100 }}%;
 }
-.people > li {
+.people .grid__item {
   width: {{ percent }}%;
   float: left !important;
   position: relative;
@@ -2750,27 +2750,27 @@ label.error {
   padding: 0;
   margin: 0 0 {{ margin }}% {{ margin }}%;
 }
-.people > li a {
+.people .grid__item a {
   display: inline-block;
   background: url('{{ "blank.gif" | asset_url }}');
   text-decoration: none;
   font-size: 80%;
 }
-.people > li h2,
-.people > li h3 {
+.people .grid__item .name,
+.people .grid__item .job {
   position: relative;
   margin: 0;
   padding: 0;
 }
 {% if nudge != '' %}
-.people > li:nth-child({{ nudge }}n) {
+.people .grid__item:nth-child({{ nudge }}n) {
   clear: left;
 }
 {% endif %}
 
 /* Force images in pic column to fill width */
 .profile.columns .pic img,
-.people > li img {
+.people .grid__item img {
   width: 100%;
 }
   

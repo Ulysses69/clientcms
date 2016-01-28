@@ -13,7 +13,7 @@
 
     {% capture teamlinks %}
     {% for link in linklists.team-menu.links %}
-    <li>      
+    <li class="grid__item">      
         {% assign mypage = link.url %}     
         {% assign parts = mypage | split: '/' %}
         {% for part in parts %}
@@ -51,7 +51,7 @@
         {% endcapture %}  
 
         {% if heading3 != blank %}
-        {% assign heading3 = '<h3>' | append: heading3 | append: '</h3>' %}
+        {% assign heading3 = '<h3 class="job">' | append: heading3 | append: '</h3>' %}
         {% endif %}
 
         {% if heading4 != blank %}
@@ -59,7 +59,7 @@
 
         <a href="{{ link.url }}">          
           {{ portrait }}          
-          <div><h2>{{ heading2 }}</h2> {{ heading3 }}</div>
+          <div><h2 class="name">{{ heading2 }}</h2> {{ heading3 }}</div>
         </a>
     </li>
     {% endfor %}
