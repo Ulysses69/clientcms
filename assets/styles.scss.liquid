@@ -154,7 +154,7 @@ $zindexNavDropdowns: 5;
 $zindexDrawer: 10;
 
 // Typography variables
-$headerFontWeight: 700;
+$headerFontWeight: 500;
 $baseFontSize: 14px; // Henseforth known as 1em
 
 @font-face {
@@ -831,7 +831,7 @@ select {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  font-weight: $headerFontWeight;
+  font-weight: $headerFontWeight !important;
   margin: 0 0 0.5em;
   line-height: 1.4;
 
@@ -2723,7 +2723,7 @@ label.error {
     {% assign nudge = '3' %}
 {% elsif columns == '3' %}
     {% assign percent = 30 %}
-    {% assign margin = 3.3 %}    
+    {% assign margin = 3.33 %}    
     {% assign nudge = '4' %}
 {% elsif columns == '4' %}
     {% assign percent = 22 %}
@@ -2752,17 +2752,12 @@ label.error {
 }
 .people > li a {
   display: inline-block;
-  /*
-  float: left;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  */
   background: url('{{ "blank.gif" | asset_url }}');
   text-decoration: none;
+  font-size: 80%;
 }
-.people > li a h2,
-.people > li a h3 {
+.people > li h2,
+.people > li h3 {
   position: relative;
   margin: 0;
   padding: 0;

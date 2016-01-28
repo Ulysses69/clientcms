@@ -28,7 +28,7 @@
         {% capture portrait %}
         {% for item in pageArray %}{% if item contains '<img' %}{{ item }}{% endif %}
         {% endfor %}
-        {% endcapture %} 
+        {% endcapture %}
         {% capture profile %}
         {% for item in pageArray %}
             {% unless item contains '<img' %}{{ item }}{% endunless %}
@@ -59,7 +59,7 @@
 
         <a href="{{ link.url }}">          
           {{ portrait }}          
-          <span><h2>{{ heading2 }}</h2> {{ heading3 }}</span>
+          <div><h2>{{ heading2 }}</h2> {{ heading3 }}</div>
         </a>
     </li>
     {% endfor %}
