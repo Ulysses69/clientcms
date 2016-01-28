@@ -137,6 +137,9 @@ $errorRedBg: #fff6f6;
 $successGreen: #56ad6a;
 $successGreenBg: #ecfef0;
 
+// Search box
+$searchWidth: 400px;
+
 // Drawers
 $drawerNavWidth: 300px;
 $drawerCartWidth: 300px;
@@ -1084,6 +1087,7 @@ hr {
     }
   }
 }
+
 .collection-view {
   display: inline-block;
   border: 1px solid $colorBorder;
@@ -1182,7 +1186,8 @@ html input[disabled] {
 }
 
 .btn,
-.rte .btn {
+.rte .btn,
+.site-header__search .social-icons .icon {
   display: inline-block;
   padding: 8px 10px;
   width: auto;
@@ -1927,11 +1932,14 @@ label.error {
 }
 
 {% if settings.searchbox_enable %}
-.site-header__search {
+.site-header__search {  
   display: inline-block;
-  max-width: 250px;
+  max-width: $searchWidth;
   margin-top: $gutter / 2;
   width: 100%;
+}
+.site-header__search.social input[type='search'] {
+  max-width: $searchWidth / 2;
 }
 
 .search-bar {
@@ -3206,4 +3214,29 @@ label.error {
 .main-body > .grid > .grid__item,
 .sidebar {
   /* border: solid 1px #ccc; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header__search .social-icons {
+  position: relative;
+  display: inline !important;
+  margin: 0 0 0 -1em !important;
+  left: 0 !important;
+}
+.site-header__search .social-icons li {
+  margin: 0 0 0 0.2em !important;
+}
+.site-header__search .social-icons a .icon {
+  font-size: 13px;
 }

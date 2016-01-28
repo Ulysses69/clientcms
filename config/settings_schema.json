@@ -419,6 +419,35 @@
         "id": "header_phone_icon",
         "label": "Show Phone Icon",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "header_social_enable",
+        "label": "Show Social Icons [NEW]",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "header_social_align",
+        "label": "Social Icons Alignment [NEW]",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top Right"
+          },
+          {
+            "value": "menu",
+            "label": "Within Main Menu"
+          },
+          {
+            "value": "search",
+            "label": "Next to Search"
+          },
+          {
+            "value": "sidebar",
+            "label": "Top of Sidebar"
+          }
+        ]
       }
     ]
   },
@@ -563,7 +592,7 @@
             "label": "Photo to Left"
           }
         ]
-      },      
+      },
       {
         "type": "checkbox",
         "id": "team_profile_h1_inline",

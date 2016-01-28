@@ -14,7 +14,7 @@
 
 {% endcomment %}
 {% if settings.searchbox_enable %}
-<div class="site-header__search">
+<div class="site-header__search{% if settings.header_social_enable and settings.header_social_align == 'search' and search_parent != 'page' %} social{% endif %}">
 
   <form action="/search" method="get" class="input-group search-bar" role="search">
     {% comment %}<input type="hidden" name="type" value="product">{% endcomment %}
@@ -25,6 +25,18 @@
         <span class="fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </span>
+    
+  {% if settings.header_social_enable and settings.header_social_align == 'search' and search_parent != 'page' %}
+            {% capture links | strip %}
+            {% include 'social-links' %}
+            {% endcapture %}
+            {% if links != blank %}
+            <ul class="inline-list social-icons">
+                  {{ links }}
+            </ul>        
+            {% endif %}          
+   {% endif %}     
+    
   </form>
 
 </div>
