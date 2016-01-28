@@ -2729,16 +2729,31 @@ label.error {
 /* Team */
 {% assign columns = settings.team_columns %}
 {% if columns == '2' %}
-    {% assign percent = 48 %}
-    {% assign margin = 2 %}
+    {% if settings.team_spacing %}
+      {% assign percent = 48 %}
+      {% assign margin = 2 %}
+    {% else %}
+      {% assign percent = 50 %}
+      {% assign margin = 0 %}
+    {% endif %} 
     {% assign nudge = '3' %}
 {% elsif columns == '3' %}
-    {% assign percent = 30 %}
-    {% assign margin = 3.33 %}    
+    {% if settings.team_spacing %}
+      {% assign percent = 30 %}
+      {% assign margin = 3.33 %}  
+    {% else %}
+      {% assign percent = 33.33 %}
+      {% assign margin = 0 %}
+    {% endif %}   
     {% assign nudge = '4' %}
 {% elsif columns == '4' %}
-    {% assign percent = 22 %}
-    {% assign margin = 3 %}
+    {% if settings.team_spacing %}
+      {% assign percent = 22 %}
+      {% assign margin = 3 %}
+    {% else %}
+      {% assign percent = 25 %}
+      {% assign margin = 0 %}
+    {% endif %}
     {% assign nudge = '5' %}
 {% else %}
     {% assign percent = 100 %}
