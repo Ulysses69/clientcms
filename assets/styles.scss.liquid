@@ -2336,7 +2336,11 @@ label.error {
     margin: 4em 0 0 0;
     margin-bottom: -($gutter * 2);
     bottom: -1em;
-  }
+    background-color: $colorBtnPrimary;
+    color: $colorBtnPrimaryText;
+    padding: 0.6em 0.7em;
+    overflow: hidden;
+  } 
   .toplink a:before {
     content: '^';
     display: block;
@@ -2351,15 +2355,22 @@ label.error {
     -ms-transform: scale(1,0.9);
     -o-transform: scale(1,0.9);
     position: relative;
+  } 
+
+  .toplink a:hover {
+    background-color: $colorBtnPrimaryHover;
+    color: $colorBtnPrimaryText;
   }
-  .toplink a {
-    background: #666;
-    padding: 0.6em 0.7em;
-    overflow: hidden;
+
+  .toplink a:active,
+  .toplink a:focus {
+   background-color: $colorBtnPrimaryActive;
+   color: $colorBtnPrimaryText;
   }
+
   .toplink a,
   .toplink a:before {
-    color: #fff;
+    color: $colorBtnPrimaryText;
   }
 
 }
