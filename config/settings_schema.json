@@ -858,12 +858,6 @@
       },
       {
         "type": "text",
-        "id": "social_tumblr_link",
-        "label": "Tumblr URL",
-        "info": "Example: https:\/\/tumblr.com\/shopify"
-      },
-      {
-        "type": "text",
         "id": "social_vimeo_link",
         "label": "Vimeo URL",
         "info": "Example: https:\/\/vimeo.com\/shopify"
