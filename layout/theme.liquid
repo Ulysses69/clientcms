@@ -28,6 +28,7 @@
   {% endif %}
   {% endif %}  
   {% assign breadcrumb = settings.breadcrumb_align %}
+  {% assign toplink = settings.top_of_page_align %}
 </head>
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
@@ -36,6 +37,7 @@
   {% include 'top-bar' %}
   {% include 'nav-drawer' %}
   <div id="PageContainer" class="is-moved-by-drawer">
+    {% assign search_parent = 'theme' %}
     {% include 'header' %}
     {% include 'nav-main' %}
     {% if breadcrumb == 'nav' %}{% include 'breadcrumb' %}{% endif %}

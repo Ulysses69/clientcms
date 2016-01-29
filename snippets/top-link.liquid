@@ -1,1 +1,3 @@
-<div class="toplink"><a href="#">{{ 'layout.footer.top_of_page' | t }}</a></div>
+{% if toplink contains 'left' %}{% assign align = ' left' %}{% endif %}
+{% if toplink contains 'right' %}{% assign align = ' right' %}{% endif %}
+<div class="toplink{{ align }}"><a href="#">{{ 'layout.footer.top_of_page' | t }}</a></div>

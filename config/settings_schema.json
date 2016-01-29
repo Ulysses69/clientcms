@@ -423,7 +423,7 @@
       {
         "type": "checkbox",
         "id": "header_social_enable",
-        "label": "Show Social Icons [NEW]",
+        "label": "Show Social Media Icons [NEW]",
         "default": true
       },
       {
@@ -498,7 +498,7 @@
       {
         "type": "checkbox",
         "id": "footer_social_enable",
-        "label": "Show Social Media Icons"
+        "label": "Show Social Media Icons [NEW]"
       },
       {
         "type": "checkbox",
