@@ -1,6 +1,16 @@
-
     <header class="site-header" role="banner">
       <div class="wrapper">
+
+        {% if settings.header_social_enable and settings.header_social_align == 'top' and search_parent != 'page' %}
+                  {% capture links | strip %}
+                  {% include 'social-links' %}
+                  {% endcapture %}
+                  {% if links != blank %}
+                  <ul class="inline-list social-icons">
+                        {{ links }}
+                  </ul>        
+                  {% endif %}          
+         {% endif %} 
 
         <div class="grid--full grid--table">
           <div class="grid__item large--one-half">
@@ -79,8 +89,10 @@
               </div>
             {% endif %}
             
+            {% if settings.search_align == 'above_menu' %}
             {% assign search_parent = '' %}
             {% include 'search-bar' %}
+            {% endif %}
 
           </div>         
           

@@ -444,6 +444,21 @@
             "label": "Top of Sidebar"
           }
         ]
+      },
+      {
+        "type": "select",
+        "id": "search_align",
+        "label": "Search Alignment [NEW]",
+        "options": [
+          {
+            "value": "above_menu",
+            "label": "Above menu"
+          },
+          {
+            "value": "menu_right",
+            "label": "Right of menu"
+          }
+        ]
       }
     ]
   },

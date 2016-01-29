@@ -1,5 +1,8 @@
 
     <nav class="nav-bar" role="navigation">
+      {% if settings.searchbox_enable and settings.search_align == 'menu_right' %}
+      {% assign shortenmenu = ' search-right' %}
+      {% endif %}
       <div class="wrapper">
         <div class="medium-down--hide">
           {% comment %}
@@ -68,5 +71,11 @@
             </div>
           </div>
         </div>
+        
+        {% if settings.search_align == 'menu_right' %}
+        {% assign search_parent = '' %}
+        {% include 'search-bar' %}
+        {% endif %}
+        
       </div>
     </nav>
