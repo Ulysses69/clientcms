@@ -1,9 +1,9 @@
 
     <nav class="nav-bar" role="navigation">
       {% if settings.searchbox_enable and settings.search_align == 'menu_right' %}
-      {% assign shortenmenu = ' search-right' %}
+      {% assign seaarchclass = ' search-right' %}
       {% endif %}
-      <div class="wrapper">
+      <div class="wrapper{{ seaarchclass }}">
         <div class="medium-down--hide">
           {% comment %}
             List out your main-menu linklist (default)

@@ -2008,20 +2008,28 @@ label.error {
   margin-top: $gutter / 2;
   width: 100%;
 }
-/*
-.site-header__search.social input[type='search'] {
-  max-width: $searchWidth / 2;
-}
-.search-bar {
-  max-width: 100%;
 
-  @include at-query ($max, $medium) {
-    margin-left: auto;
-    margin-right: auto;
+.search-right {
+
+  .site-header__search {
+    display: none;
+    @include at-query ($min, $large) {
+      display: block;
+      float: right;
+      width: 20%;
+      margin-top: -0.25em;
+    }
   }
+  .site-nav {
+    @include at-query ($min, $large) {
+      float: left;
+      width: 80%;
+    }
+  }
+
 }
 {% endif %}
-*/
+
 
 
 
@@ -2049,6 +2057,7 @@ label.error {
   font-size: em(16px);
   cursor: default;
   margin: 0 0 0 (-$gutter / 2);
+  line-height: 0em;
 
   li {
     margin: 0;
