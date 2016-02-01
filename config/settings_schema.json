@@ -1527,6 +1527,17 @@
     ]
   },
   {
+    "name": "Home Page [NEW]",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "dividers_enable",
+        "label": "Display Dividers",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Password Page [NEW]",
     "settings": [
       {

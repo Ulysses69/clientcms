@@ -22,16 +22,16 @@
 
 {% else %}
 
-<h2>{{ 'homepage.sections.frontpage_title' | t }}</h2>
+  <h2>{{ 'homepage.sections.frontpage_title' | t }}</h2>
 
 {% endif %}
 
+      {% capture collectionProducts %}
       {% comment %}
         Use class grid-uniform to have evenly sized columns clear
         each other properly at each breakpoint.
       {% endcomment %}
       <div class="grid-uniform">
-
         {% comment %}
           Loop through products in your Frontpage collection.
           This collection is created by default, but you must add products to it.
@@ -64,14 +64,11 @@
         {% endfor %}
 
       </div>
+      {% if settings.dividers_enable %}<hr>{% endif %}
+      {% endcapture %}
 
-      <hr>
-
-      <h2>{{ 'homepage.sections.featured_title' | t }}</h2>
-
-      <div class="grid-uniform">
-
-        {% comment %}
+      {% capture collectionFeatured %}  
+      {% comment %}
           Show five collections, unless it's 'frontpage'.
 
           Use an index variable in combination to the limit filter
@@ -79,7 +76,9 @@
 
           Use variable isEmpty to check if no collections will be shown.
           For empty store demo only.
-        {% endcomment %}
+      {% endcomment %}      
+      <h2>{{ 'homepage.sections.featured_title' | t }}</h2>
+      <div class="grid-uniform">
         {% assign index = 1 %}
         {% assign isEmpty = true %}
 
@@ -130,9 +129,10 @@
         {% endif %}
 
       </div>
+      {% if settings.dividers_enable %}<hr>{% endif %}
+      {% endcapture %}
 
-      <hr>
-
+      {% capture blogArticles %}
       {% comment %}
         Loop through three recent blog articles with the following code.
 
@@ -164,7 +164,20 @@
         {% endif %}
 
       </div>
+      {% if settings.dividers_enable %}<hr>{% endif %}
+      {% endcapture %}
 
+      
+      
+      
+      {{ collectionProducts }}    
+      {{ collectionFeatured }}
+      {{ blogArticles }}
+
+      
+      
+      
+      
 {% if settings.sidebar_enable and settings.sidebar_home_enable %}
 
     </div>
