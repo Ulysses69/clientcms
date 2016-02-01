@@ -123,7 +123,7 @@
         "default": true
       },
       {
-        "type": "text",
+        "type": "textarea",
         "id": "topbar_content",
         "label": "Top Bar Content",
         "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
@@ -221,7 +221,7 @@
         "content": "Legal"
       },
       {
-        "type": "text",
+        "type": "textarea",
         "id": "copyright",
         "label": "Copyright",
         "default": "&copy; Copyright [shop] [year]",
@@ -1261,7 +1261,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item1_review",
-        "label": "Testimony 1 Review"
+        "label": "Testimony 1 Feedback"
       },
       {
         "type": "header",
@@ -1290,7 +1290,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item2_review",
-        "label": "Testimony 2 Review"
+        "label": "Testimony 2 Feedback"
       },
       {
         "type": "header",
@@ -1319,7 +1319,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item3_review",
-        "label": "Testimony 3 Review"
+        "label": "Testimony 3 Feedback"
       },
       {
         "type": "header",
@@ -1348,7 +1348,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item4_review",
-        "label": "Testimony 4 Review"
+        "label": "Testimony 4 Feedback"
       },
       {
         "type": "header",
@@ -1377,7 +1377,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item5_review",
-        "label": "Testimony 5 Review"
+        "label": "Testimony 5 Feedback"
       },
       {
         "type": "header",
@@ -1406,7 +1406,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item6_review",
-        "label": "Testimony 6 Review"
+        "label": "Testimony 6 Feedback"
       },
       {
         "type": "header",
@@ -1435,7 +1435,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item7_review",
-        "label": "Testimony 7 Review"
+        "label": "Testimony 7 Feedback"
       },
       {
         "type": "header",
@@ -1464,7 +1464,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item8_review",
-        "label": "Testimony 8 Review"
+        "label": "Testimony 8 Feedback"
       },
       {
         "type": "header",
@@ -1493,7 +1493,7 @@
       {
         "type": "textarea",
         "id": "testimonials_item9_review",
-        "label": "Testimony 9 Review"
+        "label": "Testimony 9 Feedback"
       },
       {
         "type": "header",
@@ -1522,25 +1522,13 @@
       {
         "type": "textarea",
         "id": "testimonials_item10_review",
-        "label": "Testimony 10 Review"
+        "label": "Testimony 10 Feedback"
       }
     ]
   },
   {
     "name": "Password Page [NEW]",
     "settings": [
-      {
-        "type": "color",
-        "id": "password_bg_color",
-        "label": "Background Colour",
-        "default": "#FFFFFF"
-      },
-      {
-        "type": "color",
-        "id": "password_text_color",
-        "label": "Text Colour",
-        "default": "#FFFFFF"
-      },
       {
         "type": "checkbox",
         "id": "enable_password_newsletter",
@@ -1555,6 +1543,18 @@
         "type": "image",
         "id": "pwBackground.jpg",
         "label": "Background Image"
+      },
+      {
+        "type": "color",
+        "id": "password_bg_color",
+        "label": "Background Colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "password_text_color",
+        "label": "Text Colour",
+        "default": "#FFFFFF"
       }
     ]
   },

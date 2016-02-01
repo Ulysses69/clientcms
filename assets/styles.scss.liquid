@@ -2001,35 +2001,6 @@ label.error {
 }
 
 
-{% if settings.searchbox_enable %}
-.site-header__search {  
-  display: inline-block;
-  max-width: $searchWidth;
-  margin-top: $gutter / 2;
-  width: 100%;
-}
-
-.search-right {
-
-  .site-header__search {
-    display: none;
-    @include at-query ($min, $large) {
-      display: block;
-      float: right;
-      width: 20%;
-      margin-top: -0.25em;
-    }
-  }
-  .site-nav {
-    @include at-query ($min, $large) {
-      float: left;
-      width: 80%;
-    }
-  }
-
-}
-{% endif %}
-
 
 
 
@@ -2144,6 +2115,38 @@ label.error {
     margin: 0 auto;
     text-align: center;
   }
+}
+
+.site-header__search {  
+  display: inline-block;
+  max-width: $searchWidth;
+  margin-top: $gutter / 2;
+  width: 100%;
+}
+
+.search-right {
+  .site-header__search {
+    display: none;
+    @include at-query ($min, $large) {
+      display: block;
+      float: right;
+      width: 25%;
+      margin-top: -0.25em;
+    }
+    @include at-query ($min, $xlarge) {
+      width: 20%;
+    }
+  }
+  .site-nav {
+    @include at-query ($min, $large) {
+      float: left;
+      width: 70%;
+    }
+    @include at-query ($min, $xlarge) {
+      width: 75%;
+    }
+  }
+
 }
 {% endif %}
 
@@ -2516,6 +2519,10 @@ label.error {
     &:first-child {
       padding-left: 0;
     }
+  }
+
+  @include at-query ($max, $small) {
+    display: none;
   }
 }
 
