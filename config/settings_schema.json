@@ -1540,6 +1540,12 @@
         "label": "Enable Background Image"
       },
       {
+        "type": "checkbox",
+        "id": "password_modal",
+        "label": "Small Appearance",
+        "default": true
+      },
+      {
         "type": "image",
         "id": "pwBackground.jpg",
         "label": "Background Image"
