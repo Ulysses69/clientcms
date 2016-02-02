@@ -1752,6 +1752,17 @@
       },
       {
         "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "text",
+        "id": "home_order",
+        "default": "W-P-C-B",
+        "label": "Order of features",
+        "info": "Example: W-P-C-B. If this field is left blank, your home page will be empty."
+      },
+      {
+        "type": "header",
         "content": "Welcome Content [W]"
       },
       {
