@@ -7,8 +7,6 @@
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
-
-
 {% if settings.sidebar_enable and settings.sidebar_home_enable %}
 {% assign quarters = ' large--three-quarters' %}
 {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
@@ -193,32 +191,29 @@
       {% if settings.dividers_enable %}<hr>{% endif %}
       </section>
       {% endcapture %}
-
       
-{% if settings.home_order != blank %}
-  {% assign modules = settings.home_order | split: "-" %}
-  {% for module in modules %}
-    {% case module %}
-      {% when 'W' %}
-        {{ welcomeContent }}
-      {% when 'P' %}
-        {{ collectionProducts }} 
-      {% when 'C' %}
-        {{ collectionFeatured }}
-      {% when 'B' %}
-        {{ blogArticles }}
-    {% endcase %}
-  {% endfor %}      
-{% endif %} 
+      {% if settings.home_order != blank %}
+        {% assign modules = settings.home_order | split: "-" %}
+        {% for module in modules %}
+          {% case module %}
+            {% when 'W' %}
+              {{ welcomeContent }}
+            {% when 'P' %}
+              {{ collectionProducts }} 
+            {% when 'C' %}
+              {{ collectionFeatured }}
+            {% when 'B' %}
+              {{ blogArticles }}
+          {% endcase %}
+        {% endfor %}      
+      {% endif %} 
 
-
-{% comment %}      
-{{ welcomeContent }}
-{{ collectionProducts }}    
-{{ collectionFeatured }}
-{{ blogArticles }}      
-{% endcomment %}
-
+      {% comment %}      
+      {{ welcomeContent }}
+      {{ collectionProducts }}    
+      {{ collectionFeatured }}
+      {{ blogArticles }}      
+      {% endcomment %}
 
 {% if settings.sidebar_enable and settings.sidebar_home_enable %}
 
