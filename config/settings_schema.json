@@ -743,6 +743,29 @@
       },
       {
         "type": "select",
+        "id": "slider_width",
+        "label": "Width",
+        "options": [
+          {
+            "value": "content",
+            "label": "Content Width"
+          },
+          {
+            "value": "full",
+            "label": "Full Width"
+          },
+          {
+            "value": "header",
+            "label": "Header Background"
+          },
+          {
+            "value": "page",
+            "label": "Page Background"
+          }
+        ]
+      },
+      {
+        "type": "select",
         "id": "slider_home_rate",
         "label": "Rotation interval",
         "options": [
