@@ -1,1 +1,7 @@
-<div id="banner">Banner</div>
+<div id="banner">
+{% if settings[url] != blank %}
+<a class="slide-link" href="{{ settings[url] }}">Banner</a>
+{% else %}
+<a class="slide-link" href="/admin/themes/{{ theme.id }}/editor">Banner</a>
+{% endif %}
+</div>
