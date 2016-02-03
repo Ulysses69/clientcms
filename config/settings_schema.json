@@ -500,6 +500,35 @@
     "settings": [
       {
         "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "text",
+        "id": "footer_order",
+        "default": "S-N",
+        "label": "Order of features",
+        "info": "Example: S-N. If this field is left blank, your home page will be empty."
+      },
+      {
+        "type": "header",
+        "content": "Social Media [S]"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show Social Media Icons"
+      },
+      {
+        "type": "header",
+        "content": "Newsletter Signup [N]"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Show Newsletter Signup"
+      },
+      {
+        "type": "header",
         "content": "Top of Page"
       },
       {
@@ -536,35 +565,6 @@
         "id": "payment_cards_enable",
         "label": "Show Payment Cards",
         "default": false
-      },
-      {
-        "type": "header",
-        "content": "Layout"
-      },
-      {
-        "type": "text",
-        "id": "footer_order",
-        "default": "S-N",
-        "label": "Order of features",
-        "info": "Example: S-N. If this field is left blank, your home page will be empty."
-      },
-      {
-        "type": "header",
-        "content": "Social Media [S]"
-      },
-      {
-        "type": "checkbox",
-        "id": "footer_social_enable",
-        "label": "Show Social Media Icons"
-      },
-      {
-        "type": "header",
-        "content": "Newsletter Signup [N]"
-      },
-      {
-        "type": "checkbox",
-        "id": "footer_newsletter_enable",
-        "label": "Show Newsletter Signup"
       }
     ]
   },
