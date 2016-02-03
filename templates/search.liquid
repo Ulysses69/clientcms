@@ -24,8 +24,6 @@
   If you do, the pagination of results will be broken.  
 {% endcomment %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
 {% paginate search.results by 10 %}
@@ -33,6 +31,8 @@
   <div class="grid--rev">
 
     <div class="grid__item{{ quarters }}">
+
+      {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
       {% if search.performed %}
         {% if search.results_count == 0 %}

@@ -22,11 +22,11 @@
   {% assign number_of_comments = article.comments_count | plus: 1 %}
 {% endif %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 <div class="grid--rev">
 
   <article class="grid__item{{ quarters }}" itemscope itemtype="http://schema.org/Article">
+
+    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
     <div class="rte" itemprop="articleBody">
       

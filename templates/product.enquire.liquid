@@ -21,8 +21,6 @@
 
   {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
-  {% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
   <div class="grid--rev product-single">
     
     <div class="grid__item large--one-half text-center">
@@ -53,6 +51,8 @@
     </div>
 
     <div class="grid__item{{ quarters }}">
+
+      {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
       <h1 itemprop="name">{{ product.title }}</h1>
 

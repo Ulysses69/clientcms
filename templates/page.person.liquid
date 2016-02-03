@@ -1,5 +1,3 @@
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 {% if settings.team_profile_layout == '2' %}{% assign profile = ' profile columns' %}{% else %}{% assign profile = ' profile' %}{% endif %}
 
@@ -7,6 +5,8 @@
 <div class="grid--rev">
 
   <div class="grid__item{{ quarters }}">
+
+    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
     {% if settings.team_profile_h1_inline == blank %}<h1>{{ page.title }}</h1>{% endif %}
 

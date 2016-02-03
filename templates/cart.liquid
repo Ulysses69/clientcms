@@ -9,7 +9,7 @@
 
 {% if settings.store_mode == "commerce" %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
+{% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
 {% if cart.item_count > 0 %}
 

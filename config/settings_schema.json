@@ -70,32 +70,8 @@
       },
       {
         "type": "checkbox",
-        "id": "searchbox_enable",
-        "label": "Show Search Box",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "searchbox_autocomplete_enable",
-        "label": "Enable Search Autocomplete",
-        "default": true
-      },
-      {
-        "type": "checkbox",
         "id": "topbar_enable",
         "label": "Show Top Bar",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "top_of_page_enable",
-        "label": "Show Top Of Page Link",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "breadcrumb_enable",
-        "label": "Show Breadcrumb",
         "default": true
       },
       {
@@ -112,12 +88,6 @@
       },
       {
         "type": "checkbox",
-        "id": "payment_cards_enable",
-        "label": "Show Payment Cards",
-        "default": false
-      },
-      {
-        "type": "checkbox",
         "id": "demo_content_enable",
         "label": "Show Demo Content",
         "default": true
@@ -127,21 +97,6 @@
         "id": "topbar_content",
         "label": "Top Bar Content",
         "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
-      },
-      {
-        "type": "select",
-        "id": "breadcrumb_align",
-        "label": "Breadcrumb Placement",
-        "options": [
-          {
-            "value": "nav",
-            "label": "Within Header"
-          },
-          {
-            "value": "content",
-            "label": "Within Content"
-          }
-        ]
       },
       {
         "type": "select",
@@ -407,7 +362,25 @@
   },
   {
     "name": "Header",
-    "settings": [
+    "settings": [      
+      {
+        "type": "checkbox",
+        "id": "breadcrumb_enable",
+        "label": "Show Breadcrumb",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "searchbox_enable",
+        "label": "Show Search Box",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "searchbox_autocomplete_enable",
+        "label": "Enable Search Autocomplete",
+        "default": true
+      },
       {
         "type": "checkbox",
         "id": "header_phone_enable",
@@ -428,20 +401,16 @@
       },
       {
         "type": "select",
-        "id": "header_social_align",
-        "label": "Social Media Icons Alignment",
+        "id": "breadcrumb_align",
+        "label": "Breadcrumb Alignment",
         "options": [
           {
-            "value": "top",
-            "label": "Top Right"
+            "value": "nav",
+            "label": "Within Header"
           },
           {
-            "value": "menu",
-            "label": "Within Main Menu"
-          },
-          {
-            "value": "sidebar",
-            "label": "Top of Sidebar"
+            "value": "content",
+            "label": "Within Content"
           }
         ]
       },
@@ -457,6 +426,25 @@
           {
             "value": "menu_right",
             "label": "Right of menu"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "header_social_align",
+        "label": "Social Media Icons Alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top Right"
+          },
+          {
+            "value": "menu",
+            "label": "Within Main Menu"
+          },
+          {
+            "value": "sidebar",
+            "label": "Top of Sidebar"
           }
         ]
       }
@@ -511,19 +499,19 @@
     "name": "Footer",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "footer_social_enable",
-        "label": "Show Social Media Icons"
+        "type": "header",
+        "content": "Top of Page"
       },
       {
         "type": "checkbox",
-        "id": "footer_newsletter_enable",
-        "label": "Show Newsletter Signup"
+        "id": "top_of_page_enable",
+        "label": "Show Top Of Page Link",
+        "default": true
       },
       {
         "type": "select",
         "id": "top_of_page_align",
-        "label": "Top Of Page Alignment",
+        "label": "Alignment",
         "options": [
           {
             "value": "bottom_center",
@@ -538,6 +526,45 @@
             "label": "Right of Content"
           }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Payment Card Icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "payment_cards_enable",
+        "label": "Show Payment Cards",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "text",
+        "id": "footer_order",
+        "default": "S-N",
+        "label": "Order of features",
+        "info": "Example: S-N. If this field is left blank, your home page will be empty."
+      },
+      {
+        "type": "header",
+        "content": "Social Media [S]"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show Social Media Icons"
+      },
+      {
+        "type": "header",
+        "content": "Newsletter Signup [N]"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Show Newsletter Signup"
       }
     ]
   },

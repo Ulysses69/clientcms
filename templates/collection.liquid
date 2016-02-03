@@ -6,8 +6,6 @@
 
 {% endcomment %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
 {% paginate collection.products by 12 %}
@@ -17,6 +15,8 @@
 {% endcomment %}
 <div class="grid--rev">
   <div class="grid__item{{ quarters }}">
+
+    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
     {% comment %}
       Different markup if a collection description exists

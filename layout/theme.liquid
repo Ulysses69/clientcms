@@ -49,7 +49,7 @@
         {% include 'banner' %}
         {% endif %}
         {% include 'sidebar' %}
-        <div class="main-body">
+        <div class="main-body">        
         {{ content_for_layout }}
         {% if settings.top_of_page_enable and settings.top_of_page_align != 'bottom_center' %}{% include 'top-link' %}{% endif %}  
         </div>

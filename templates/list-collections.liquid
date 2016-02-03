@@ -9,8 +9,6 @@
 
 {% endcomment %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 {% comment %}
   Loop through each collection, except 'frontpage'
 {% endcomment %}
@@ -28,6 +26,9 @@
     </div>
 
     <div class="grid">
+
+      {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
+      
       {% for product in collection.products limit:5 %}
         {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
         {% include 'product-grid-item' %}

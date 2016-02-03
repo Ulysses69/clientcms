@@ -9,13 +9,13 @@
 
 {% endcomment %}
 
-{% if breadcrumb == 'content' %}{% include 'breadcrumb' %}{% endif %}
-
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
 <div class="grid--rev">
 
   <div class="grid__item{{ quarters }}">
+
+    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
     <h1>{{ page.title }}</h1>
 
