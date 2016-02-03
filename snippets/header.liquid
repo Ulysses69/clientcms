@@ -13,8 +13,9 @@
          {% endif %} 
 
         <div class="grid--full grid--table">
-          <div class="grid__item large--one-half">
-            {% comment %}
+
+            {% capture theLogo %}  
+            {% comment %}            
               Use the uploaded logo from theme settings if enabled.
               Site name gets precedence with H1 tag on homepage, div on other pages.
             {% endcomment %}
@@ -35,19 +36,23 @@
             {% else %}
               </div>
             {% endif %}
-          </div>
+            {% endcapture %}
 
-          <div class="grid__item large--one-half large--text-right medium-down--hide">
+          <div class="grid__item large--one-half">
+            {{ theLogo }}
+          </div>         
 
+            {% capture thePhone %}
             {% if settings.header_phone_enable %}
             <span class="service-number">
             {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' | t }} {{ shop.phone }}
             </span>
-            {% endif %}
-                   
+            {% endif %}  
+            {% endcapture %}  
+
+            {% capture theCart %}
             {% comment %}
               Show number of items in the cart and total cost in the /cart link
-
               Ajax Cart Notes:
                 - #cartCount updates the total number of items in the cart
                 - #cartCost updates the total cost of the cart
@@ -65,11 +70,12 @@
               </a>
             </div>
             {% endif %}
+            {% endcapture %}
 
+            {% capture theAccounts %}
             {% comment %}
               If customer accounts are enabled, provide login and create account links
             {% endcomment %}
-
             {% if shop.customer_accounts_enabled %}
               <div class="site-account">
                 {% if customer %}
@@ -87,13 +93,21 @@
                   {% endif %}
                 {% endif %}
               </div>
-            {% endif %}
-            
+            {% endif %}  
+            {% endcapture %}
+
+            {% capture theSearch %}
             {% if settings.search_align == 'above_menu' %}
             {% assign search_parent = '' %}
             {% include 'search-bar' %}
-            {% endif %}
+            {% endif %} 
+            {% endcapture %}
 
+          <div class="grid__item large--one-half large--text-right medium-down--hide">
+            {{ thePhone }}
+            {{ theCart }}
+            {{ theAccounts }}
+            {{ theSearch }}
           </div>         
           
         </div>

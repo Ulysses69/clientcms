@@ -364,6 +364,40 @@
     "name": "Header",
     "settings": [      
       {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "header_layout_style",
+        "label": "Layout Style",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "search",
+            "label": "Search"
+          },
+          {
+            "value": "logo",
+            "label": "Logo"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "header_order",
+        "default": "S-P-C-L-M",
+        "label": "Order of features",
+        "info": "Example: S-P-C-L-M. If this field is left blank, your header will be empty."
+      },
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
         "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
@@ -507,7 +541,7 @@
         "id": "footer_order",
         "default": "S-N",
         "label": "Order of features",
-        "info": "Example: S-N. If this field is left blank, your home page will be empty."
+        "info": "Example: S-N. If this field is left blank, your footer will be empty."
       },
       {
         "type": "header",
