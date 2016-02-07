@@ -767,6 +767,7 @@ body {
   display: block;
   margin-top: $gutter;
   padding-bottom: $gutter * 2;
+  padding-top: $gutter;
 }
 .main-content > .left,
 .main-content > .right {
@@ -1006,6 +1007,10 @@ hr {
   &.hr--clear {
     border-top-color: transparent;
   }
+}
+
+.template-index .grid__item .rte section:last-of-type hr {
+  display: none;
 }
 
 /*================ Section Headers ================*/
@@ -1941,8 +1946,15 @@ label.error {
 ==============================================================================*/
 .site-header {
   padding: ($gutter / 2) 0;
+  padding: 0;
+  margin: 0;
   background: {{ settings.color_header_bg }};
   color: {{ settings.color_header_text }};
+
+  .wrapper {
+    padding-top: ($gutter / 2); 
+    padding-bottom: ($gutter / 2);  
+  }
 
   .grid--table {
     display: table;
@@ -1954,6 +1966,11 @@ label.error {
       display: table-cell;
       vertical-align: middle;
     }
+
+    > .grid__item.meta {
+      text-align: right;
+    }
+
   }
 
   .service-number {
@@ -2406,15 +2423,21 @@ label.error {
 ==============================================================================*/
 .site-footer {
   background-color: $colorFooterBg;
-  padding: $gutter 0;
+  padding: $gutter 0 0 0;
   color: $colorFooterText;
 
+  .wrapper {
+    padding-top: $gutter;
+    margin-top: 0;
+    padding-bottom: ($gutter * 2);
+  }
+
   @include at-query ($min, $large) {
-    padding: ($gutter * 2) 0;
+    padding: 0;
   }
 
   @include at-query ($min, $xlarge) {
-    padding: ($gutter * 2) 0;
+    padding: 0;
   }
 
   // Top of page
@@ -2428,7 +2451,7 @@ label.error {
     display: inline-block;
     margin: 4em 0 0 0;
     margin-bottom: -($gutter * 2);
-    bottom: -1em;
+    bottom: -0.5em;
     background-color: $colorBtnPrimary;
     color: $colorBtnPrimaryText;
     padding: 0.6em 0.7em;
@@ -3321,8 +3344,17 @@ label.error {
 .sidebar {
   /* border: solid 1px #ccc; */
 }
-
-
-.template-index .grid__item .rte section:last-of-type hr {
-  display: none;
+.breadcrumb,
+.wrapper.main-content {
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
+
+
+
+/*
+.wrapper {
+  background: #ccffff;
+}
+*/

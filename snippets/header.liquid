@@ -1,7 +1,8 @@
     <header class="site-header" role="banner">
       <div class="wrapper">
 
-        {% if settings.header_social_enable and settings.header_social_align == 'top' and search_parent != 'page' %}
+        {% capture theSocial %}  
+            {% if settings.header_social_enable and settings.header_social_align == 'top' and search_parent != 'page' %}
                   {% capture links | strip %}
                   {% include 'social-links' %}
                   {% endcapture %}
@@ -10,11 +11,10 @@
                         {{ links }}
                   </ul>        
                   {% endif %}          
-         {% endif %} 
+            {% endif %}
+        {% endcapture %}
 
-        <div class="grid--full grid--table">
-
-            {% capture theLogo %}  
+        {% capture theLogo %}  
             {% comment %}            
               Use the uploaded logo from theme settings if enabled.
               Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -36,21 +36,17 @@
             {% else %}
               </div>
             {% endif %}
-            {% endcapture %}
+        {% endcapture %}
 
-          <div class="grid__item large--one-half">
-            {{ theLogo }}
-          </div>         
-
-            {% capture thePhone %}
+        {% capture thePhone %}
             {% if settings.header_phone_enable %}
             <span class="service-number">
             {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' | t }} {{ shop.phone }}
             </span>
             {% endif %}  
-            {% endcapture %}  
+        {% endcapture %}  
 
-            {% capture theCart %}
+        {% capture theCart %}
             {% comment %}
               Show number of items in the cart and total cost in the /cart link
               Ajax Cart Notes:
@@ -70,9 +66,9 @@
               </a>
             </div>
             {% endif %}
-            {% endcapture %}
+        {% endcapture %}
 
-            {% capture theAccounts %}
+        {% capture theAccounts %}
             {% comment %}
               If customer accounts are enabled, provide login and create account links
             {% endcomment %}
@@ -94,24 +90,28 @@
                 {% endif %}
               </div>
             {% endif %}  
-            {% endcapture %}
+        {% endcapture %}
 
-            {% capture theSearch %}
+        {% capture theSearch %}
             {% if settings.search_align == 'above_menu' %}
             {% assign search_parent = '' %}
             {% include 'search-bar' %}
             {% endif %} 
-            {% endcapture %}
+        {% endcapture %}
 
-          <div class="grid__item large--one-half large--text-right medium-down--hide">
+        {{ theSocial }}
+        <div class="grid--full grid--table">
+          <div class="grid__item large--one-half logo">
+            {{ theLogo }}
+          </div> 
+          <div class="grid__item large--one-half medium-down--hide meta">
+          <!-- <div class="grid__item large--one-half large--text-right medium-down--hide"> -->
             {{ thePhone }}
             {{ theCart }}
             {{ theAccounts }}
             {{ theSearch }}
-          </div>         
-          
-        </div>
-        
+          </div>    
+        </div>        
 
       </div>
     </header>
