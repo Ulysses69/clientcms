@@ -93,6 +93,36 @@
         "default": true
       },
       {
+        "type": "checkbox",
+        "id": "box_site_enable",
+        "label": "Box Page Content",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "site_width_max",
+        "label": "Maximum Site Width",
+        "default": "1180"
+      },
+      {
+        "type": "text",
+        "id": "site_gutter",
+        "label": "Site Gutter",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "site_grid_gutter",
+        "label": "Site Grid Gutter",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "site_radius",
+        "label": "Curved Radius",
+        "default": "3px"
+      },
+      {
         "type": "textarea",
         "id": "topbar_content",
         "label": "Top Bar Content",
@@ -146,30 +176,6 @@
         "id": "cart_status_count",
         "label": "Show Cart Count",
         "default": true
-      },
-      {
-        "type": "text",
-        "id": "site_width_max",
-        "label": "Maximum Site Width",
-        "default": "1180"
-      },
-      {
-        "type": "text",
-        "id": "site_gutter",
-        "label": "Site Gutter",
-        "default": "30px"
-      },
-      {
-        "type": "text",
-        "id": "site_grid_gutter",
-        "label": "Site Grid Gutter",
-        "default": "30px"
-      },
-      {
-        "type": "text",
-        "id": "site_radius",
-        "label": "Curved Radius",
-        "default": "3px"
       },
       {
         "type": "header",
@@ -255,9 +261,38 @@
       },
       {
         "type": "color",
+        "id": "color_page_bg",
+        "label": "Page Background",
+        "default": "rgba(0,0,0,0)",
+        "info": "When page content is boxed"
+      },
+      {
+        "type": "color",
         "id": "color_borders",
         "label": "Borders",
         "default": "#e5e5e5"
+      },
+      {
+        "type": "header",
+        "content": "Top Bar"
+      },
+      {
+        "type": "color",
+        "id": "color_topbar_bg",
+        "label": "Background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "color_topbar_text",
+        "label": "Text",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_topbar_link",
+        "label": "Link",
+        "default": "#204a80"
       },
       {
         "type": "header",

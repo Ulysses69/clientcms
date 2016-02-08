@@ -1,5 +1,3 @@
-    <header class="site-header" role="banner">
-      <div class="wrapper">
 
         {% capture theSocial %}  
             {% if settings.header_social_enable and settings.header_social_align == 'top' and search_parent != 'page' %}
@@ -99,6 +97,9 @@
             {% endif %} 
         {% endcapture %}
 
+  <header class="site-header" role="banner">
+      {% if settings.box_site_enable %}{% include 'top-bar' %}{% endif %}      
+      <div class="wrapper">
         {{ theSocial }}
         <div class="grid--full grid--table">
           <div class="grid__item large--one-half logo">
@@ -111,7 +112,6 @@
             {{ theAccounts }}
             {{ theSearch }}
           </div>    
-        </div>        
-
+        </div> 
       </div>
     </header>

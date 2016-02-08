@@ -33,8 +33,7 @@
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
-<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if template == 'collection' %}{{ collection.handle }} {% endif %}{% if settings.topbar_enable %} topbar-enabled{% endif %}" >
-  {% include 'top-bar' %}
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if template == 'collection' %}{{ collection.handle }} {% endif %}{% if settings.topbar_enable %} topbar-enabled{% endif %}" >  
   {% include 'nav-drawer' %}
   <div id="PageContainer" class="is-moved-by-drawer">
     {% assign search_parent = 'theme' %}

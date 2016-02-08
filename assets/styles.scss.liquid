@@ -28,6 +28,7 @@ Description: Shopify Theme (http://www.shopify.com/?ref=out-of-the-sandbox)
   #Forms
   #Icons
   #Pagination
+  #Top Bar
   #Site Header
   #Site Nav and Dropdowns
   #Mobile Nav
@@ -757,6 +758,7 @@ body {
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 ($gutter / 2);
+  background: {{ settings.color_page_bg }};
 
   @include at-query ($min, $small) {
     padding: 0 $gutter;
@@ -1942,6 +1944,32 @@ label.error {
 }
 
 
+/* #Top Bar
+==============================================================================*/
+#topbar {
+  margin: 0 auto;
+  background: {{ settings.color_topbar_bg }};
+  color: {{ settings.color_topbar_text }};
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+  .wrapper {
+    background: {{ settings.color_topbar_bg }};
+    padding-top: 0;
+    padding-bottom: 0;    
+  }
+
+  a {  
+    color: {{ settings.color_topbar_link }};
+  }
+
+}
+
+.site-header #topbar {
+  max-width: $siteWidth;
+}
+
+
 /* #Site Header
 ==============================================================================*/
 .site-header {
@@ -2016,9 +2044,6 @@ label.error {
 .site-header__cart-toggle {
   display: inline-block;
 }
-
-
-
 
 
 /* #Site Nav and Dropdowns
@@ -2553,6 +2578,7 @@ label.error {
   margin: 0;
 }
 
+
 /* #Product Page
 ==============================================================================*/
 .product-single__variants {
@@ -2670,8 +2696,6 @@ label.error {
 }
 {% endif %}
 
-
-
 {% assign columns = settings.gallery_columns %}
 {% assign margin = '' %}
 {% assign gallerywidth = '' %}
@@ -2701,7 +2725,6 @@ label.error {
   {% if columns == '5' %}{% assign percent = col5percent %}{% endif %}
   {% if columns == '6' %}{% assign percent = col6percent %}{% endif %}
 {% endif %}
-
 
 
 /* #Gallery
@@ -2935,7 +2958,6 @@ label.error {
 }
   
 
-
 {% assign margin = '' %}
 {% assign teamwidth = '' %}
 {% assign teammargin = '' %}
@@ -3044,7 +3066,6 @@ label.error {
   }
 }
 {% endif %}
-
 
 {% if nudge != '' %}
 @include at-query ($min, $min_xlarge) {
@@ -3353,8 +3374,3 @@ label.error {
 
 
 
-/*
-.wrapper {
-  background: #ccffff;
-}
-*/

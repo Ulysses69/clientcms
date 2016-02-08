@@ -1,3 +1,6 @@
+
+  {% unless settings.box_site_enable %}{% include 'top-bar' %}{% endunless %}
+
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
       <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
