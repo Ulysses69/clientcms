@@ -1,7 +1,12 @@
 {% if settings.topbar_enable %}
 
-    <div id="topbar">
-	    <div class="wrapper">{{  settings.topbar_content }}</div>
+    <div id="topbar"{% if topclass %} class={{ topclass }}{% endif %}>
+	    <div class="wrapper">
+	    {{  settings.topbar_content }}
+	    {% if settings.header_social_align == 'topbar' %}
+	    {{ theSocial }}
+		{% endif %}
+	    </div>
     </div>
 
 {% endif %}

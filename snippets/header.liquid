@@ -1,17 +1,4 @@
 
-        {% capture theSocial %}  
-            {% if settings.header_social_enable and settings.header_social_align == 'top' and search_parent != 'page' %}
-                  {% capture links | strip %}
-                  {% include 'social-links' %}
-                  {% endcapture %}
-                  {% if links != blank %}
-                  <ul class="inline-list social-icons">
-                        {{ links }}
-                  </ul>        
-                  {% endif %}          
-            {% endif %}
-        {% endcapture %}
-
         {% capture theLogo %}  
             {% comment %}            
               Use the uploaded logo from theme settings if enabled.
@@ -100,7 +87,7 @@
   <header class="site-header" role="banner">
       {% if settings.box_site_enable %}{% include 'top-bar' %}{% endif %}      
       <div class="wrapper">
-        {{ theSocial }}
+        {% unless settings.header_social_align == 'topbar' %}{{ theSocial }}{% endunless %}   
         <div class="grid--full grid--table">
           <div class="grid__item large--one-half logo">
             {{ theLogo }}

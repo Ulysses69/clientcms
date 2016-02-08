@@ -514,6 +514,10 @@
           {
             "value": "sidebar",
             "label": "Top of Sidebar"
+          },
+          {
+            "value": "topbar",
+            "label": "Within Top Bar"
           }
         ]
       }
