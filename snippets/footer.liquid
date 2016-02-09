@@ -7,71 +7,122 @@
           {% include 'testimonials' %}
         </div>
         {% endif %}
-        <div class="grid">
 
-          {% capture social %}
-          {% if settings.footer_social_enable %}
-            {% capture links | strip %}
-            {% include 'social-links' %}
-            {% endcapture %}
-            {% if links != blank %}
-            <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-            <div class="grid__item large--one-half medium--one-half">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
-                  {{ links }}
-                </ul>
-            </div>          
-            {% endif %}          
-          {% endif %}
-          {% endcapture %}
+        
+        <div class="grid">  
 
-          {% capture newsletter %}
-          {% if settings.footer_newsletter_enable %}
-            <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-            <div class="grid__item large--one-half medium--one-half">
-            {% include 'newsletter' %}
-            </div>
-          {% endif %}
-          {% endcapture %}
-
-          {% if settings.footer_order != blank %}
+          {% if settings.footer_order != blank %}        
             {% assign modules = settings.footer_order | split: "-" %}
-            {% for module in modules %}
-              {% case module %}
-                {% when 'S' %}
-                  {{ social }}
-                {% when 'N' %}
-                  {{ newsletter }}
-              {% endcase %}
-            {% endfor %}      
-          {% endif %} 
-          
-          <div class="grid__item text-center">
-            <hr>
-            {% comment %}
-              Loop through available payment methods and show their icons.
-            {% endcomment %}
-            {% if settings.payment_cards_enable %}
-            {% unless shop.enabled_payment_types == empty %}
-              <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
-              <ul class="inline-list payment-icons">
-                {% for type in shop.enabled_payment_types %}
-                  <li>
-                    <span class="icon-fallback-text">
-                      <span class="icon icon-{{type}}" aria-hidden="true"></span>
-                      <span class="fallback-text">{{ type | replace: '_',' '}}</span>
-                    </span>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endunless %}
+            <!-- Footer Modules Count: {{ modules | size }} -->
+            <!-- Footer Modules Last: {{ modules | last }} -->
+            <!-- IF Check: {% if modules | last == 'W' %} last{% endif %} -->
+
+            {% capture footmenu %}
+              {% if settings.footer_linklist != blank %}
+              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'F' %} last{% endif %}">
+                <h3>{{ linklists[settings.footer_linklist].title }}</h3>
+                <ul>
+                  {% for link in linklists[settings.footer_linklist].links %}
+                    <li>
+                      <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
+                      {% if linklists[link.handle] != empty %}
+                        {% assign display_sublinks = false %}             
+                        {% for link in linklists[link.handle].links %}
+                          {% if link.active %}
+                            {% assign display_sublinks = true %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if display_sublinks or link.active %}
+                          <ul>
+                          {% for link in linklists[link.handle].links %}
+                            <li>
+                              <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            </li>
+                          {% endfor %}
+                          </ul>
+                        {% endif %}
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+            {% endcapture %}
+
+            {% capture social %}
+            {% if settings.footer_social_enable %}
+              {% capture links | strip %}
+              {% include 'social-links' %}
+              {% endcapture %}
+              {% if links != blank %}
+              <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
+              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'S' %} last{% endif %}">
+                <h3>{{ 'layout.footer.social_title' | t }}</h3>
+                  <ul class="inline-list social-icons">
+                    {{ links }}
+                  </ul>
+              </div>          
+              {% endif %}          
             {% endif %}
-            {% if settings.copyright %}<small>{% assign year = 'now' | date: '%Y' %}{{ settings.copyright | replace: "[shop]", shop.name | replace: "[year]", year }}</small>{% endif %}
+            {% endcapture %}
+
+            {% capture newsletter %}
+            {% if settings.footer_newsletter_enable %}
+              <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
+              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'N' %} last{% endif %}">
+              {% include 'newsletter' %}
+              </div>
+            {% endif %}
+            {% endcapture %}
+
+            
+              {% assign modulesCount = modules | size %}
+              {% assign largeColumns = '' %}
+              {% assign mediumColumns = '' %}
+              {% if modulesCount == 1 %}{% assign largeColumns = ' large--one-whole' %}{% endif %}
+              {% if modulesCount == 2 %}{% assign largeColumns = ' large--one-half' %}{% assign mediumColumns = ' medium--one-whole' %}{% endif %}
+              {% if modulesCount == 3 %}{% assign largeColumns = ' large--one-third' %}{% assign mediumColumns = ' medium--one-third' %}{% endif %}
+              {% if modulesCount == 4 %}{% assign largeColumns = ' large--one-quarter' %}{% assign mediumColumns = ' medium--one-half' %}{% endif %}
+              {% for module in modules %}
+                {% case module %}
+                  {% when 'F' %}
+                    {{ footmenu | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}                
+                  {% when 'S' %}
+                    {{ social | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
+                  {% when 'N' %}
+                    {{ newsletter | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
+                {% endcase %}
+              {% endfor %} 
+
+          {% endif %}             
+            
+            <div class="grid__item text-center">
+              <hr>
+              {% comment %}
+                Loop through available payment methods and show their icons.
+              {% endcomment %}
+              {% if settings.payment_cards_enable %}
+              {% unless shop.enabled_payment_types == empty %}
+                <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
+                <ul class="inline-list payment-icons">
+                  {% for type in shop.enabled_payment_types %}
+                    <li>
+                      <span class="icon-fallback-text">
+                        <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                        <span class="fallback-text">{{ type | replace: '_',' '}}</span>
+                      </span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endunless %}
+              {% endif %}
+              {% if settings.copyright %}<small>{% assign year = 'now' | date: '%Y' %}{{ settings.copyright | replace: "[shop]", shop.name | replace: "[year]", year }}</small>{% endif %}
+            </div>
+
           </div>
 
-        </div>
-        {% if settings.top_of_page_enable and settings.top_of_page_align == 'bottom_center' %}{% include 'top-link' %}{% endif %}  
+        {% if settings.top_of_page_enable and settings.top_of_page_align == 'bottom_center' %}{% include 'top-link' %}{% endif %} 
+
       </div>      
     </footer>
 
