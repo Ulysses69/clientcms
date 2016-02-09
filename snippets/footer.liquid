@@ -15,7 +15,8 @@
             {% include 'social-links' %}
             {% endcapture %}
             {% if links != blank %}
-            <div class="grid__item large--one-third medium--one-half">
+            <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
+            <div class="grid__item large--one-half medium--one-half">
               <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
                   {{ links }}
@@ -28,7 +29,7 @@
           {% capture newsletter %}
           {% if settings.footer_newsletter_enable %}
             <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-            <div class="grid__item large--one-third medium--one-half">
+            <div class="grid__item large--one-half medium--one-half">
             {% include 'newsletter' %}
             </div>
           {% endif %}

@@ -1981,13 +1981,20 @@ label.error {
   margin-right: -0.2em;
 
   .social-icons {
-    margin-toP: 0;
+    margin-top: 0;
   }
 }
 
 .site-header #topbar {
   max-width: $siteWidth;
 }
+{% if settings.topbar_enable and settings.topbar_content != blank %}
+@include at-query ($max, $small) {
+  #topbar .social-icons {
+    display: none;
+  }
+}
+{% endif %}
 
 
 /* #Site Header
@@ -3116,6 +3123,10 @@ label.error {
   margin: 0 !important;
   left: 0 important;
   right: 0 !important; 
+
+  img {
+    width: 100%;
+  }
 }
 
 .sidebar aside {
@@ -3132,17 +3143,27 @@ label.error {
   font-size: 80%;
 }
 
-@include at-query ($max, $large) {
-  .sidebar {
+@include at-query ($max, $medium) {  
+  .sidebar {    
+    width: 100%;
     display: block;
-    width: auto;
-  }
-}
 
-@include at-query ($max, $xlarge) {
-  .sidebar {
-    display: block;
-    width: auto;
+    display: none;
+
+    #testimonials {
+      width: 105%;
+      margin-left: -5%;
+    }
+    
+    #testimonials h4 {
+      margin-left: 5%;
+    }
+    
+    #testimonials .item {
+      width: 45%;
+      margin-left: 5%;
+    }
+
   }
 }
 
