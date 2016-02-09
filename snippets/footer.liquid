@@ -7,23 +7,55 @@
           {% include 'testimonials' %}
         </div>
         {% endif %}
-
         
         <div class="grid">  
 
           {% if settings.footer_order != blank %}        
             {% assign modules = settings.footer_order | split: "-" %}
             {% assign lastModule = modules | last %}
+            {% assign captures = 0 %}
             <!-- Footer Modules Count: {{ modules | size }} -->
             <!-- Footer Modules Last: {{ modules | last }} -->
             <!-- IF Check: {% if lastModule == 'W' %} last{% endif %} -->
 
-            {% capture footmenu %}
-              {% if settings.footer_linklist != blank %}
-              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'F' %} last{% endif %}">
-                <h3>{{ linklists[settings.footer_linklist].title }}</h3>
+            {% capture footmenu1 %}
+              {% if settings.footer_linklist_1 != blank %}
+              <div class="grid__item largeColumns mediumColumns{% if lastModule == '1' %} last{% endif %}">
+                <h3>{{ linklists[settings.footer_linklist_1].title }}</h3>
                 <ul>
-                  {% for link in linklists[settings.footer_linklist].links %}
+                  {% for link in linklists[settings.footer_linklist_1].links %}
+                    <li>
+                      <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
+                      {% if linklists[link.handle] != empty %}
+                        {% assign display_sublinks = false %}             
+                        {% for link in linklists[link.handle].links %}
+                          {% if link.active %}
+                            {% assign display_sublinks = true %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if display_sublinks or link.active %}
+                          <ul>
+                          {% for link in linklists[link.handle].links %}
+                            <li>
+                              <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            </li>
+                          {% endfor %}
+                          </ul>
+                        {% endif %}
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+            {% endcapture %}
+
+            {% capture footmenu2 %}
+              {% if settings.footer_linklist_2 != blank %}
+              <div class="grid__item largeColumns mediumColumns{% if lastModule == '2' %} last{% endif %}">
+                <h3>{{ linklists[settings.footer_linklist_2].title }}</h3>
+                <ul>
+                  {% for link in linklists[settings.footer_linklist_2].links %}
                     <li>
                       <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
                       {% if linklists[link.handle] != empty %}
@@ -76,18 +108,26 @@
             {% endif %}
             {% endcapture %}
 
+            {% if footmenu1 != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
+            {% if footmenu2 != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
+            {% if social != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
+            {% if newsletter != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
+
+            <!-- Captures: {{ captures }} -->
             
               {% assign modulesCount = modules | size %}
               {% assign largeColumns = '' %}
               {% assign mediumColumns = '' %}
-              {% if modulesCount == 1 %}{% assign largeColumns = ' large--one-whole' %}{% endif %}
-              {% if modulesCount == 2 %}{% assign largeColumns = ' large--one-half' %}{% assign mediumColumns = ' medium--one-whole' %}{% endif %}
-              {% if modulesCount == 3 %}{% assign largeColumns = ' large--one-third' %}{% assign mediumColumns = ' medium--one-third' %}{% endif %}
-              {% if modulesCount == 4 %}{% assign largeColumns = ' large--one-quarter' %}{% assign mediumColumns = ' medium--one-half' %}{% endif %}
+              {% if captures == 1 %}{% assign largeColumns = ' large--one-whole' %}{% endif %}
+              {% if captures == 2 %}{% assign largeColumns = ' large--one-half' %}{% assign mediumColumns = ' medium--one-whole' %}{% endif %}
+              {% if captures == 3 %}{% assign largeColumns = ' large--one-third' %}{% assign mediumColumns = ' medium--one-third' %}{% endif %}
+              {% if captures == 4 %}{% assign largeColumns = ' large--one-quarter' %}{% assign mediumColumns = ' medium--one-half' %}{% endif %}
               {% for module in modules %}
                 {% case module %}
-                  {% when 'F' %}
-                    {{ footmenu | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}                
+                  {% when '1' %}
+                    {{ footmenu1 | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}                
+                  {% when '2' %}
+                    {{ footmenu2 | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}                
                   {% when 'S' %}
                     {{ social | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
                   {% when 'N' %}
@@ -126,8 +166,6 @@
 
       </div>      
     </footer>
-
-
 
     <!-- //site-footer -->
     {{ 'fastclick.min.js' | asset_url | script_tag }}

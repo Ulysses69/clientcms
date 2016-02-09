@@ -578,23 +578,38 @@
       {
         "type": "text",
         "id": "footer_order",
-        "default": "F-S-N",
+        "default": "1-2-S-N",
         "label": "Order of features",
-        "info": "Example: F-S-N. If this field is left blank, your footer will be empty."
+        "info": "Example: 1-2-S-N. If this field is left blank, your footer will be empty."
       },
       {
         "type": "header",
-        "content": "Footer Menu [F]"
+        "content": "Menu One [1]"
       },
       {
         "type": "checkbox",
-        "id": "show_footer_menu",
+        "id": "show_footer_menu_1",
         "label": "Enable",
         "default": true
       },
       {
         "type": "link_list",
-        "id": "footer_linklist",
+        "id": "footer_linklist_1",
+        "label": "Content"
+      },
+      {
+        "type": "header",
+        "content": "Menu Two [2]"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_footer_menu_2",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_2",
         "label": "Content"
       },
       {
