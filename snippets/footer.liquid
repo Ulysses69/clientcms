@@ -13,13 +13,14 @@
 
           {% if settings.footer_order != blank %}        
             {% assign modules = settings.footer_order | split: "-" %}
+            {% assign lastModule = modules | last %}
             <!-- Footer Modules Count: {{ modules | size }} -->
             <!-- Footer Modules Last: {{ modules | last }} -->
-            <!-- IF Check: {% if modules | last == 'W' %} last{% endif %} -->
+            <!-- IF Check: {% if lastModule == 'W' %} last{% endif %} -->
 
             {% capture footmenu %}
               {% if settings.footer_linklist != blank %}
-              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'F' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'F' %} last{% endif %}">
                 <h3>{{ linklists[settings.footer_linklist].title }}</h3>
                 <ul>
                   {% for link in linklists[settings.footer_linklist].links %}
@@ -56,7 +57,7 @@
               {% endcapture %}
               {% if links != blank %}
               <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'S' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'S' %} last{% endif %}">
                 <h3>{{ 'layout.footer.social_title' | t }}</h3>
                   <ul class="inline-list social-icons">
                     {{ links }}
@@ -69,7 +70,7 @@
             {% capture newsletter %}
             {% if settings.footer_newsletter_enable %}
               <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-              <div class="grid__item largeColumns mediumColumns{% if modules | last == 'N' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'N' %} last{% endif %}">
               {% include 'newsletter' %}
               </div>
             {% endif %}
