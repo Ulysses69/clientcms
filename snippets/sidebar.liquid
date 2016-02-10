@@ -37,7 +37,7 @@
 			    {% include 'nav-demo' %}
 			</ul>
 		{% endif %}
-		{% if template contains 'collection' and settings.collection_sidebar_linklist == blank and settings.collection_sidebar_linklist2 == blank and settings.collection_sidebar_page == blank %}
+		{% if template contains 'collection' %}
 			{% if collections.size > 1 %}
 			    <h4 class="toggle"><span>+</span>{{ linklists[settings.collection_sidebar_linklist].title }}</h4>
 			    <ul class="blog_list toggle_list">
