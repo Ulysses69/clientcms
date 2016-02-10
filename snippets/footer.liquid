@@ -20,7 +20,7 @@
 
             {% capture footmenu1 %}
               {% if settings.footer_linklist_1 != blank %}
-              <div class="grid__item largeColumns mediumColumns{% if lastModule == '1' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns">
                 <h3>{{ linklists[settings.footer_linklist_1].title }}</h3>
                 <ul>
                   {% for link in linklists[settings.footer_linklist_1].links %}
@@ -52,7 +52,7 @@
 
             {% capture footmenu2 %}
               {% if settings.footer_linklist_2 != blank %}
-              <div class="grid__item largeColumns mediumColumns{% if lastModule == '2' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns">
                 <h3>{{ linklists[settings.footer_linklist_2].title }}</h3>
                 <ul>
                   {% for link in linklists[settings.footer_linklist_2].links %}
@@ -89,7 +89,7 @@
               {% endcapture %}
               {% if links != blank %}
               <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'S' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns">
                 <h3>{{ 'layout.footer.social_title' | t }}</h3>
                   <ul class="inline-list social-icons">
                     {{ links }}
@@ -102,9 +102,21 @@
             {% capture newsletter %}
             {% if settings.footer_newsletter_enable %}
               <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
-              <div class="grid__item largeColumns mediumColumns{% if lastModule == 'N' %} last{% endif %}">
+              <div class="grid__item largeColumns mediumColumns">
               {% include 'newsletter' %}
               </div>
+            {% endif %}
+            {% endcapture %}
+
+            {% capture content %}
+            {% if settings.show_footer_content %}
+              {% if settings.footer_content_text != blank %}
+                <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
+                <div class="grid__item largeColumns mediumColumns">
+                  {% if settings.footer_content_heading != blank %}<h3>{{ settings.footer_content_heading }}</h3>{% endif %}
+                  <p>{{ settings.footer_content_text }}</p>
+                </div>          
+              {% endif %}          
             {% endif %}
             {% endcapture %}
 
@@ -112,16 +124,18 @@
             {% if footmenu2 != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
             {% if social != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
             {% if newsletter != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
+            {% if content != blank %}{% assign captures = captures | plus: 1 %}{% endif %}
 
             <!-- Captures: {{ captures }} -->
-            
+            {% capture moduleOutput %}
               {% assign modulesCount = modules | size %}
               {% assign largeColumns = '' %}
               {% assign mediumColumns = '' %}
               {% if captures == 1 %}{% assign largeColumns = ' large--one-whole' %}{% endif %}
               {% if captures == 2 %}{% assign largeColumns = ' large--one-half' %}{% assign mediumColumns = ' medium--one-whole' %}{% endif %}
-              {% if captures == 3 %}{% assign largeColumns = ' large--one-third' %}{% assign mediumColumns = ' medium--one-third' %}{% endif %}
+              {% if captures == 3 %}{% assign largeColumns = ' large--one-third' %}{% assign mediumColumns = ' medium--one-whole' %}{% endif %}
               {% if captures == 4 %}{% assign largeColumns = ' large--one-quarter' %}{% assign mediumColumns = ' medium--one-half' %}{% endif %}
+              {% if captures == 5 %}{% assign largeColumns = ' large--one-fifth' %}{% assign mediumColumns = ' medium--one-half' %}{% endif %}
               {% for module in modules %}
                 {% case module %}
                   {% when '1' %}
@@ -132,8 +146,18 @@
                     {{ social | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
                   {% when 'N' %}
                     {{ newsletter | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
+                  {% when 'T' %}
+                    {{ content | replace: ' largeColumns', largeColumns | replace: ' mediumColumns', mediumColumns }}
                 {% endcase %}
               {% endfor %} 
+            {% endcapture %}
+
+            {% if moduleOutput != blank %}
+            <div class="modules">
+            {{ moduleOutput }}
+            </div>
+            {% endif %}
+
 
           {% endif %}             
             

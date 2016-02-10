@@ -578,9 +578,9 @@
       {
         "type": "text",
         "id": "footer_order",
-        "default": "1-2-S-N",
+        "default": "1-2-S-T-N",
         "label": "Order of features",
-        "info": "Example: 1-2-S-N. If this field is left blank, your footer will be empty."
+        "info": "Example: 1-2-S-T-N. If this field is left blank, your footer will be empty."
       },
       {
         "type": "header",
@@ -610,6 +610,26 @@
       {
         "type": "link_list",
         "id": "footer_linklist_2",
+        "label": "Content"
+      },
+      {
+        "type": "header",
+        "content": "Text Content [T]"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_footer_content",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "footer_content_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_content_text",
         "label": "Content"
       },
       {

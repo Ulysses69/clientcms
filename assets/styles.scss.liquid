@@ -2484,8 +2484,36 @@ label.error {
     padding-bottom: ($gutter * 2);
   }
 
-  .grid__item.last {
+  .modules div {
+    @include at-query ($max, $medium) {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      @include at-query ($max, $medium) {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }    
+    }
+
+    ul li {
+      @include at-query ($max, $medium) {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }    
+    }
+
+  }
+
+  .modules div:last-of-type {
     text-align: right;
+
+    @include at-query ($max, $medium) {
+      text-align: center;
+    }
   }
 
   @include at-query ($min, $large) {
