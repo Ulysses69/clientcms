@@ -19,7 +19,7 @@
             <!-- IF Check: {% if lastModule == 'W' %} last{% endif %} -->
 
             {% capture footmenu1 %}
-              {% if settings.footer_linklist_1 != blank %}
+              {% if settings.footer_order contains '1' and settings.show_footer_menu_1 and settings.footer_linklist_1 != blank %}
               <div class="grid__item largeColumns mediumColumns">
                 <h3>{{ linklists[settings.footer_linklist_1].title }}</h3>
                 <ul>
@@ -51,7 +51,7 @@
             {% endcapture %}
 
             {% capture footmenu2 %}
-              {% if settings.footer_linklist_2 != blank %}
+              {% if settings.footer_order contains '2' and settings.show_footer_menu_2 and settings.footer_linklist_2 != blank %}
               <div class="grid__item largeColumns mediumColumns">
                 <h3>{{ linklists[settings.footer_linklist_2].title }}</h3>
                 <ul>
@@ -83,7 +83,7 @@
             {% endcapture %}
 
             {% capture social %}
-            {% if settings.footer_social_enable %}
+            {% if settings.footer_order contains 'S' and settings.footer_social_enable %}
               {% capture links | strip %}
               {% include 'social-links' %}
               {% endcapture %}
@@ -100,7 +100,7 @@
             {% endcapture %}
 
             {% capture newsletter %}
-            {% if settings.footer_newsletter_enable %}
+            {% if settings.footer_order contains 'N' and settings.footer_newsletter_enable %}
               <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
               <div class="grid__item largeColumns mediumColumns">
               {% include 'newsletter' %}
@@ -109,14 +109,12 @@
             {% endcapture %}
 
             {% capture content %}
-            {% if settings.show_footer_content %}
-              {% if settings.footer_content_text != blank %}
+            {% if settings.footer_order contains 'T' and settings.show_footer_content and settings.footer_content_text != blank %}
                 <!-- <div class="grid__item large--one-third push--large--one-third medium--one-half"> -->
                 <div class="grid__item largeColumns mediumColumns">
                   {% if settings.footer_content_heading != blank %}<h3>{{ settings.footer_content_heading }}</h3>{% endif %}
                   <p>{{ settings.footer_content_text }}</p>
-                </div>          
-              {% endif %}          
+                </div>       
             {% endif %}
             {% endcapture %}
 
