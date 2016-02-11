@@ -856,7 +856,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 
   a {
-    text-decoration: none;
+    {% unless settings.links_body_underline %}text-decoration: none;{% endunless %}
     font-weight: inherit;
   }
 }
@@ -1150,9 +1150,11 @@ hr {
 .rte {
   margin-bottom: $gutter / 2;
 
+  {% if settings.links_body_underline %}
   a {
     text-decoration: underline;
   }
+  {% endif %}
 
   // Add some top margin to headers from the rich text editor
   h1, h2, h3, h4, h5, h6 {
@@ -1162,9 +1164,12 @@ hr {
       margin-top: 0;
     }
 
+    {% unless settings.links_body_underline %}
     a {
       text-decoration: none;
     }
+    {% endunless %}
+
   }
 
   > div {
@@ -1186,7 +1191,7 @@ hr {
 a,
 .text-link {
   color: $colorLink;
-  text-decoration: none;
+  {% unless settings.links_body_underline %}text-decoration: none;{% endunless %}
   background: transparent;
 }
 
@@ -1206,6 +1211,13 @@ html input[disabled] {
 
 .btn,
 .rte .btn,
+.toplink a,
+.site-header__search .social-icons .icon {
+  text-decoration: none;
+}
+
+.btn,
+.rte .btn,
 .site-header__search .social-icons .icon {
   display: inline-block;
   padding: 8px 10px;
@@ -1213,7 +1225,6 @@ html input[disabled] {
   margin: 0;
   line-height: 1.42;
   font-weight: bold;
-  text-decoration: none;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -2121,7 +2132,7 @@ label.error {
 
 .site-nav__link {
   display: block;
-  text-decoration: none;
+  {% unless settings.links_menus_underline %}text-decoration: none;{% endunless %}
   padding: $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
@@ -2499,6 +2510,13 @@ label.error {
     }
 
     ul li {
+
+      {% unless settings.links_menus_underline %}
+      a {
+        text-decoration: none;
+      }
+      {% endunless %}
+
       @include at-query ($max, $medium) {
         list-style: none;
         padding-left: 0;
@@ -2616,6 +2634,12 @@ label.error {
 ==============================================================================*/
 .breadcrumb {
   margin-bottom: $gutter;
+
+  {% unless settings.links_menus_underline %}
+  a {
+    text-decoration: none;
+  }
+  {% endunless %}
 
   a,
   span {
@@ -3017,7 +3041,7 @@ label.error {
 .people .grid__item a {
   display: inline-block;
   background: url('{{ "blank.gif" | asset_url }}');
-  text-decoration: none;
+  {% unless settings.links_body_underline %}text-decoration: none;{% endunless %}
   font-size: 80%;
 }
 .people .grid__item .name,
@@ -3185,6 +3209,13 @@ label.error {
   float: none !important;
   padding: 0 !important;
   margin: 0 !important;
+
+  {% unless settings.links_menus_underline %}
+  li a {
+    text-decoration: none;
+  }
+  {% endunless %}
+
 }
 
 .sidebar .blog_list time {

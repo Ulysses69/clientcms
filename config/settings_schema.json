@@ -1372,6 +1372,18 @@
         ]
       },
       {
+        "type": "checkbox",
+        "id": "links_menus_underline",
+        "label": "Underline Menu Links",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "links_body_underline",
+        "label": "Underline Body Links",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "Google Web Font"
       },
