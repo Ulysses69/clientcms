@@ -2946,7 +2946,24 @@ label.error {
   margin-top: -0.7em;
   padding-top: 0;
 }
-
+.profile.columns.full .pic,
+.profile.columns.full .txt {
+  width: auto;
+  float: none !important;
+  margin-left: 0;
+}
+.profile.columns.third .pic {
+  width: 29%;
+}
+.profile.columns.third .txt {
+  width: 67%;
+}
+.profile.columns.quarter .pic {
+  width: 23%;
+}
+.profile.columns.quarter .txt {
+  width: 73%;
+}
 /* Team */
 {% assign columns = settings.team_columns %}
 {% if columns == '2' %}

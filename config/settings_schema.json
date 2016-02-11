@@ -756,6 +756,8 @@
       {
         "type": "select",
         "id": "team_profile_layout",
+        "label": "Photo Alignment",
+        "default": "1",
         "options": [
           {
             "value": "1",
@@ -764,6 +766,30 @@
           {
             "value": "2",
             "label": "Photo to Left"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "team_profile_photo_width",
+        "label": "Photo Width",
+        "default": "half",
+        "options": [
+          {
+            "value": "full",
+            "label": "Full"
+          },
+          {
+            "value": "half",
+            "label": "Half"
+          },
+          {
+            "value": "third",
+            "label": "Third"
+          },
+          {
+            "value": "quarter",
+            "label": "Quarter"
           }
         ]
       },
