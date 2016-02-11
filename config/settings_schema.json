@@ -1372,6 +1372,10 @@
         ]
       },
       {
+        "type": "header",
+        "content": "Links"
+      },
+      {
         "type": "checkbox",
         "id": "links_menus_underline",
         "label": "Underline Menu Links",
