@@ -1,5 +1,9 @@
 {% if settings.sidebar_enable or settings.sidebar_home_enable %}
 {% if template != 'index' or settings.sidebar_home_enable %}
+{% if settings.sidebar_linklist %}{% assign sidelist = true %}{% else %}{% assign sidelist = false %}{% endif %}
+{% if template contains 'collection' or template contains 'product' %}{% unless settings.collection_sidebar_linklist %}{% assign sidelist = false %}{% endunless %}{% endif %}
+{% if settings.sidebar_page %}{% assign sidepage = true %}{% else %}{% assign sidepage = false %}{% endif %}
+{% if template contains 'collection' or template contains 'product' %}{% unless settings.collection_sidebar_page %}{% assign sidepage = false %}{% endunless %}{% endif %}
 {% if settings.sidebar_toggle %}{% assign toggle = ' class="toggle"><span>+</span' %}{% assign toggleul = ' toggle_list' %}{% endif %}
 {% unless settings.sidebar_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
 <!-- Sidebar | Align: {{ sidebar }} -->
@@ -39,7 +43,7 @@
 			    {% include 'nav-demo' %}
 			</ul>	
 		{% else %}
-		  {% if settings.sidebar_linklist != blank %}
+		  {% if settings.sidebar_linklist != blank and sidelist == true %}
 		    <h4{{ toggle }}>{{ linklists[settings.sidebar_linklist].title }}</h4>
 		    <ul class="blog_list{{ bullets }}{{ toggleul }}">
 		      {% for link in linklists[settings.sidebar_linklist].links %}
@@ -104,7 +108,7 @@
 
 		{% endif %}
 
-			{% if settings.sidebar_page != blank %}
+			{% if settings.sidebar_page != blank and sidepage == true %}
 			    <h4{{ toggle }}>{{ pages[settings.sidebar_page].title }}</h4>
 			    {{ pages[settings.sidebar_page].content }}
 			{% endif %}
