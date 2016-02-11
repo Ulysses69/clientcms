@@ -102,7 +102,10 @@
       }
     },
     "sidebar": {
-      "tags": "Tags"
+      "sidemenu": "Side Menu",
+      "tags": "Tags",
+      "types": "Types",
+      "vendors": "Vendors"
     },
     "sorting": {
       "title": "Sort by",

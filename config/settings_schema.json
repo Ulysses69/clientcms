@@ -528,28 +528,41 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "collection_sidebar",
-        "label": "Show Collection Sidebar"
-      },
-      {
-        "type": "page",
-        "id": "collection_sidebar_page",
-        "label": "Collection Sidebar Content Page"
-      },
-      {
-        "type": "link_list",
-        "id": "collection_sidebar_linklist",
-        "label": "Collection Sidebar Link List"
-      },
-      {
-        "type": "link_list",
-        "id": "collection_sidebar_linklist2",
-        "label": "Sidebar Link List 2"
+        "id": "sidebar_toggle",
+        "label": "Show Toggle",
+        "default": false
       },
       {
         "type": "checkbox",
-        "id": "filter_by_category",
-        "label": "Show List of Collections"
+        "id": "sidebar_bullets",
+        "label": "Show Bullets",
+        "default": true
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_linklist",
+        "label": "Sidebar Menu"
+      },
+      {
+        "type": "page",
+        "id": "sidebar_page",
+        "label": "Sidebar Page Content"
+      },
+      {
+        "type": "header",
+        "content": "Collection Pages"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sidebar_linklist",
+        "label": "Show Sidebar Menu",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sidebar_page",
+        "label": "Show Sidebar Page Content",
+        "default": true
       },
       {
         "type": "checkbox",
