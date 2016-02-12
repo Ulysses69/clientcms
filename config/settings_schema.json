@@ -596,6 +596,12 @@
         "info": "Example: 1-2-S-T-N. If this field is left blank, your footer will be empty."
       },
       {
+        "type": "checkbox",
+        "id": "footer_bullets",
+        "label": "Show Bullets",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "Menu One [1]"
       },
