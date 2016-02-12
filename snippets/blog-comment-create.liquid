@@ -1,8 +1,13 @@
 
       {% if settings.blog_comment_create %}
+
+          {% if blog.moderated %}
+            <p><em>{{ 'blogs.comments.moderated' | t }}</em></p>
+          {% endif %}
+
           {% form article %}
-            {% if form.posted_successfully? %}
-              {% if blog.moderated? %}
+            {% if form.posted_successfully %}
+              {% if blog.moderated %}
                 <p class="quote align_left">{{ 'blogs.comments.success_moderated' | t }}</p>
               {% else %}
                 <p class="quote align_left">{{ 'blogs.comments.success' | t }}</p>
