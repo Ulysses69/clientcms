@@ -3040,9 +3040,18 @@ label.error {
 }
 .people .grid__item a {
   display: inline-block;
-  background: url('{{ "blank.gif" | asset_url }}');
-  {% unless settings.links_body_underline %}text-decoration: none;{% endunless %}
+  background: url('{{ "blank.gif" | asset_url }}');  
   font-size: 80%;
+  text-decoration: none;
+
+  h2 {
+    {% if settings.links_body_underline %}text-decoration: underline;{% else %}text-decoration: none;{% endif %}
+  }
+
+  h3 {
+    text-decoration: none;
+  }
+
 }
 .people .grid__item .name,
 .people .grid__item .job {
