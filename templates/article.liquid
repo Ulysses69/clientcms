@@ -27,7 +27,7 @@
   <article class="grid__item{{ quarters }}" itemscope itemtype="http://schema.org/Article">
 
     {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
-    {% assign feature = article | img_url: 'medium' %}
+    {% assign feature = article | img_url: '1024x1024' %}
 
     <div class="rte" itemprop="articleBody">
       
