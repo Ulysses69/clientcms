@@ -2249,6 +2249,11 @@
         "type": "checkbox",
         "id": "blog_article_photos",
         "label": "Show Photos"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_comment_create",
+        "label": "Show Comment Form"
       }
     ]
   },
