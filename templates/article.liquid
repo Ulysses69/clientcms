@@ -1,4 +1,7 @@
-<div class="grid--rev"><!-- /templates/article.liquid -->
+{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
+
+<!-- /templates/article.liquid -->
+<div class="grid--rev">
 {% comment %}
 
   Comments will not appear right after they are submitted, either to be checked for spam
@@ -13,8 +16,6 @@
 
 {% assign number_of_comments = article.comments_count %}
 
-{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
-
 {% comment %}
   If a comment was just submitted and it has no blank fields, we have an extra comment to count.
 {% endcomment %}
@@ -22,7 +23,6 @@
   {% assign number_of_comments = article.comments_count | plus: 1 %}
 {% endif %}
 
-<div class="grid--rev">
 
   <article class="grid__item{{ quarters }}" itemscope itemtype="http://schema.org/Article">
 
