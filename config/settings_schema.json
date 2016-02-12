@@ -2230,6 +2230,29 @@
     ]
   },
   {
+    "name": "Blog",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Archive Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_archive_photos",
+        "label": "Show Photos"
+      },
+      {
+        "type": "header",
+        "content": "Article Pages"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_article_photos",
+        "label": "Show Photos"
+      }
+    ]
+  },
+  {
     "name": "Contact Page",
     "settings": [
       {

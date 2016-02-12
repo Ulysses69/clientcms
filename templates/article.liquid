@@ -27,12 +27,14 @@
   <article class="grid__item{{ quarters }}" itemscope itemtype="http://schema.org/Article">
 
     {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
+    {% assign feature = article | img_url: 'medium' %}
 
     <div class="rte" itemprop="articleBody">
       
       <header class="section-header">
         <div class="section-header__left">
           <h1>{{ article.title }}</h1>
+          {% if feature != blank %}<div class="pic"><img src="{{ feature }}" alt="" /></div>{% endif %}
           {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
           {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
           <p class="authored">{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</p>
