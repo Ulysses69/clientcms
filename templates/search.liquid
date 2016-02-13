@@ -32,6 +32,8 @@
 
     <div class="grid__item{{ quarters }}">
 
+      <div class="rte">
+
       {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
       {% if search.performed %}
@@ -43,8 +45,6 @@
       {% else %}
         <h1>{{ 'general.search.title' | t }}</h1>
       {% endif %}
-
-      <div class="rte">
 
         {% assign search_parent = 'page' %}
         {% include 'search-bar' %}

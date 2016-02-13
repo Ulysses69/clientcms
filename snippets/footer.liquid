@@ -152,7 +152,8 @@
             {% endcapture %}
 
             {% if moduleOutput != blank %}
-            <div class="modules">
+            {% if captures > 2 %}{% assign smallForms = ' smallforms' %}{% endif %}
+            <div class="modules{{ smallForms }}">
             {{ moduleOutput }}
             </div>
             {% endif %}

@@ -167,10 +167,13 @@
       {% endcomment %}
       <section>
       <h1>{{ 'homepage.sections.news_title' | t }}</h1>
-      <div class="grid">
 
-        {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
-        {% if demo == 'homecatalogblogabout-us' %}
+      {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
+      {% assign news = 'news' %}
+
+      <div class="grid blog-articles">
+
+        {% if demo == 'homecatalogblogabout-us' and blogs[news].articles.size < 2 %}
 
           {% if settings.demo_content_enable %}
           {% include 'onboarding-featured-blog' %}
@@ -178,7 +181,7 @@
           
         {% else %}
 
-          {% for article in blogs['news'].articles limit:3 %}
+          {% for article in blogs[news].articles limit:3 %}
 
             <div class="grid__item large--one-third">
               {% include 'blog-item' %}

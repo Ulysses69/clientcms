@@ -42,6 +42,7 @@ Description: Shopify Theme (http://www.shopify.com/?ref=out-of-the-sandbox)
   #Map
   #Team
   #Gallery
+  #Blog
   #Banner
   #Sidebar
   #Cart Page
@@ -150,8 +151,9 @@ $colorDrawerText: #333;
 $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
-$siteWidth: {{ settings.site_width_max | remove: 'px' }}px;
 $gutter: {{ settings.site_gutter | remove: 'px' }}px;
+$siteWidth: {{ settings.site_width_max | remove: 'px' }}px;
+$largeMax: {{ settings.site_width_max | remove: 'px' | minus: settings.site_gutter | remove: 'px' }}px;
 $gridGutter: {{ settings.site_grid_gutter | remove: 'px' }}px; // can be a %, but nested grids will have smaller margins because of it
 $radius: {{ settings.site_radius | remove: 'px' }}px;
 
@@ -768,12 +770,16 @@ body {
 .main-content {
   display: block;
   margin-top: $gutter;
-  padding-bottom: $gutter * 2;
+  /* padding-bottom: $gutter * 2; */
   padding-top: $gutter;
 }
 .main-content > .left,
 .main-content > .right {
   width: 100%;
+}
+
+#PageContainer {
+  margin-bottom: $gutter * 2;
 }
 
 /* #Helper Classes
@@ -928,6 +934,9 @@ p {
     font-size: 100%;
   }
 }
+.updated {
+  margin-bottom: 0;
+}
 
 em {
   font-style: italic;
@@ -997,7 +1006,7 @@ pre {
   margin: 0 0 $gutter;
 }
 
-/*================ Horizontal Rules ================*/
+/*================ Horizontal & Vertical Rules ================*/
 hr {
   clear: both;
   border-top: solid $colorBorder;
@@ -1014,9 +1023,26 @@ hr {
   }
 }
 
-.template-index .grid__item .rte section:last-of-type hr {
+.grid__item .rte section:last-of-type hr,
+.sidebar aside > div:last-of-type hr {
   display: none;
 }
+
+{% if settings.sidebar_divider_vertical %}
+.main-body .grid--rev .rte:before {
+  content: '';
+  position: absolute;
+  border-left: solid 1px $colorBorder;
+  width: 2px;
+  height: 100%;  
+  margin-left: -2.8%;
+
+  @include at-query ($min, $siteWidth) {
+      margin-left: -$gutter * 1.3;
+  }
+
+}
+{% endif %}
 
 /*================ Section Headers ================*/
 .section-header {
@@ -1463,6 +1489,10 @@ th, td {
 ==============================================================================*/
 img {
   border: 0 none;
+}
+article .pic img {  
+  max-width: 100%;
+  width: 100%;
 }
 
 svg:not(:root) {
@@ -2498,6 +2528,17 @@ label.error {
     padding-bottom: ($gutter * 2);
   }
 
+  @include at-query ($max, $xlarge) {  
+    .modules.smallforms #mc-embedded-subscribe-form,
+    .modules.smallforms #mc-embedded-subscribe-form input,
+    .modules.smallforms #mc-embedded-subscribe-form .input-group-btn {
+         display: block !important;
+         width: 100% !important;
+         float: none !important;
+         position: relative !important;
+    }
+  }
+
   .modules div {
     @include at-query ($max, $medium) {
       text-align: center;
@@ -3141,7 +3182,7 @@ label.error {
   }  
 }
 {% else %}
-@include at-query ($max, x$large) {
+@include at-query ($max, $large) {
   .people {
     {% assign teamwidth = col3width %}
     {% assign teammargin = col3percentLeft %}
@@ -3188,6 +3229,174 @@ label.error {
 {% endif %}
 
 
+
+
+
+/* #Blog
+==============================================================================*/
+{% assign columns = settings.blog_columns %}
+{% if columns == '2' %}
+    {% if settings.blog_spacing %}
+      {% assign percent = 48 %}
+      {% assign margin = 2 %}
+    {% else %}
+      {% assign percent = 50 %}
+      {% assign margin = 0 %}
+    {% endif %} 
+    {% assign nudge = '3' %}
+{% elsif columns == '3' %}
+    {% if settings.blog_spacing %}
+      {% assign percent = 30 %}
+      {% assign margin = 3.33 %}  
+    {% else %}
+      {% assign percent = 33.33 %}
+      {% assign margin = 0 %}
+    {% endif %}   
+    {% assign nudge = '4' %}
+{% elsif columns == '4' %}
+    {% if settings.blog_spacing %}
+      {% assign percent = 22 %}
+      {% assign margin = 3 %}
+    {% else %}
+      {% assign percent = 25 %}
+      {% assign margin = 0 %}
+    {% endif %}
+    {% assign nudge = '5' %}
+{% else %}
+    {% assign percent = 100 %}
+    {% assign margin = 0 %}
+    {% assign nudge = '' %}
+{% endif %}
+.blog-articles {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 -{{ margin }}%;
+  width: {{ margin | plus: 100 }}%;
+}
+.blog-articles .grid__item {
+  width: {{ percent }}%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 0 {{ margin }}% {{ margin }}%;
+
+  .pic,
+  img,
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+}
+.blog-articles .grid__item a {
+  display: inline-block;
+  background: url('{{ "blank.gif" | asset_url }}');  
+  font-size: 80%;
+  text-decoration: none;
+
+  h2 {
+    {% if settings.links_body_underline %}text-decoration: underline;{% else %}text-decoration: none;{% endif %}
+  }
+
+  h3 {
+    text-decoration: none;
+  }
+
+}
+
+/* Force images in pic column to fill width */
+.blog-articles .grid__item img {
+  width: 100%;
+}
+  
+
+{% assign margin = '' %}
+{% assign blogwidth = '' %}
+{% assign blogmargin = '' %}
+{% if settings.blog_spacing %}
+  {% assign col2percent = 48 %}{% assign col2percentMargin = '0 0 2% 2%' %}{% assign col2width = 'width: 102%;' %}{% assign col2percentLeft = '' %}
+  {% assign col3percent = 30 %}{% assign col3percentMargin = '0 0 3% 3%' %}{% assign col3width = 'width: 103%;' %}{% assign col3percentLeft = '' %}
+  {% assign col4percent = 22 %}{% assign col4percentMargin = '0 0 3% 3%' %}{% assign col4width = 'width: 103%;' %}{% assign col4percentLeft = '' %}
+  {% assign col5percent = 18 %}{% assign col5percentMargin = '0 0 2% 2%' %}{% assign col5width = 'width: 102%;' %}{% assign col5percentLeft = '' %}
+  {% if columns == '1' %}{% assign percent = 100 %}{% assign margin = '0 0 2% 0' %}{% endif %}
+  {% if columns == '2' %}{% assign percent = col2percent %}{% assign margin = col2percentMargin %}{% assign blogwidth = col2width %}{% assign blogmargin = col2percentLeft %}{% endif %}
+  {% if columns == '3' %}{% assign percent = col3percent %}{% assign margin = col3percentMargin %}{% assign blogwidth = col3width %}{% assign blogmargin = col3percentLeft %}{% endif %}
+  {% if columns == '4' %}{% assign percent = col4percent %}{% assign margin = col4percentMargin %}{% assign blogwidth = col4width %}{% assign blogmargin = col4percentLeft %}{% endif %}
+{% else %}
+  {% assign col2percent = 50 %}
+  {% assign col3percent = 33.33 %}
+  {% assign col4percent = 25 %}
+  {% assign col5percent = 20 %}
+  {% if columns == '1' %}{% assign percent = 100 %}{% endif %}
+  {% if columns == '2' %}{% assign percent = col2percent %}{% endif %}
+  {% if columns == '3' %}{% assign percent = col3percent %}{% endif %}
+  {% if columns == '4' %}{% assign percent = col4percent %}{% endif %}
+{% endif %}
+
+.blog-articles .grid__item {
+  width: {{ percent }}%;
+  {% if margin != '' %}margin: {{ margin }};{% endif %}
+}
+
+.blog-articles {
+  {{ blogwidth }}
+  {{ blogmargin }}
+}
+
+
+
+@include at-query ($max, $large) {
+  .blog-articles {
+    {% assign blogwidth = col2width %}
+    {% assign blogmargin = col2percentLeft %}
+    {{ blogwidth }}
+    {{ blogmargin }}
+  }
+  .blog-articles .grid__item {
+    {% assign percent = col2percent %}
+    {% assign margin = col2percentMargin %}
+    width: {{ percent }}%;
+    {% if margin != '' %}margin: {{ margin }};{% endif %}
+  }
+  .blog-articles .grid__item:nth-child(2n+4) {
+      clear: left;
+  } 
+}
+/*
+@media all and (max-width: $large) and (min-width: $min_small) {
+  .blog-articles .grid__item:nth-child(2n+3) {
+      clear: left;
+  }
+}
+*/
+@include at-query ($max, $small) {
+  .blog-articles {
+    width: 100%;
+    margin: 0 0 1em 0;
+  }
+  .blog-articles .grid__item {
+    width: 100%;
+    margin: 0;
+  } 
+}
+
+/*
+{% if nudge != '' %}
+@include at-query ($min, $min_xlarge) {
+  .blog-articles .grid__item:nth-child({{ columns }}n+{{ columns | plus: 1 }}) {
+      clear: left;
+  }
+}
+{% endif %}
+*/
+
+
+
+
+
 /* #Banner
 ==============================================================================*/
 #banner {
@@ -3222,6 +3431,10 @@ label.error {
   padding: 0 !important;
   margin: 0 !important;
 
+  .grid__item {
+    padding-left: 0;
+  }
+
   {% unless settings.links_menus_underline %}
   li a {
     text-decoration: none;
@@ -3233,6 +3446,17 @@ label.error {
 .sidebar .blog_list time {
   display: block;
   font-size: 80%;
+}
+
+@include at-query ($max, $largeMax) {  
+  .sidebar #mc-embedded-subscribe-form,
+  .sidebar #mc-embedded-subscribe-form input,
+  .sidebar #mc-embedded-subscribe-form .input-group-btn {
+     display: block !important;
+     width: 100% !important;
+     float: none !important;
+     position: relative !important;
+  }
 }
 
 @include at-query ($max, $medium) {  

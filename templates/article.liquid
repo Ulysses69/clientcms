@@ -23,13 +23,13 @@
   {% assign number_of_comments = article.comments_count | plus: 1 %}
 {% endif %}
 
-
   <article class="grid__item{{ quarters }}" itemscope itemtype="http://schema.org/Article">
 
-    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
     {% assign feature = article | img_url: '1024x1024' %}
 
     <div class="rte" itemprop="articleBody">
+
+    {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
       
       <header class="section-header">
         <div class="section-header__left">

@@ -1,20 +1,16 @@
-<!-- /templates/collection.liquid -->
-{% comment %}
-
-  For more information on collection tags:
-    - http://docs.shopify.com/themes/liquid-variables/collection
-
-{% endcomment %}
-
 {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 
+<!-- /templates/collection.liquid -->
 {% paginate collection.products by 12 %}
 
 {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
 {% endcomment %}
 <div class="grid--rev">
+
   <div class="grid__item{{ quarters }}">
+
+    <div class="rte">
 
     {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
@@ -90,9 +86,7 @@
 
       {% endfor %}
 
-    </div>
-
-    {% include 'date-updated' %}
+    </div>    
 
     {% if paginate.pages > 1 %}
       <hr>
@@ -100,6 +94,10 @@
         {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
       </div>
     {% endif %}
+
+    </div>
+
+    {% include 'date-updated' %}
 
   </div>
 

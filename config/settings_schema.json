@@ -539,6 +539,24 @@
         "default": true
       },
       {
+        "type": "checkbox",
+        "id": "sidebar_divider_horizontal",
+        "label": "Show Horizontal Dividers",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_divider_vertical",
+        "label": "Show Vertical Dividers",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_newsletter_enable",
+        "label": "Show Newsletter Signup",
+        "default": false
+      },
+      {
         "type": "link_list",
         "id": "sidebar_linklist",
         "label": "Sidebar Menu"
@@ -2246,6 +2264,34 @@
         "type": "checkbox",
         "id": "blog_archive_photos",
         "label": "Show Photos"
+      },
+      {
+        "type": "select",
+        "id": "blog_columns",
+        "label": "Article Layout",
+        "options": [
+          {
+            "value": "1",
+            "label": "One Column"
+          },
+          {
+            "value": "2",
+            "label": "Two Columns"
+          },
+          {
+            "value": "3",
+            "label": "Three Columns"
+          },
+          {
+            "value": "4",
+            "label": "Four Columns"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_spacing",
+        "label": "Show Article Spacing"
       },
       {
         "type": "header",

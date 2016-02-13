@@ -5,14 +5,14 @@
 
   <div class="grid__item{{ quarters }}">
 
+    <div class="rte team">
+
     {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
     <h1>{{ page.title }}</h1>
 
-    <div class="rte team">
-
     {% capture teamlinks %}
-    {% for link in linklists.team-menu.links %}
+    {% for link in linklists.team.links %}
     <li class="grid__item">      
         {% assign mypage = link.url %}     
         {% assign parts = mypage | split: '/' %}
@@ -72,7 +72,7 @@
       <li>Set layout for all people to <strong>page.person</strong></li>
       <li><a href="/admin/link_lists/new">Create a new menu</a></li>
       <li>Name it <strong>Team menu</strong></li>
-      <li>Handle must be <strong>team-menu</strong> (change if required)</li>
+      <li>Handle must be <strong>team</strong> (change if required)</li>
       <li>Add people page links</li>
       <li>Save menu</li>
       <li>Done</li>

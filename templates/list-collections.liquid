@@ -1,3 +1,5 @@
+{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
+
 <!-- /templates/list-collections.liquid -->
 {% comment %}
 
@@ -12,34 +14,46 @@
 {% comment %}
   Loop through each collection, except 'frontpage'
 {% endcomment %}
-{% for collection in collections %}
+<div class="grid--rev">
 
-  {% unless collection.handle == 'frontpage' %}
+  <div class="grid__item{{ quarters }}">
 
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+    <div class="rte">
 
-    <div class="section-header">
-      <p class="h1 section-header__left">{{ collection_title }}</p>
-      <div class="section-header__right">
-        <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">More {{ collection_title }} &rsaquo;</a>
-      </div>
-    </div>
+      {% for collection in collections %}
 
-    <div class="grid">
+        {% unless collection.handle == 'frontpage' %}
 
-      {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
-      
-      {% for product in collection.products limit:5 %}
-        {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
-        {% include 'product-grid-item' %}
+          {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+
+          <div class="section-header">
+            <p class="h1 section-header__left">{{ collection_title }}</p>
+            <div class="section-header__right">
+              <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">More {{ collection_title }} &rsaquo;</a>
+            </div>
+          </div>
+
+          <div class="grid">
+
+            {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
+            
+            {% for product in collection.products limit:5 %}
+              {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
+              {% include 'product-grid-item' %}
+            {% endfor %}
+
+            {% include 'date-updated' %}
+            
+          </div>
+
+          {% unless forloop.last %}<hr>{% endunless %}
+
+        {% endunless %}
+
       {% endfor %}
 
-      {% include 'date-updated' %}
-      
     </div>
 
-    {% unless forloop.last %}<hr>{% endunless %}
+  </div>
 
-  {% endunless %}
-
-{% endfor %}
+</div>
