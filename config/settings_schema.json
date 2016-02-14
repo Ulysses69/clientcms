@@ -365,6 +365,16 @@
       },
       {
         "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "color",
+        "id": "color_sidebar_boxed_bg",
+        "label": "Text",
+        "default": "#f2f2f2"
+      },
+      {
+        "type": "header",
         "content": "Footer"
       },
       {
@@ -542,6 +552,12 @@
         "type": "checkbox",
         "id": "sidebar_divider_horizontal",
         "label": "Show Horizontal Dividers",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_boxed",
+        "label": "Show In Box",
         "default": false
       },
       {
@@ -2292,6 +2308,12 @@
         "type": "checkbox",
         "id": "blog_spacing",
         "label": "Show Article Spacing"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_archive_excerpt_auto",
+        "label": "Auto-Generate Excerpt",
+        "default": true
       },
       {
         "type": "header",

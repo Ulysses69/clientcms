@@ -1212,6 +1212,12 @@ hr {
   li {
     margin-bottom: 0.4em;
   }
+
+  h1:first-child {
+    position: relative !important;
+    top: -0.2em !important;
+  }
+
 }
 
 .rte--header {
@@ -3113,7 +3119,24 @@ label.error {
 .people .grid__item img {
   width: 100%;
 }
-  
+@include at-query ($max, $large) {
+  .profile.columns .pic {
+    width: 40% !important;
+  }
+  .profile.columns .txt {
+    width: 55% !important;
+  }
+} 
+@include at-query ($max, $small) {
+  .profile.columns .pic,
+  .profile.columns .txt {
+    width: 100% !important;
+    display: block !important;
+    float: none !important;
+    padding: 0;
+    margin: 0 0 1em 0;
+  }
+}  
 
 {% assign margin = '' %}
 {% assign teamwidth = '' %}
@@ -3361,22 +3384,26 @@ label.error {
   {{ blogmargin }}
 
   {% if columns == '1' %}
-    > div:nth-of-type(1) hr {
-        display: none;
+    @include at-query ($min, $large) {
+      > div:nth-of-type(1) hr {
+          display: none;
+      }
+      > div:nth-of-type(1) {
+          padding-top: 0;
+      } 
     }
-    > div:nth-of-type(1) {
-        padding-top: 0;
-    } 
   {% endif %}
   {% if columns == '2' %}
-    > div:nth-of-type(1) hr,
-    > div:nth-of-type(2) hr {
-        display: none;
+    @include at-query ($min, $large) {
+      > div:nth-of-type(1) hr,
+      > div:nth-of-type(2) hr {
+          display: none;
+      }
+      > div:nth-of-type(1),
+      > div:nth-of-type(2) {
+          padding-top: 0;
+      } 
     }
-    > div:nth-of-type(1),
-    > div:nth-of-type(2) {
-        padding-top: 0;
-    } 
   {% endif %}
   {% if columns == '3' %}
     > div:nth-of-type(1) hr,
@@ -3388,7 +3415,14 @@ label.error {
     > div:nth-of-type(2),
     > div:nth-of-type(3) {
         padding-top: 0;
-    } 
+    }
+
+    @include at-query ($min, $large) {
+      > div:nth-of-type(3n+4) {
+          clear: left;
+      }
+    }
+
   {% endif %}
   {% if columns == '4' %}
     > div:nth-of-type(1) hr,
@@ -3403,6 +3437,12 @@ label.error {
     > div:nth-of-type(4) {
         padding-top: 0;
     } 
+
+    @include at-query ($min, $large) {
+      > div:nth-of-type(4n+5) {
+          clear: left;
+      }
+    }
   {% endif %}
   {% if columns == '5' %}
     > div:nth-of-type(1) hr,
@@ -3419,6 +3459,12 @@ label.error {
     > div:nth-of-type(5) {
         padding-top: 0;
     } 
+
+    @include at-query ($min, $large) {
+      > div:nth-of-type(5n+6) {
+          clear: left;
+      }
+    }
   {% endif %}
 
 }
@@ -3527,6 +3573,25 @@ label.error {
     width: 100%;
   }
 }
+
+
+
+@include at-query ($min, $xlarge) {  
+  .sidebar-boxed .sidebar {
+    background: {{ settings.color_sidebar_boxed_bg }};
+    width: 22.7%;
+    padding: $gutter !important;
+  }
+  .sidebar-boxed .grid--rev .grid__item .rte {
+    padding-top: $gutter;
+
+    &:before {
+      margin-top: -$gutter;
+    }
+  }
+}
+
+
 
 .sidebar aside {
   position: relative !important;

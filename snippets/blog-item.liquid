@@ -12,11 +12,17 @@
         Since this is just a listing page, you can either use the excerpt or truncate the full article.
       {% endcomment %}
       <div class="rte">
+      {% if blog_archive_excerpt_auto %}
+        {% comment %}<p>{{ article.content | strip_html | truncatewords: 20 }}</p>{% endcomment %}
+        <p>{{ article.content | strip_html | truncate: 80 }}</p>
+      {% else %}
         {% if article.excerpt.size > 0 %}
           {{ article.excerpt }}
         {% else %}
-          <p>{{ article.content | strip_html | truncatewords: 20 }}</p>
-        {% endif %}
+          {% comment %}<p>{{ article.content | strip_html | truncatewords: 20 }}</p>{% endcomment %}
+          <p>{{ article.content | strip_html | truncate: 80 }}</p>
+        {% endif %}      
+      {% endif %}
       </div>
 
       {% comment %}
