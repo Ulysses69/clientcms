@@ -3574,8 +3574,6 @@ label.error {
   }
 }
 
-
-
 @include at-query ($min, $xlarge) {  
   .sidebar-boxed .sidebar {
     background: {{ settings.color_sidebar_boxed_bg }};
@@ -3591,8 +3589,6 @@ label.error {
   }
 }
 
-
-
 .sidebar aside {
   position: relative !important;
   display: block !important;
@@ -3603,6 +3599,10 @@ label.error {
 
   .grid__item {
     padding-left: 0;
+  }
+
+  .search-bar {
+    margin-top: -0.2em;
   }
 
   {% unless settings.links_menus_underline %}
@@ -3627,6 +3627,34 @@ label.error {
      float: none !important;
      position: relative !important;
   }
+}
+
+@include at-query ($max, $xlarge) {  
+  .sidebar {    
+
+    .search-bar,
+    .search-bar input,
+    .search-bar button.btn {
+       display: block !important;
+       width: 100% !important;
+       float: none !important;
+       position: relative !important;
+    }
+    .search-bar .icon-search {
+      display: none !important;
+    }
+
+  }
+
+  .supports-fontface .search-bar .icon-fallback-text .fallback-text {
+      display: block !important;
+      position: relative !important;
+      overflow: hidden;
+      clip: auto;
+      height: auto; width: auto;
+      margin: 0; padding: 0; border: 0;
+  }
+
 }
 
 @include at-query ($max, $medium) {  

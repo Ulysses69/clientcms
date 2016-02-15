@@ -10,6 +10,16 @@
 <!-- Sidebar | Align: {{ sidebar }} -->
 <div class="sidebar {{ sidebar }}">
 <aside class="grid" role="complementary">
+
+	{% if settings.search_align == 'sidebar_top' %}
+		<div class="grid__item">
+			<h4{{ toggle }}>{{ 'general.search.heading' | t }}</h4>
+            {% assign search_parent = '' %}
+            {% include 'search-bar' %}
+            {{ divide_h }}
+        </div>	
+	{% endif %}
+
 	{% if template contains 'blog' or template contains 'article' %}
 		<div class="grid__item">
 			<h4{{ toggle }}>{{ 'blogs.sidebar.recent_articles' | t }}</h4>

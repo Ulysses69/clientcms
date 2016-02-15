@@ -500,11 +500,15 @@
         "options": [
           {
             "value": "above_menu",
-            "label": "Above menu"
+            "label": "Above the Menu"
           },
           {
             "value": "menu_right",
-            "label": "Right of menu"
+            "label": "Right of Menu"
+          },
+          {
+            "value": "sidebar_top",
+            "label": "Top of Sidebar"
           }
         ]
       },
