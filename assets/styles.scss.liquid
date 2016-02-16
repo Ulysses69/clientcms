@@ -3672,9 +3672,8 @@ label.error {
   .sidebar {    
     width: 100%;
     display: block;
-
     display: none;
-
+    
     #testimonials {
       width: 105%;
       margin-left: -5%;
@@ -3691,6 +3690,20 @@ label.error {
 
   }
 }
+
+{% if settings.sidebar_width == 'one-quarter' or settings.sidebar_width == 'one-fifth' or settings.sidebar_width == 'one-sixth' %}
+@include at-query ($max, $medium) {  
+  .sidebar {    
+    width: 28.8%;      
+    display: block;
+  }
+}
+@include at-query ($max, $small) {  
+  .sidebar {  
+    display: none;
+  }
+}
+{% endif %}
 
 
 /* #Cart Page
