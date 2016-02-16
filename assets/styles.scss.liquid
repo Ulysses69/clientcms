@@ -3692,6 +3692,17 @@ label.error {
 }
 
 {% if settings.sidebar_width == 'one-quarter' or settings.sidebar_width == 'one-fifth' or settings.sidebar_width == 'one-sixth' %}
+@include at-query ($max, $large) {  
+  .sidebar {    
+    width: 20%;      
+    display: block;
+  }
+  @include at-query ($min, $medium) { 
+    .main-body .grid--rev > .grid__item {
+      width: 75%;
+    }
+  }
+}
 @include at-query ($max, $medium) {  
   .sidebar {    
     width: 28.8%;      
