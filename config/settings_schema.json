@@ -568,8 +568,8 @@
         "default": "one-third",
         "options": [
           {
-            "value": "half",
-            "label": "Half"
+            "value": "one-half",
+            "label": "One Half"
           },
           {
             "value": "two-fifths",

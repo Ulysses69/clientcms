@@ -3563,7 +3563,13 @@ label.error {
 ==============================================================================*/
 .sidebar {
   display: inline-block;
-  width: 20%;
+  {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
+  {% if settings.sidebar_width == "two-fifths" %}width: 35.8%;{% endif %}
+  {% if settings.sidebar_width == "one-third" %}width: 28.8%;{% endif %}
+  {% if settings.sidebar_width == "one-quarter" %}width: 20%;{% endif %}
+  {% if settings.sidebar_width == "one-fifth" %}width: 15%;{% endif %}
+  {% if settings.sidebar_width == "one-sixth" %}width: 11.8%;{% endif %}
+
   padding: 0 !important;
   margin: 0 !important;
   left: 0 important;
