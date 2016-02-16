@@ -129,21 +129,6 @@
         "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
       },
       {
-        "type": "select",
-        "id": "sidebar_align",
-        "label": "Sidebar Placement",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          }
-        ]
-      },
-      {
         "type": "page",
         "id": "enquiry_url",
         "label": "Product Enquiry Link",
@@ -577,14 +562,61 @@
         "default": false
       },
       {
+        "type": "select",
+        "id": "sidebar_width",
+        "label": "Sidebar Width",
+        "default": "one-third",
+        "options": [
+          {
+            "value": "half",
+            "label": "Half"
+          },
+          {
+            "value": "two-fifths",
+            "label": "Two Fifths"
+          },
+          {
+            "value": "one-third",
+            "label": "One Third"
+          },
+          {
+            "value": "one-quarter",
+            "label": "One Quarter"
+          },
+          {
+            "value": "one-fifth",
+            "label": "One Fifth"
+          },
+          {
+            "value": "one-sixth",
+            "label": "One Sixth"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "sidebar_align",
+        "label": "Page Placement",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
         "type": "link_list",
         "id": "sidebar_linklist",
-        "label": "Sidebar Menu"
+        "label": "Add Menu to Sidebar"
       },
       {
         "type": "page",
         "id": "sidebar_page",
-        "label": "Sidebar Page Content"
+        "label": "Add Page Content to Sidebar"
       },
       {
         "type": "header",

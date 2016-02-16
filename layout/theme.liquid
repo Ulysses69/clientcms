@@ -45,6 +45,7 @@
       {% endif %}
     {% endif %}
   {% endcapture %}
+  {% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
 </head>
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
