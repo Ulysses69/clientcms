@@ -1,0 +1,12 @@
+{% if settings.sidebar_enable %}      
+    {% if settings.sidebar_width == 'one-half' %}{% assign sidewidth = 'one-half' %}{% endif %}
+    {% if settings.sidebar_width == 'two-fifths' %}{% assign sidewidth = 'three-fifths' %}{% endif %}
+    {% if settings.sidebar_width == 'one-third' %}{% assign sidewidth = 'two-thirds' %}{% endif %}
+    {% if settings.sidebar_width == 'one-quarter' %}{% assign sidewidth = 'three-quarters' %}{% endif %}
+    {% if settings.sidebar_width == 'one-fifth' %}{% assign sidewidth = 'four-fifths' %}{% endif %}
+    {% if settings.sidebar_width == 'one-sixth' %}{% assign sidewidth = 'five-sixths' %}{% endif %}
+    {% assign quarters = ' large--' | append: sidewidth %}
+    {% assign sidebar = ' large--' | append: settings.sidebar_width %}
+{% else %}
+  	{% assign quarters = ' large--one-whole' %}{% assign sidewidth = 'one-whole' %}
+{% endif %}
