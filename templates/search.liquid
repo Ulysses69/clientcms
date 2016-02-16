@@ -24,8 +24,6 @@
   If you do, the pagination of results will be broken.  
 {% endcomment %}
 
-{% if settings.sidebar_enable %}{% assign quarters = ' large--three-quarters' %}{% else %}{% assign quarters = ' large--one-whole' %}{% endif %}
-
 {% paginate search.results by 10 %}
 
   <div class="grid--rev">
