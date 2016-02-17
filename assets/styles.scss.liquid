@@ -1029,30 +1029,20 @@ hr {
 }
 
 {% if settings.sidebar_divider_vertical %}
-.main-body .grid--rev .rte:before {
+.main-body .grid--rev .grid__item .rte:before {
   content: '';
   position: absolute;
   border-left: solid 1px $colorBorder;
   width: 2px;
   height: 100%; 
-
-  margin-left: -2em;
-
-  /*
-  @include at-query ($min, $siteWidth) {
-      margin-left: -$gutter;
-  }
-  */
-
-  /*
-  @include at-query ($max, $large) {
-      display: none;
-  }
-  */
+  left: 0;
   @include at-query ($max, $small) {
       display: none;
   }
 
+}
+.main-body .grid--rev .grid__item * .rte:before {
+  display: none;
 }
 {% endif %}
 
@@ -2908,123 +2898,139 @@ label.error {
 }
 
 {% if columns > '1' and columns < '5' %}
-@include at-query ($max, $xlarge) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col3width %}
-    {% assign gallerymargin = col3percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col3percent %}
-    {% assign margin = col3percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-@include at-query ($max, $small) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col2width %}
-    {% assign gallerymargin = col2percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col2percent %}
-    {% assign margin = col2percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-{% assign minlarge = large | plus: 1 | append: 'px' %}
-@include at-query ($min, {{ minlarge }}) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col4width %}
-    {% assign gallerymargin = col4percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col4percent %}
-    {% assign margin = col4percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-{% assign minxlarge = xlarge | plus: 1 | append: 'px' %}
-@include at-query ($min, {{ minxlarge }}) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col5width %}
-    {% assign gallerymargin = col5percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col5percent %}
-    {% assign margin = col5percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
+    @include at-query ($max, $xlarge) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col3width %}
+        {% assign gallerymargin = col3percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col3percent %}
+        {% assign margin = col3percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    {% if settings.sidebar_enable %}
+    @include at-query ($max, $large) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col2width %}
+        {% assign gallerymargin = col2percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col2percent %}
+        {% assign margin = col2percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }    
+    {% endif %}
+    @include at-query ($max, $small) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col2width %}
+        {% assign gallerymargin = col2percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col2percent %}
+        {% assign margin = col2percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    {% assign minlarge = large | plus: 1 | append: 'px' %}
+    @include at-query ($min, {{ minlarge }}) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col4width %}
+        {% assign gallerymargin = col4percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col4percent %}
+        {% assign margin = col4percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    {% assign minxlarge = xlarge | plus: 1 | append: 'px' %}
+    @include at-query ($min, {{ minxlarge }}) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col5width %}
+        {% assign gallerymargin = col5percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col5percent %}
+        {% assign margin = col5percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
 {% else %}
-@include at-query ($max, $large) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col4width %}
-    {% assign gallerymargin = col4percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col4percent %}
-    {% assign margin = col4percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-@include at-query ($max, $small) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col2width %}
-    {% assign gallerymargin = col2percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col2percent %}
-    {% assign margin = col2percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-{% assign minlarge = large | plus: 1 | append: 'px' %}
-@include at-query ($min, {{ minlarge }}) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col5width %}
-    {% assign gallerymargin = col5percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col5percent %}
-    {% assign margin = col5percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
-{% assign minxlarge = xlarge | plus: 1 | append: 'px' %}
-@include at-query ($min, {{ minxlarge }}) {
-  .gallery .thumbnails {
-    {% assign gallerywidth = col6width %}
-    {% assign gallerymargin = col6percentLeft %}
-    {{ gallerywidth }}
-    {{ gallerymargin }}
-  }
-  .gallery .thumbnails img {
-    {% assign percent = col6percent %}
-    {% assign margin = col6percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }  
-}
+    @include at-query ($max, $large) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col4width %}
+        {% assign gallerymargin = col4percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col4percent %}
+        {% assign margin = col4percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    @include at-query ($max, $small) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col2width %}
+        {% assign gallerymargin = col2percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col2percent %}
+        {% assign margin = col2percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    {% assign minlarge = large | plus: 1 | append: 'px' %}
+    @include at-query ($min, {{ minlarge }}) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col5width %}
+        {% assign gallerymargin = col5percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col5percent %}
+        {% assign margin = col5percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
+    {% assign minxlarge = xlarge | plus: 1 | append: 'px' %}
+    @include at-query ($min, {{ minxlarge }}) {
+      .gallery .thumbnails {
+        {% assign gallerywidth = col6width %}
+        {% assign gallerymargin = col6percentLeft %}
+        {{ gallerywidth }}
+        {{ gallerymargin }}
+      }
+      .gallery .thumbnails img {
+        {% assign percent = col6percent %}
+        {% assign margin = col6percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }  
+    }
 {% endif %}
 
 
@@ -3167,8 +3173,8 @@ label.error {
 {% assign teamwidth = '' %}
 {% assign teammargin = '' %}
 {% if settings.team_spacing %}
-  {% assign col2percent = 48 %}{% assign col2percentMargin = '0 0 2% 2%' %}{% assign col2width = 'width: 102%;' %}{% assign col2percentLeft = '' %}
-  {% assign col3percent = 30 %}{% assign col3percentMargin = '0 0 3% 3%' %}{% assign col3width = 'width: 103%;' %}{% assign col3percentLeft = '' %}
+  {% assign col2percent = 48 %}{% assign col2percentMargin = '0 0 2% 2%' %}{% assign col2width = 'width: 103%;' %}{% assign col2percentLeft = '' %}
+  {% assign col3percent = 30 %}{% assign col3percentMargin = '0 0 3% 3%' %}{% assign col3width = 'width: 104%;' %}{% assign col3percentLeft = '' %}
   {% assign col4percent = 22 %}{% assign col4percentMargin = '0 0 3% 3%' %}{% assign col4width = 'width: 103%;' %}{% assign col4percentLeft = '' %}
   {% assign col5percent = 18 %}{% assign col5percentMargin = '0 0 2% 2%' %}{% assign col5width = 'width: 102%;' %}{% assign col5percentLeft = '' %}
   {% if columns == '1' %}{% assign percent = 100 %}{% assign margin = '0 0 2% 0' %}{% endif %}
@@ -3197,64 +3203,67 @@ label.error {
 }
 
 {% if columns > '2' %}
-@include at-query ($max, $xlarge) {
-  .people {
-    {% assign teamwidth = col3width %}
-    {% assign teammargin = col3percentLeft %}
-    {{ teamwidth }}
-    {{ teammargin }}
-  }
-  .people .grid__item {
-    {% assign percent = col3percent %}
-    {% assign margin = col3percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }
-}
-@media all and (max-width: $xlarge) and (min-width: $min_small) {
-  .people .grid__item:nth-child(3n+4) {
-      clear: left;
-  }
-}
-@include at-query ($max, $small) {
-  .people {
-    {% assign teamwidth = col2width %}
-    {% assign teammargin = col2percentLeft %}
-    {{ teamwidth }}
-    {{ teammargin }}
-  }
-  .people .grid__item {
-    {% assign percent = col2percent %}
-    {% assign margin = col2percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }
-  .people .grid__item:nth-child(2n+3) {
-      clear: left;
-  }  
-}
+    @include at-query ($max, $xlarge) {
+      .people {
+        {% assign teamwidth = col3width %}
+        {% assign teammargin = col3percentLeft %}
+        {{ teamwidth }}
+        {{ teammargin }}
+      }
+      .people .grid__item {
+        {% assign percent = col3percent %}
+        {% assign margin = col3percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }
+    }
+    @media all and (max-width: $xlarge) and (min-width: $min_small) {
+      .people .grid__item:nth-child(3n+4) {
+          clear: left;
+      }
+    }
 {% else %}
+    @include at-query ($max, $large) {
+      .people {
+        {% assign teamwidth = col3width %}
+        {% assign teammargin = col3percentLeft %}
+        {{ teamwidth }}
+        {{ teammargin }}
+      }
+      .people .grid__item {
+        {% assign percent = col3percent %}
+        {% assign margin = col3percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }
+    }
+    @media all and (max-width: $xlarge) and (min-width: $min_small) {
+      .people .grid__item:nth-child(3n+4) {
+          clear: left;
+      }
+    }
+    @include at-query ($max, $small) {
+      .people {
+        {% assign teamwidth = col2width %}
+        {% assign teammargin = col2percentLeft %}
+        {{ teamwidth }}
+        {{ teammargin }}
+      }
+      .people .grid__item {
+        {% assign percent = col2percent %}
+        {% assign margin = col2percentMargin %}
+        width: {{ percent }}%;
+        {% if margin != '' %}margin: {{ margin }};{% endif %}
+      }
+      .people .grid__item:nth-child(2n+3) {
+          clear: left;
+      }
+    }
+{% endif %}
+
+{% if settings.sidebar_enable %}
 @include at-query ($max, $large) {
   .people {
-    {% assign teamwidth = col3width %}
-    {% assign teammargin = col3percentLeft %}
-    {{ teamwidth }}
-    {{ teammargin }}
-  }
-  .people .grid__item {
-    {% assign percent = col3percent %}
-    {% assign margin = col3percentMargin %}
-    width: {{ percent }}%;
-    {% if margin != '' %}margin: {{ margin }};{% endif %}
-  }
-}
-@media all and (max-width: $xlarge) and (min-width: $min_small) {
-  .people .grid__item:nth-child(3n+4) {
-      clear: left;
-  }
-}
-@include at-query ($max, $small) {
-  .people {
     {% assign teamwidth = col2width %}
     {% assign teammargin = col2percentLeft %}
     {{ teamwidth }}
@@ -3264,10 +3273,11 @@ label.error {
     {% assign percent = col2percent %}
     {% assign margin = col2percentMargin %}
     width: {{ percent }}%;
+    clear: none !important;
     {% if margin != '' %}margin: {{ margin }};{% endif %}
   }
   .people .grid__item:nth-child(2n+3) {
-      clear: left;
+      clear: left !important;
   }
 }
 {% endif %}
@@ -3279,6 +3289,7 @@ label.error {
   }
 }
 {% endif %}
+
 
 
 
@@ -3603,8 +3614,7 @@ label.error {
   }
 }
 
-
-  .sidebar-boxed .sidebar {
+.sidebar-boxed .sidebar {
     background: {{ settings.color_sidebar_boxed_bg }};
     padding: $gutter !important;
     {% if settings.sidebar_width == "one-half" %}width: 48.7%;{% endif %}
@@ -3613,15 +3623,14 @@ label.error {
     {% if settings.sidebar_width == "one-quarter" %}width: 22.7%;{% endif %}
     {% if settings.sidebar_width == "one-fifth" %}width: 17.7%;{% endif %}
     {% if settings.sidebar_width == "one-sixth" %}width: 14.5%;{% endif %}
-  }
-  .sidebar-boxed .grid--rev .grid__item .rte {
+}
+.sidebar-boxed .grid--rev .grid__item .rte {
     padding-top: $gutter;
 
     &:before {
       margin-top: -$gutter;
     }
-  }
-
+}
 
 @include at-query ($max, '1400px') {  
   .sidebar {
@@ -3631,24 +3640,7 @@ label.error {
     {% endif %}
   }
   .sidebar-boxed .sidebar {
-    padding: 0 1.3% 0 1.3% !important;
-  }
-  .main-body .grid--rev > .grid__item {
-    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 75% !important;
-    {% endif %}
-  }
-}
-
-@include at-query ($max, '1200px') {  
-  .sidebar {
-    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 22% !important;
-    padding: 0 3% 0 0 !important;
-    {% endif %}
-  }
-  .sidebar-boxed .sidebar {
-    adding: 0 1.5% 0 1.5% !important;
+    padding: 2% 2% 2% 2% !important;
   }
   .main-body .grid--rev > .grid__item {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
@@ -3660,16 +3652,16 @@ label.error {
 @include at-query ($max, $xlarge) {  
   .sidebar {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 21.4% !important;
+    width: 23% !important;
     padding: 0 3.6% 0 0 !important;
     {% endif %}
   }
   .sidebar-boxed .sidebar {
-    padding: 0 1.8% 0 1.8% !important;
+    padding: 3% 2.5% 3% 2.5% !important;
   }
   .main-body .grid--rev > .grid__item {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 75% !important;
+    width: 77% !important;
     {% endif %}
   }
 }
@@ -3677,16 +3669,16 @@ label.error {
 @include at-query ($max, $large) {  
   .sidebar {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 33% !important;
+    width: 32% !important;
     padding: 0 4% 0 0 !important;  
     {% endif %}
   }
   .sidebar-boxed .sidebar {
-    padding: 0 2% 0 2% !important;  
+    padding: 3% 2.5% 3% 2.5% !important;
   }
   .main-body .grid--rev > .grid__item {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 67% !important;
+    width: 68% !important;
     {% endif %}
   }
 }
@@ -3694,16 +3686,16 @@ label.error {
 @include at-query ($max, $medium) {  
   .sidebar {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 29% !important;
+    width: 36% !important;
     padding: 0 5% 0 0 !important; 
     {% endif %}
   }
   .sidebar-boxed .sidebar {
-    padding: 0 2.5% 0 2.5% !important; 
+    padding: 3% 3% 3% 3% !important; 
   }
   .main-body .grid--rev > .grid__item {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
-    width: 66.2% !important;
+    width: 64% !important;
     {% endif %}
   }
 }
@@ -4049,11 +4041,23 @@ label.error {
 
 
 
+
+
+.main-body > .grid--rev > .grid__item {
+  overflow: hidden;
+  margin-left: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+.main-body > .grid--rev {
+  overflow: hidden;
+  position: relative;
+}
 /*
+.main-body > .grid--rev {
+  background: orange;
+}
 .sidebar {
   background: green;
-}
-.main-body > .grid--rev > .grid__item {
-  background: orange
 }
 */
