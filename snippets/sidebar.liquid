@@ -8,7 +8,8 @@
 {% if settings.sidebar_divider_horizontal %}{% assign divide_h = '<hr>' %}{% endif %}
 {% unless settings.sidebar_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
 <!-- Sidebar | Align: {{ sidebar }} -->
-<div class="sidebar {{ sidebar }}">
+<div id="sidecolumn">
+<div class="sidebar {{ sidebar }}" id="sidebar">
 <aside class="grid" role="complementary">
 
 	{% if settings.search_align == 'sidebar_top' %}
@@ -161,6 +162,7 @@
   		</div> 
     {% endif %}
 </aside>
+</div>
 </div>
 
 {% endif %}

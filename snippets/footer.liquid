@@ -1,6 +1,7 @@
 {% unless settings.footer_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
 
     <!-- begin site-footer -->
+    <div>
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         {% if settings.testimonials_enable and settings.testimonials_align == 'footer' %}
@@ -9,7 +10,7 @@
         </div>
         {% endif %}
         
-        <div class="grid">  
+        <div class="grid" id="footcolumn">  
 
           {% if settings.footer_order != blank %}        
             {% assign modules = settings.footer_order | split: "-" %}
@@ -190,6 +191,7 @@
 
       </div>      
     </footer>
+    </div>
 
     <!-- //site-footer -->
     {{ 'fastclick.min.js' | asset_url | script_tag }}
