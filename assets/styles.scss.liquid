@@ -4067,21 +4067,21 @@ label.error {
 
 
 .main-body  {
-  {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
+  {% if settings.sidebar_width == "one-half" %}width: 50%;{% endif %}
   {% if settings.sidebar_width == "two-fifths" %}width: 65%;{% endif %}
   {% if settings.sidebar_width == "one-third" %}width: 70%;{% endif %}
-  {% if settings.sidebar_width == "one-quarter" %}width: 75%;{% endif %}
+  {% if settings.sidebar_width == "one-quarter" %}width: 76%;{% endif %}
   {% if settings.sidebar_width == "one-fifth" %}width: 82%;{% endif %}
   {% if settings.sidebar_width == "one-sixth" %}width: 86%;{% endif %}
   padding: 0 0 0 2% !important;
 }
 .sidebar {
-  {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
-  {% if settings.sidebar_width == "two-fifths" %}width: 35.8%;{% endif %}
-  {% if settings.sidebar_width == "one-third" %}width: 28.8%;{% endif %}
-  {% if settings.sidebar_width == "one-quarter" %}width: 22%;{% endif %}
+  {% if settings.sidebar_width == "one-half" %}width: 50%;{% endif %}
+  {% if settings.sidebar_width == "two-fifths" %}width: 35%;{% endif %}
+  {% if settings.sidebar_width == "one-third" %}width: 30%;{% endif %}
+  {% if settings.sidebar_width == "one-quarter" %}width: 24%;{% endif %}
   {% if settings.sidebar_width == "one-fifth" %}width: 18%;{% endif %}
-  {% if settings.sidebar_width == "one-sixth" %}width: 11.8%;{% endif %}
+  {% if settings.sidebar_width == "one-sixth" %}width: 14%;{% endif %}
   padding: 0 2% 0 0 !important;
   margin: 0 !important;
   left: 0 important;
@@ -4226,10 +4226,8 @@ label.error {
      position: relative !important;
   }
 }
-
 @include at-query ($max, $xlarge) {  
-  .sidebar {    
-
+  .sidebar {
     .search-bar,
     .search-bar input,
     .search-bar button.btn {
@@ -4241,9 +4239,7 @@ label.error {
     .search-bar .icon-search {
       display: none !important;
     }
-
   }
-
   .supports-fontface .sidebar .search-bar .icon-fallback-text .fallback-text {
       display: block !important;
       position: relative !important;
@@ -4252,8 +4248,34 @@ label.error {
       height: auto; width: auto;
       margin: 0; padding: 0; border: 0;
   }
-
 }
+
+{% if settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+  .sidebar #mc-embedded-subscribe-form,
+  .sidebar #mc-embedded-subscribe-form input,
+  .sidebar #mc-embedded-subscribe-form .input-group-btn,
+  .sidebar {
+    .search-bar,
+    .search-bar input,
+    .search-bar button.btn {
+       display: block !important;
+       width: 100% !important;
+       float: none !important;
+       position: relative !important;
+    }
+    .search-bar .icon-search {
+      display: none !important;
+    }
+  }
+  .supports-fontface .sidebar .search-bar .icon-fallback-text .fallback-text {
+      display: block !important;
+      position: relative !important;
+      overflow: hidden;
+      clip: auto;
+      height: auto; width: auto;
+      margin: 0; padding: 0; border: 0;
+  }
+{% endif %}
 
 
 
