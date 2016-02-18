@@ -1029,7 +1029,7 @@ hr {
 }
 
 {% if settings.sidebar_divider_vertical %}
-.main-body .grid--rev .grid__item .rte:before {
+.main-body:before {
   content: '';
   position: absolute;
   border-left: solid 1px $colorBorder;
@@ -1040,9 +1040,6 @@ hr {
       display: none;
   }
 
-}
-.main-body .grid--rev .grid__item * .rte:before {
-  display: none;
 }
 {% endif %}
 
@@ -3597,6 +3594,7 @@ label.error {
 
 /* #Sidebar
 ==============================================================================*/
+/*
 .sidebar {
   display: inline-block;
   {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
@@ -3792,6 +3790,7 @@ label.error {
   }
 
 }
+*/
 
 
 
@@ -4042,27 +4041,236 @@ label.error {
 
 
 
+
+
+
 .main-body > .grid--rev {
   position: relative;
 }
-/*
-.main-body > .grid--rev {
-  overflow: hidden;
+.main-body {
   position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  float: right;
+}
+.sidebar {
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+}
+
+
+
+
+
+.main-body  {
+  {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
+  {% if settings.sidebar_width == "two-fifths" %}width: 65%;{% endif %}
+  {% if settings.sidebar_width == "one-third" %}width: 70%;{% endif %}
+  {% if settings.sidebar_width == "one-quarter" %}width: 75%;{% endif %}
+  {% if settings.sidebar_width == "one-fifth" %}width: 82%;{% endif %}
+  {% if settings.sidebar_width == "one-sixth" %}width: 86%;{% endif %}
+  padding: 0 0 0 2% !important;
+}
+.sidebar {
+  {% if settings.sidebar_width == "one-half" %}width: 46%;{% endif %}
+  {% if settings.sidebar_width == "two-fifths" %}width: 35.8%;{% endif %}
+  {% if settings.sidebar_width == "one-third" %}width: 28.8%;{% endif %}
+  {% if settings.sidebar_width == "one-quarter" %}width: 22%;{% endif %}
+  {% if settings.sidebar_width == "one-fifth" %}width: 18%;{% endif %}
+  {% if settings.sidebar_width == "one-sixth" %}width: 11.8%;{% endif %}
+  padding: 0 2% 0 0 !important;
+  margin: 0 !important;
+  left: 0 important;
+  right: 0 !important;
+  img {
+    width: 100%;
+  }
 }
 .main-body > .grid--rev > .grid__item {
-  overflow: hidden;
-  margin-left: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
+  width: 100%;
+  margin: 0;
 }
-*/
+
+.sidebar-boxed .sidebar {
+    background: {{ settings.color_sidebar_boxed_bg }};
+    padding: $gutter !important;
+}
+.sidebar-boxed .grid--rev .grid__item .rte {
+    padding-top: 2.5%;
+}
+
+@include at-query ($max, '1400px') {  
+  .sidebar {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 23% !important;
+    padding: 0 3% 0 0 !important;
+    {% endif %}
+  }
+  .sidebar-boxed .sidebar {
+    padding: 2% 2% 2% 2% !important;
+  }
+  .main-body {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 77% !important;
+    padding: 0 0 0 3% !important;
+    {% endif %}
+  }
+}
+@include at-query ($max, $large) {  
+  .sidebar {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 32% !important;  
+    {% endif %}
+  }
+  .sidebar-boxed .sidebar {
+    padding: 3% 3% 3% 3% !important;
+  }
+  .main-body {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 68% !important;
+    {% endif %}
+  }
+  .sidebar-boxed .grid--rev .grid__item .rte {
+      padding-top: 3.5%;
+  }
+}
+
+@include at-query ($max, $medium) {  
+  .sidebar {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 36% !important;
+    padding: 0 3.5% 0 0 !important; 
+    {% endif %}
+  }
+  .sidebar-boxed .sidebar {
+    padding: 3% 3% 3% 3% !important; 
+  }
+  .main-body {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 64% !important;
+    padding: 0 0 0 3.5% !important;
+    {% endif %}
+  }
+}
+
+@include at-query ($max, $small) {  
+  .sidebar {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 100% !important;
+    {% endif %}
+  }
+  .main-body {
+    {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
+    width: 100% !important;
+    padding: 0 0 0 0 !important;
+    {% endif %}
+  }
+  .sidebar-boxed .grid--rev .grid__item .rte {
+      margin-top: -1%;
+      padding-top: 0;
+  }
+}
+
+.site-footer .sidebar {
+  position: relative;
+  width: auto;
+  display: block;
+  margin: 0;
+  padding: 0 0 0 2em !important;
+  left: auto;
+  float: none;
+  overflow: hidden;
+}
+
+.sidebar aside {
+  position: relative;
+  display: block;
+  width: 100%;
+  float: none;
+  padding: 0;
+  margin: 0;
+
+  .grid__item {
+    padding-left: 0;
+  }
+  .search-bar {
+    margin-top: -0.2em;
+  }
+  {% unless settings.links_menus_underline %}
+  li a {
+    text-decoration: none;
+  }
+  {% endunless %}
+
+}
+.sidebar .blog_list time {
+  display: block;
+  font-size: 80%;
+}
+.sidebar .site-header__search {  
+  display: block;
+  max-width: none;
+}
+
+@include at-query ($max, $largeMax) {  
+  .sidebar #mc-embedded-subscribe-form,
+  .sidebar #mc-embedded-subscribe-form input,
+  .sidebar #mc-embedded-subscribe-form .input-group-btn {
+     display: block !important;
+     width: 100% !important;
+     float: none !important;
+     position: relative !important;
+  }
+}
+
+@include at-query ($max, $xlarge) {  
+  .sidebar {    
+
+    .search-bar,
+    .search-bar input,
+    .search-bar button.btn {
+       display: block !important;
+       width: 100% !important;
+       float: none !important;
+       position: relative !important;
+    }
+    .search-bar .icon-search {
+      display: none !important;
+    }
+
+  }
+
+  .supports-fontface .sidebar .search-bar .icon-fallback-text .fallback-text {
+      display: block !important;
+      position: relative !important;
+      overflow: hidden;
+      clip: auto;
+      height: auto; width: auto;
+      margin: 0; padding: 0; border: 0;
+  }
+
+}
 
 
+
+
+
+
+/*
+.main-body {
+  background: pink;
+}
+.main-body > .grid--rev {
+  background: blue;
+}
 .main-body > .grid--rev > .grid__item {
   background: orange;
 }
 .sidebar {
   background: green;
 }
-
+*/
