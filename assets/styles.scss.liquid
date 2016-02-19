@@ -4153,13 +4153,19 @@ label.error {
     padding: 0 1.5em 0.5em 0 !important;
     {% endif %}
     {% endif %}
+    {% unless settings.sidebar_features_boxed %}
+    padding-bottom: 1em !important;
+    {% endunless %}
     {% if settings.sidebar_divider_vertical %}
     aside .grid__item {
       margin-bottom: 1.5em;
       {% if settings.sidebar_features_boxed %}
       padding: 1.5em;
       {% else %}
-      margin-bottom: -0.5em;
+      margin-bottom: -1em;
+      hr {
+        margin-top: 0;
+      }
       {% endif %}
     }
     {% endif %}
@@ -4201,13 +4207,19 @@ label.error {
     padding: 0 1em 0.5em 0 !important; 
     {% endif %}
     {% endif %}
+    {% unless settings.sidebar_features_boxed %}
+    padding-bottom: 1em !important;
+    {% endunless %}
     {% if settings.sidebar_divider_vertical %}
     aside .grid__item {
       margin-bottom: 1em;
       {% if settings.sidebar_features_boxed %}
       padding: 1em;
       {% else %}
-      margin-bottom: -0.5em;
+      margin-bottom: -1em;
+      hr {
+        margin-top: 0;
+      }
       {% endif %}
     }
     {% endif %}
@@ -4227,6 +4239,8 @@ label.error {
   .sidebar {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
     width: 100% !important;
+    {% if settings.sidebar_divider_vertical %}
+    {% endif %}    
     {% endif %}
   }
   .main-body {
@@ -4245,8 +4259,8 @@ label.error {
   position: relative;
   width: auto;
   display: block;
-  margin: 0;
-  padding: 0 0 0 2em !important;
+  margin: -3em 0 0 0 !important;
+  padding: 0 0 2em 2em !important;
   left: auto;
   float: none;
   overflow: hidden;
