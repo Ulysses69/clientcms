@@ -546,7 +546,13 @@
       {
         "type": "checkbox",
         "id": "sidebar_boxed",
-        "label": "Show In Box",
+        "label": "Wrap In Box",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_features_boxed",
+        "label": "Show Features as Boxes",
         "default": false
       },
       {

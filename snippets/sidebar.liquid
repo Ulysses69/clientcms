@@ -5,7 +5,7 @@
 {% if settings.sidebar_page %}{% assign sidepage = true %}{% else %}{% assign sidepage = false %}{% endif %}
 {% if template contains 'collection' or template contains 'product' %}{% unless settings.collection_sidebar_page %}{% assign sidepage = false %}{% endunless %}{% endif %}
 {% if settings.sidebar_toggle %}{% assign toggle = ' class="toggle"><span>+</span' %}{% assign toggleul = ' toggle_list' %}{% endif %}
-{% if settings.sidebar_divider_horizontal %}{% assign divide_h = '<hr>' %}{% endif %}
+{% if settings.sidebar_divider_horizontal %}{% unless settings.sidebar_features_boxed %}{% assign divide_h = '<hr>' %}{% endunless %}{% endif %}
 {% unless settings.sidebar_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
 <!-- Sidebar | Align: {{ sidebar }} -->
 <div id="sidecolumn">
