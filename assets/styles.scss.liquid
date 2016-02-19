@@ -2533,6 +2533,61 @@ label.error {
     padding-bottom: ($gutter * 2);
   }
 
+  .modules { 
+    position: relative;
+  }
+
+  .modules div {
+    position: relative;
+    padding: 0 2em;
+    @include at-query ($max, $medium) {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    {% if settings.footer_divider_vertical %}
+    &:after {
+      content: '';
+      position: absolute;
+      float: left;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: {{ settings.color_borders }};
+    }
+    {% endif %}
+    ul {
+      @include at-query ($max, $medium) {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }    
+    }
+    ul li {
+      {% unless settings.links_menus_underline %}
+      a {
+        text-decoration: none;
+      }
+      {% endunless %}
+      @include at-query ($max, $medium) {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }    
+    }
+  }
+
+  .modules div:last-of-type {
+    text-align: right;
+    padding-right: 0;    
+    &:after {
+      display: none;
+    }
+    @include at-query ($max, $medium) {
+      text-align: center;
+    }
+  }
+
   @include at-query ($max, $xlarge) {  
     .modules.smallforms #mc-embedded-subscribe-form,
     .modules.smallforms #mc-embedded-subscribe-form input,
@@ -2544,7 +2599,13 @@ label.error {
     }
   }
 
-  @include at-query ($max, $medium) {  
+  @include at-query ($max, $medium) {
+    .modules div {
+      padding-right: 0;
+      &:after {
+        display: none;
+      }
+    }
     .modules.smallforms #mc-embedded-subscribe-form,
     .modules.smallforms #mc-embedded-subscribe-form input,
     .modules.smallforms #mc-embedded-subscribe-form .input-group-btn {
@@ -2558,45 +2619,6 @@ label.error {
     .modules.smallforms #mc-embedded-subscribe-form input,
     .modules.smallforms #mc-embedded-subscribe-form .input-group-btn {
          max-width: 480px !important;
-    }
-  }
-
-  .modules div {
-    @include at-query ($max, $medium) {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-
-    ul {
-      @include at-query ($max, $medium) {
-        list-style: none;
-        padding-left: 0;
-        margin-left: 0;
-      }    
-    }
-
-    ul li {
-
-      {% unless settings.links_menus_underline %}
-      a {
-        text-decoration: none;
-      }
-      {% endunless %}
-
-      @include at-query ($max, $medium) {
-        list-style: none;
-        padding-left: 0;
-        margin-left: 0;
-      }    
-    }
-
-  }
-
-  .modules div:last-of-type {
-    text-align: right;
-
-    @include at-query ($max, $medium) {
-      text-align: center;
     }
   }
 
@@ -4235,7 +4257,10 @@ label.error {
   }
 }
 
-@include at-query ($max, $small) {  
+@include at-query ($max, $small) {
+  #sidecolumn .sidebar {
+    display: none;
+  }
   .sidebar {
     {% if settings.sidebar_width == "one-third" or settings.sidebar_width == "one-quarter" or settings.sidebar_width == "one-fifth" or settings.sidebar_width == "one-sixth" %}
     width: 100% !important;

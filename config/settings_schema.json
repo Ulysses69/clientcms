@@ -678,6 +678,12 @@
         "default": true
       },
       {
+        "type": "checkbox",
+        "id": "footer_divider_vertical",
+        "label": "Show Vertical Dividers",
+        "default": false
+      },
+      {
         "type": "header",
         "content": "Menu One [1]"
       },
