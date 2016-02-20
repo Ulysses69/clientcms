@@ -2761,6 +2761,10 @@ label.error {
     }
   }
 
+  @media screen and (max-width: $medium) and (orientation:landscape) {
+    display: none;
+  }
+
   @include at-query ($max, $small) {
     display: none;
   }
