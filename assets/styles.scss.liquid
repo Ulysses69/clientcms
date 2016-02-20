@@ -1039,7 +1039,12 @@ hr {
   @include at-query ($max, $small) {
       display: none;
   }
-
+}
+.right .main-body:before {
+  border-left: none;
+  border-right: solid 1px $colorBorder;
+  left: auto;
+  right: 0;
 }
 {% endif %}
 
@@ -2541,6 +2546,10 @@ label.error {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    @include at-query ($max, $small) {
+      display: block;
+      flex-wrap: nowrap;
+    }
   }
 
   .modules div {
@@ -2551,6 +2560,10 @@ label.error {
     @include at-query ($max, $medium) {
       text-align: center;
       margin-bottom: 1em;
+    }
+    @include at-query ($max, $small) {
+      display: block;
+      flex-direction: row;
     }
     {% if settings.footer_divider_vertical %}
     &:after {
@@ -4101,6 +4114,9 @@ label.error {
   {% if settings.sidebar_width == "one-sixth" %}width: 86%;{% endif %}
   padding: 0 0 0 2em !important;
 }
+.right .main-body {
+  padding: 0 2em 0 0 !important;
+}
 .sidebar {
   {% if settings.sidebar_width == "one-half" %}width: 50%;{% endif %}
   {% if settings.sidebar_width == "two-fifths" %}width: 35%;{% endif %}
@@ -4123,6 +4139,13 @@ label.error {
   aside .grid__item {
     margin-bottom: 2em;
   }
+  {% endif %}
+}
+.right .sidebar {
+  {% if settings.sidebar_divider_vertical %}
+  padding: 0 0 0.5em 2em !important;
+  {% else %}
+  padding: 0 !important;
   {% endif %}
 }
 
@@ -4200,6 +4223,12 @@ label.error {
     }
     {% endif %}
   }
+  .right .sidebar {
+    padding: 0 0 0.5em 1.5em !important;
+    {% unless settings.sidebar_features_boxed %}
+    padding-bottom: 1em !important;
+    {% endunless %}
+  }
   .sidebar-boxed .sidebar {
     padding: 2% 2% 2% 2% !important;
   }
@@ -4253,6 +4282,12 @@ label.error {
       {% endif %}
     }
     {% endif %}
+  }
+  .right .sidebar {
+    padding: 0 0 0.5em 1em !important; 
+    {% unless settings.sidebar_features_boxed %}
+    padding-bottom: 1em !important;
+    {% endunless %}
   }
   .sidebar-boxed .sidebar {
     padding: 3% 3% 3% 3% !important; 
