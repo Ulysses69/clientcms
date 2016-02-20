@@ -2533,6 +2533,10 @@ label.error {
     padding-bottom: ($gutter * 2);
   }
 
+  hr {
+    border-color: {{ settings.color_footer_borders }};
+  }
+
   .modules { 
     position: relative;
     display: flex;
@@ -2557,7 +2561,7 @@ label.error {
       top: 0;
       height: 100%;
       width: 1px;
-      background: {{ settings.color_borders }};
+      background: {{ settings.color_footer_borders }};
     }
     {% endif %}
     ul {

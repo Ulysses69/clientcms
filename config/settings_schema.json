@@ -377,8 +377,14 @@
       {
         "type": "color",
         "id": "color_footer_social_link",
-        "label": "Social media icons",
+        "label": "Social Media Icons",
         "default": "#bbbbbb"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_borders",
+        "label": "Borders",
+        "default": "#e5e5e5"
       },
       {
         "type": "header",
