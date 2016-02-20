@@ -4083,6 +4083,12 @@ label.error {
 .wrapper.main-content {
   margin-top: 0;
   margin-bottom: 0;
+  @include at-query ($max, $small) { 
+    margin-top: -2em; 
+  }
+  @media screen and (max-width: $medium) and (orientation:landscape) {
+    margin-top: -2em; 
+  }
 }
 
 
