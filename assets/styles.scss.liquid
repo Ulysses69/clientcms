@@ -779,7 +779,10 @@ body {
 }
 
 #PageContainer {
-  margin-bottom: $gutter * 2;
+  margin-bottom: $gutter * 2;  
+  {% if settings.topbar_enable and settings.topbar_sticky %}
+  padding-top: 3.7em;
+  {% endif %}
 }
 
 /* #Helper Classes
@@ -2018,6 +2021,11 @@ label.error {
   color: {{ settings.color_topbar_text }};
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  {% if settings.topbar_enable and settings.topbar_sticky %}
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  {% endif %}
 
   .wrapper {
     background: {{ settings.color_topbar_bg }};

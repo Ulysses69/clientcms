@@ -76,6 +76,12 @@
       },
       {
         "type": "checkbox",
+        "id": "topbar_sticky",
+        "label": "Sticky Top Bar",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "updated_enable",
         "label": "Show Update Date",
         "default": true
