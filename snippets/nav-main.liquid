@@ -16,7 +16,7 @@
           {% capture demo %}{% for item in linklists.main-menu.links %}{{ item.title | handleize }}{% endfor %}{% endcapture %}
           {% if demo == 'homecatalogblogabout-us' %}
             {% include 'nav-demo' %}
-           {% else %}                      
+           {% else %}                    
             {% for link in linklists.main-menu.links %}           
               {% comment %}
                 Create a dropdown menu by naming a linklist the same as a link in the parent nav
