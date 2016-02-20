@@ -17,7 +17,7 @@
           {% if demo == 'homecatalogblogabout-us' %}
             {% include 'nav-demo' %}
            {% else %}                      
-            {% for link in linklists.main-menu.links %}              
+            {% for link in linklists.main-menu.links %}           
               {% comment %}
                 Create a dropdown menu by naming a linklist the same as a link in the parent nav
 
@@ -26,18 +26,21 @@
               {% endcomment %}
               {% assign child_list_handle = link.title | handleize %}
               {% if linklists[child_list_handle].links != blank %}
-                <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+                <li class="{% if settings.header_submenu %}site-nav--has-dropdown {% endif %}{% if link.active %}site-nav--active{% endif %}"{% if settings.header_submenu %} aria-haspopup="true"{% endif %}>
                   <a href="{{ link.url }}" class="site-nav__link">
                     {{ link.title }}
-                    <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                    {% if settings.header_submenu %}<span class="icon icon-arrow-down" aria-hidden="true"></span>{% endif %}
                   </a>
-                  <ul class="site-nav__dropdown">
+                  {% capture subnav %}
+                  <ul{% if settings.header_submenu %} class="site-nav__dropdown"{% endif %}>
                     {% for childlink in linklists[child_list_handle].links %}
                       <li{% if childlink.active %} class="site-nav--active"{% endif %}>
                         <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
                       </li>
                     {% endfor %}
                   </ul>
+                  {% endcapture %}
+                  {% if settings.header_submenu %}{{ subnav }}{% endif %}
                 </li>
               {% else %}
                 <li{% if link.active %} class="site-nav--active"{% endif %}>

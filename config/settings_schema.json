@@ -70,18 +70,6 @@
       },
       {
         "type": "checkbox",
-        "id": "topbar_enable",
-        "label": "Show Top Bar",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "topbar_sticky",
-        "label": "Sticky Top Bar",
-        "default": false
-      },
-      {
-        "type": "checkbox",
         "id": "updated_enable",
         "label": "Show Update Date",
         "default": true
@@ -313,6 +301,12 @@
       },
       {
         "type": "color",
+        "id": "color_submenu_bg",
+        "label": "Submenu Background",
+        "default": "rgba(255,255,255,0.9)"
+      },
+      {
+        "type": "color",
         "id": "color_menu_link",
         "label": "Link",
         "default": "#333333"
@@ -441,8 +435,26 @@
       },
       {
         "type": "checkbox",
+        "id": "topbar_enable",
+        "label": "Show Top Bar",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "topbar_sticky",
+        "label": "Sticky Top Bar",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "header_submenu",
+        "label": "Show Submenu",
         "default": true
       },
       {
