@@ -2535,11 +2535,15 @@ label.error {
 
   .modules { 
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .modules div {
     position: relative;
     padding: 0 2em;
+    display: flex; 
+    flex-direction: column;
     @include at-query ($max, $medium) {
       text-align: center;
       margin-bottom: 1em;
