@@ -639,14 +639,20 @@
         ]
       },
       {
+        "type": "page",
+        "id": "sidebar_page",
+        "label": "Add Page Content to Sidebar"
+      },
+      {
         "type": "link_list",
         "id": "sidebar_linklist",
         "label": "Add Menu to Sidebar"
       },
       {
-        "type": "page",
-        "id": "sidebar_page",
-        "label": "Add Page Content to Sidebar"
+        "type": "checkbox",
+        "id": "sidebar_linklist_heading",
+        "label": "Show Menu Heading",
+        "default": true
       },
       {
         "type": "header",

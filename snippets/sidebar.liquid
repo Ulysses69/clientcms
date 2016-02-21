@@ -21,7 +21,7 @@
         </div>	
 	{% endif %}
 
-                    
+    <!--                
     <div class="grid__item">
     <ul>
     {% for link in linklists.main-menu.links %}           
@@ -51,6 +51,7 @@
     {% endfor %}
     </ul>
     </div>
+    -->
 
 
 	{% if template contains 'blog' or template contains 'article' %}
@@ -99,11 +100,15 @@
 		  {% if settings.sidebar_linklist != blank and sidelist == true %}
 		  	<div class="grid__item">
 			    <h4{{ toggle }}>{{ linklists[settings.sidebar_linklist].title }}</h4>
+			    {% capture nav %}
 			    <ul class="blog_list{{ bullets }}{{ toggleul }}">
-			      {% for link in linklists[settings.sidebar_linklist].links %}
-			        <li>
-			          <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
+			      {% for link in linklists[settings.sidebar_linklist].links %}			      
+			      {% assign toptitle = link.title %}
+			      {% assign tophandle = 'parent-' | append: link.handle %}     	
+			        <li class="{{ tophandle }}{% if link.active %} active{% assign activehandle = 'parent-' | append: link.handle %}{% endif %}">
+			          <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
 			          {% if linklists[link.handle] != empty %}
+			            {% capture subnav %}
 			            {% assign display_sublinks = false %}		          
 			            {% for link in linklists[link.handle].links %}
 			              {% if link.active %}
@@ -113,16 +118,24 @@
 			            {% if display_sublinks or link.active %}
 			              <ul>
 			              {% for link in linklists[link.handle].links %}
-			                <li>
-			                  <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+			                <li{% if link.active %} class="active"{% assign activehandle = tophandle %}{% endif %}>
+			                  <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
 			                </li>
 			              {% endfor %}
 			              </ul>
 			            {% endif %}
+			            {% endcapture %}
+			            [subnav]		            
 			          {% endif %}
 			        </li>
 			      {% endfor %}
 			    </ul>
+			    {% endcapture %}
+			    <!-- activehandle: {{ activehandle }} -->
+			    {% assign activeclass = activehandle | append: ' active' %}
+			    {% assign nav = nav | replace: activehandle, activeclass %}
+			    {{ nav | replace: '[subnav]', subnav }}
+
 			    {{ divide_h }}
 			</div>
 		  {% endif %}				
