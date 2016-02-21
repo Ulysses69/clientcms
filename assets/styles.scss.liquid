@@ -4163,7 +4163,11 @@ label.error {
   {% endif %}
   {% if settings.sidebar_linklist_indent %}
   ul ul {
+    margin-left: 1em;
+  }
+  ul ul.no-bullets {
     padding-left: 1em;
+    margin-left: 0;
   }
   {% endif %}
 }
