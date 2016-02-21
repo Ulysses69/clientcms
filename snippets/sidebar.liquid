@@ -98,8 +98,8 @@
 			</div>	
 		{% else %}
 		  {% if settings.sidebar_linklist != blank and sidelist == true %}
-		  	<div class="grid__item">
-			    <h4{{ toggle }}>{{ linklists[settings.sidebar_linklist].title }}</h4>
+		  	
+			    
 			    {% capture nav %}
 			    <ul class="blog_list{{ bullets }}{{ toggleul }}">
 			      {% for link in linklists[settings.sidebar_linklist].links %}			      
@@ -132,12 +132,16 @@
 			    </ul>
 			    {% endcapture %}
 			    <!-- activehandle: {{ activehandle }} -->
+			    {% if activehandle != blank %}
 			    {% assign activeclass = activehandle | append: ' active' %}
 			    {% assign nav = nav | replace: activehandle, activeclass %}
+			    <div class="grid__item">
+			    <h4{{ toggle }}>{{ linklists[settings.sidebar_linklist].title }}</h4>
 			    {{ nav | replace: '[subnav]', subnav }}
-
 			    {{ divide_h }}
-			</div>
+			    </div>
+			    {% endif %}
+			
 		  {% endif %}				
 		{% endif %}
 		{% if template contains 'collection' or template contains 'product' %}
