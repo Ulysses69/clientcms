@@ -4161,6 +4161,11 @@ label.error {
     margin-bottom: 2em;
   }
   {% endif %}
+  {% if settings.sidebar_linklist_indent %}
+  ul ul {
+    padding-left: 1em;
+  }
+  {% endif %}
 }
 .right .sidebar {
   {% if settings.sidebar_divider_vertical %}

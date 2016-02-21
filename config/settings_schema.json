@@ -655,6 +655,18 @@
         "default": true
       },
       {
+        "type": "checkbox",
+        "id": "sidebar_linklist_parents",
+        "label": "Show as Submenu",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_linklist_indent",
+        "label": "Indent Submenu",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "Collection Pages"
       },

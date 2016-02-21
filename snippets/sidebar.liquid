@@ -105,7 +105,7 @@
 			      {% for link in linklists[settings.sidebar_linklist].links %}			      
 			      {% assign toptitle = link.title %}
 			      {% assign tophandle = 'parent-' | append: link.handle %}     	
-			        <li class="{{ tophandle }}{% if link.active %} active{% assign activehandle = 'parent-' | append: link.handle %}{% endif %}">
+			        <li class="{{ tophandle }}{% if link.active %} active{% assign activehandle = 'parent-' | append: link.handle %}{% assign activetitle = toptitle %}{% endif %}">
 			          <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
 			          {% if linklists[link.handle] != empty %}
 			            {% capture subnav %}
@@ -116,9 +116,9 @@
 			              {% endif %}
 			            {% endfor %}
 			            {% if display_sublinks or link.active %}
-			              <ul>
+			              <ul class="blog_list{{ bullets }}{{ toggleul }}">
 			              {% for link in linklists[link.handle].links %}
-			                <li{% if link.active %} class="active"{% assign activehandle = tophandle %}{% endif %}>
+			                <li{% if link.active %} class="active"{% assign activehandle = tophandle %}{% assign activetitle = toptitle %}{% endif %}>
 			                  <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
 			                </li>
 			              {% endfor %}
@@ -136,8 +136,15 @@
 			    {% assign activeclass = activehandle | append: ' active' %}
 			    {% assign nav = nav | replace: activehandle, activeclass %}
 			    <div class="grid__item">
+
+			    {% if settings.sidebar_linklist_parents %}
 			    <h4{{ toggle }}>{{ linklists[settings.sidebar_linklist].title }}</h4>
 			    {{ nav | replace: '[subnav]', subnav }}
+			    {% else %}
+			    <h4{{ toggle }}>{{ activetitle }}</h4>
+			    {{ subnav }}
+			    {% endif %}
+
 			    {{ divide_h }}
 			    </div>
 			    {% endif %}
