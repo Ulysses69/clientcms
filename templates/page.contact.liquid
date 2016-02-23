@@ -24,6 +24,16 @@
 
       <h1>{{ page.title }}</h1>
 
+
+      <p>Client Business Name:</p>
+      <p>Client Store Address Summary: {{ shop.address.summary }}</p>
+      <p>Client Store Street: {{ shop.address.street }}</p>
+      <p>Client Store Province: {{ shop.address.province }}</p>
+      <p>Client Store City: {{ shop.address.city }}</p>
+      <p>Client Store Postcode: {{ shop.address.zip }}</p>
+      <p>Client Store Country: {{ shop.address.country }}</p>
+
+
       {{ page.content }}
     </div>
 
