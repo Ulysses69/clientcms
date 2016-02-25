@@ -2893,6 +2893,7 @@ label.error {
   width: {{ map_width }};
   height: {{ map_height }};
   padding: 0;
+  margin: 0 0 1em 0;
   {% if map_align != 'full' and map_width != '100%' %}float: map_align; margin-{{ map_align }}: 2em; {% endif %}
 
   iframe {
@@ -2904,6 +2905,7 @@ label.error {
   }
 
 }
+
 {% endif %}
 
 {% assign columns = settings.gallery_columns %}

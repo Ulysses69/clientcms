@@ -13,7 +13,7 @@
 
 <div class="grid--rev">
 
-  <div class="grid__item{{ quarters }}">
+  <div class="grid__item{{ quarters }}{% if settings.contact_columns %} columns{% endif %}">
 
     {% comment %}
       Regular page content goes here.
@@ -25,6 +25,7 @@
       <h1>{{ page.title }}</h1>
 
 
+      <!--
       <p>Client Business Name:</p>
       <p>Client Store Address Summary: {{ shop.address.summary }}</p>
       <p>Client Store Street: {{ shop.address.street }}</p>
@@ -32,14 +33,15 @@
       <p>Client Store City: {{ shop.address.city }}</p>
       <p>Client Store Postcode: {{ shop.address.zip }}</p>
       <p>Client Store Country: {{ shop.address.country }}</p>
+      -->
 
 
       {{ page.content }}
     </div>
 
     {% if settings.map_enable %}
-    {% if address != blank %}
-    {% assign address = settings.contact_address | replace: ", ", ' ' %}
+    {% if settings.contact_address != blank %}
+    {% assign address = settings.contact_address | replace: ", ", ' ' | replace: " ", "+" %}
     {% else %}
     {% assign address = shop.address.summary shop.address.zip | replace: ", ", ' ' %}
     {% endif %}

@@ -2426,13 +2426,24 @@
     "settings": [
       {
         "type": "checkbox",
+        "id": "contact_columns",
+        "label": "Column Layout"
+      },
+      {
+        "type": "checkbox",
         "id": "map_enable",
-        "label": "Show map"
+        "label": "Show Map"
+      },
+      {
+        "type": "checkbox",
+        "id": "contact_address_enable",
+        "label": "Show Address"
       },
       {
         "type": "text",
         "id": "contact_address",
-        "label": "Postal Address"
+        "label": "Postal Address",
+        "info": "Leave Empty to use Store Address"
       },
       {
         "type": "text",
@@ -2467,10 +2478,11 @@
         "type": "select",
         "id": "zoom_level",
         "label": "Map Zoom Level",
+        "default": "11",
         "options": [
           {
             "value": "1",
-            "label": "1 Closest"
+            "label": "1 Furthest"
           },
           {
             "value": "2",
@@ -2514,7 +2526,7 @@
           },
           {
             "value": "12",
-            "label": "12 Furthest"
+            "label": "12 Closest"
           }
         ]
       }
