@@ -721,6 +721,12 @@
       },
       {
         "type": "checkbox",
+        "id": "footer_align_last",
+        "label": "Right Align Last Column",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "footer_divider_vertical",
         "label": "Show Vertical Dividers",
         "default": false

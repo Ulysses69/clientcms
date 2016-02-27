@@ -2609,14 +2609,17 @@ label.error {
     }
   }
 
-  .modules div:last-of-type {
+  
+  .modules div:last-of-type {  
+    {% if settings.footer_align_last %}
     text-align: right;
-    padding-right: 0;    
-    &:after {
-      display: none;
-    }
+    padding-right: 0;  
     @include at-query ($max, $medium) {
       text-align: center;
+    }
+    {% endif %}
+    &:after {
+      display: none;
     }
   }
 
