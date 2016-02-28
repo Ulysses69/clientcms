@@ -2431,14 +2431,33 @@
     "name": "Contact Page",
     "settings": [
       {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "text",
+        "id": "contact_order",
+        "default": "C-A-M-F",
+        "label": "Order of features",
+        "info": "Example: C-A-M-F. If this field is left blank, your contact page will be empty."
+      },
+      {
         "type": "checkbox",
         "id": "contact_columns",
         "label": "Column Layout"
       },
       {
+        "type": "header",
+        "content": "Content [C]"
+      },
+      {
         "type": "checkbox",
-        "id": "map_enable",
-        "label": "Show Map"
+        "id": "contact_content_enable",
+        "label": "Show Content"
+      },
+      {
+        "type": "header",
+        "content": "Address [A]"
       },
       {
         "type": "checkbox",
@@ -2446,9 +2465,27 @@
         "label": "Show Address"
       },
       {
+        "type": "header",
+        "content": "Form [F]"
+      },
+      {
+        "type": "checkbox",
+        "id": "contact_form_enable",
+        "label": "Show Contact Form"
+      },
+      {
+        "type": "header",
+        "content": "Map [M]"
+      },
+      {
+        "type": "checkbox",
+        "id": "contact_map_enable",
+        "label": "Show Map"
+      },
+      {
         "type": "text",
         "id": "contact_address",
-        "label": "Postal Address",
+        "label": "Map Address",
         "info": "Leave Empty to use Store Address"
       },
       {

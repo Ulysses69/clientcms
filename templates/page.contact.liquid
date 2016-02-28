@@ -24,70 +24,99 @@
 
       <h1>{{ page.title }}</h1>
 
+      {% capture addressModule %}
+      {% if settings.contact_address_enable %}      
+      <!-- <p>Client Store Address Summary: {{ shop.address.summary }}</p> -->
+      <p class="address">
+      <span>{{ shop.name }} </span>
+      <span>{{ shop.address.street }} </span>
+      <span>{{ shop.address.province }} </span>
+      <span>{{ shop.address.city }} </span>
+      <span>{{ shop.address.zip }} </span>
+      <span>{{ shop.address.country }} </span>
+      </p>
+      {% endif %}
+      {% endcapture %}
 
-      <!--
-      <p>Client Business Name:</p>
-      <p>Client Store Address Summary: {{ shop.address.summary }}</p>
-      <p>Client Store Street: {{ shop.address.street }}</p>
-      <p>Client Store Province: {{ shop.address.province }}</p>
-      <p>Client Store City: {{ shop.address.city }}</p>
-      <p>Client Store Postcode: {{ shop.address.zip }}</p>
-      <p>Client Store Country: {{ shop.address.country }}</p>
-      -->
-
-
+      {% capture contentModule %}
+      {% if settings.contact_content_enable %}
       {{ page.content }}
-    </div>
+      {% endif %}
+      {% endcapture %}
 
-    {% if settings.map_enable %}
-    {% if settings.contact_address != blank %}
-    {% assign address = settings.contact_address | replace: ", ", ' ' | replace: " ", "+" %}
-    {% else %}
-    {% assign address = shop.address.summary shop.address.zip | replace: ", ", ' ' %}
-    {% endif %}
-    {% if settings.map_width != blank and settings.map_height != blank %}
-    <div class="map">
-      <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={{ address | replace: ' ', '+' }}&amp;z={{ settings.zoom_level }}&amp;output=embed"></iframe>
-    </div>
-    {% else %}
-    <p>Configure map width and height settings</p>
-    {% endif %}
-    {% endif %}
+      {% capture mapModule %}
+      {% if settings.contact_map_enable %}
+      {% if settings.contact_address != blank %}
+      {% assign address = settings.contact_address | replace: ", ", ' ' | replace: " ", "+" %}
+      {% else %}
+      {% assign address = shop.address.summary shop.address.zip | replace: ", ", ' ' %}
+      {% endif %}
+      {% if settings.map_width != blank and settings.map_height != blank %}
+      <div class="map">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={{ address | replace: ' ', '+' }}&amp;z={{ settings.zoom_level }}&amp;output=embed"></iframe>
+      </div>
+      {% else %}
+      <p>Configure map width and height settings</p>
+      {% endif %}
+      {% endif %}
+      {% endcapture %}
 
-    {% comment %}
-      Contact form starts here
-    {% endcomment %}
-    <div class="form-vertical">
-      {% form 'contact' %}
+      {% capture formModule %}
+      {% comment %}
+        Contact form starts here
+      {% endcomment %}
+      {% if settings.contact_form_enable %}
+      <div class="form-vertical">
+        {% form 'contact' %}
 
-        {% comment %}
-          Successful message
-        {% endcomment %}
-        {% if form.posted_successfully? %}
-          <p class="note form-success">
-            {{ 'contact.form.post_success' | t }}
-          </p>
-        {% endif %}
+          {% comment %}
+            Successful message
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
 
-        {{ form.errors | default_errors }}
+          {{ form.errors | default_errors }}
 
-        {% assign name_attr = 'contact.form.name' | t | handle %}
-        <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
-        <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          {% assign name_attr = 'contact.form.name' | t | handle %}
+          <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+          <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
 
-        <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
-        <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+          <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
 
-        {% assign name_attr = 'contact.form.phone' | t | handle %}
-        <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
-        <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          {% assign name_attr = 'contact.form.phone' | t | handle %}
+          <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
-        <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
-        <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-        <input type="submit" class="btn right" value="{{ 'contact.form.send' | t }}">
+          <input type="submit" class="btn right" value="{{ 'contact.form.send' | t }}">
 
-      {% endform %}
+        {% endform %}
+      </div>
+      {% endif %}
+      {% endcapture %}
+      
+      {% if settings.contact_order != blank %}
+        {% assign modules = settings.contact_order | split: "-" %}
+        {% for module in modules %}
+          {% case module %}
+            {% when 'C' %}
+              {{ contentModule }}
+            {% when 'A' %}
+              {{ addressModule }} 
+            {% when 'F' %}
+              {{ formModule }}
+            {% when 'M' %}
+              {{ mapModule }}
+          {% endcase %}
+        {% endfor %}      
+      {% endif %}       
+
     </div>
 
     {% include 'date-updated' %}
