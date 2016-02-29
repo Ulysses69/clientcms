@@ -1820,17 +1820,66 @@ label.error {
     text-align: center;
 
     li {
-      width: 33.333%;
       float: left;
       border-right: solid 1px #ccc;
 
       &:last-of-type {
-        border-right: none
+        border-right: none;
+      }
+
+      a {
+        display: block;
       }
     }
   }
 }
+.upsellbar.one ul li {
+    width: 100%;
+    float: none;
+    border-right: none;
+}
+.upsellbar.two ul li {
+    width: 50%;
+    @include at-query ($max, $small) {
+      width: 100%;
+      float: none;
+      border-right: none; 
+      border-bottom: solid 1px #ccc;
+      padding-bottom: 1em;
+      padding-top: 0.5em;
 
+      &:first-of-type {
+        padding-top: 0;
+      }
+
+      &:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+}
+.upsellbar.three ul li {
+    width: 33.333%;
+    @include at-query ($max, $medium) {
+      width: 100%;
+      float: none;
+      border-right: none; 
+      border-bottom: solid 1px #ccc;
+      padding-bottom: 1em;
+      padding-top: 0.5em;
+
+      &:first-of-type {
+        padding-top: 0;
+      }
+
+      &:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+}
 
 /* #Icons
 ==============================================================================*/
@@ -2653,8 +2702,8 @@ label.error {
       display: none;
     }
   }
-
-  @include at-query ($max, $xlarge) {  
+  
+  @include at-query ($max, '1400px') {  
     .modules.smallforms #mc-embedded-subscribe-form,
     .modules.smallforms #mc-embedded-subscribe-form input,
     .modules.smallforms #mc-embedded-subscribe-form .input-group-btn {

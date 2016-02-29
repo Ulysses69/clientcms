@@ -117,12 +117,6 @@
         "default": "3px"
       },
       {
-        "type": "textarea",
-        "id": "topbar_content",
-        "label": "Top Bar Content",
-        "default": "<span>Welcome to our website. <a href='\/account\/login'>Login<\/a><\/span>"
-      },
-      {
         "type": "page",
         "id": "enquiry_url",
         "label": "Product Enquiry Link",
@@ -571,6 +565,38 @@
             "label": "Within Top Bar"
           }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Top Bar"
+      },
+      {
+        "type": "textarea",
+        "id": "topbar_content",
+        "label": "Top Bar Content",
+        "default": "<span>Welcome to our website. <a href=\"\/account\/login\">Login<\/a><\/span>"
+      },
+      {
+        "type": "header",
+        "content": "Upsell Bar"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_first",
+        "label": "First Upsell",
+        "default": "<a href=\"\">Next Day Delivery <br /><span>Order by 2pm</span></a>"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_second",
+        "label": "Second Upsell",
+        "default": "<a href=\"\">Reserve Online <br /><span>Pick up in one hour</span></a>"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_third",
+        "label": "Third Upsell",
+        "default": "<a href=\"\">Find Your Nearest Store <br /><span>Open 7 days</span></a>"
       }
     ]
   },

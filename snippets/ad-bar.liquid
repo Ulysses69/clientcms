@@ -1,13 +1,21 @@
 
       {% if settings.upsell_enable %}
-      <!-- TO DO: Add upsell features -->
-      <div class="upsellbar">
+      {% capture upsells %}
+      {% assign upsellcount = 0 %}{% assign sell = '' %}
+      {% if settings.upsell_content_first != blank %}<li>{{ settings.upsell_content_first }}</li>{% assign upsellcount = upsellcount | plus: 1 %}{% endif %}
+      {% if settings.upsell_content_first != blank %}<li>{{ settings.upsell_content_second }}</li>{% assign upsellcount = upsellcount | plus: 1 %}{% endif %}
+      {% if settings.upsell_content_first != blank %}<li>{{ settings.upsell_content_third }}</li>{% assign upsellcount = upsellcount | plus: 1 %}{% endif %}
+      {% endcapture %}
+      {% if upsellcount > 0 %}
+      {% if upsellcount == 1 %}{% assign sell = ' one' %}{% endif %}
+      {% if upsellcount == 2 %}{% assign sell = ' two' %}{% endif %}
+      {% if upsellcount == 3 %}{% assign sell = ' three' %}{% endif %}
+      <div class="upsellbar{{ sell }}">
         <div class="wrapper">
           <ul>
-            <li><a href="">Next Day Delivery <br /><span>Order by 2pm</span></a></li>
-            <li><a href="">Reserve Online <br /><span>Pick up in one hour</span></a></li>
-            <li><a href="">Find Your Nearest Store <br /><span>Open 7 days</span></a></li>
+            {{ upsells }}
           </ul>
         </div>
       </div>
+      {% endif %}
       {% endif %}
