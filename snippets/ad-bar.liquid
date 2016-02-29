@@ -1,11 +1,13 @@
 
+      {% if settings.upsell_enable %}
       <!-- TO DO: Add upsell features -->
-      <div class="sellbar">
+      <div class="upsellbar">
         <div class="wrapper">
           <ul>
-            <li><a href="">Next Day Delivery <span>Order by 2pm</span></a></li>
-            <li><a href="">Reserve Online <span>Pick up in one hour</span></a></li>
-            <li><a href="">Find Your Nearest Store <span>Open 7 days</span></a></li>
+            <li><a href="">Next Day Delivery <br /><span>Order by 2pm</span></a></li>
+            <li><a href="">Reserve Online <br /><span>Pick up in one hour</span></a></li>
+            <li><a href="">Find Your Nearest Store <br /><span>Open 7 days</span></a></li>
           </ul>
         </div>
       </div>
+      {% endif %}

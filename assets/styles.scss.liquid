@@ -1357,7 +1357,7 @@ ul.square { list-style: square outside; }
 ul.disc { list-style: disc outside; }
 ol.alpha { list-style: lower-alpha outside; }
 
-.sellbar ul,
+.upsellbar ul,
 .no-bullets {
   list-style: none;
   margin-left: 0;
@@ -1806,6 +1806,29 @@ label.error {
   white-space: nowrap;
   width: 1%;
   padding: 0;
+}
+/*================ Upsell styles ================*/
+.upsellbar {
+  background: {{ settings.color_upsell_bg }};
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+      width: 33.333%;
+      float: left;
+      border-right: solid 1px #ccc;
+
+      &:last-of-type {
+        border-right: none
+      }
+    }
+  }
 }
 
 

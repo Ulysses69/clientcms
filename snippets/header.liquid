@@ -100,6 +100,9 @@
             {{ theSearch }}
           </div>    
         </div> 
-      </div>          
+      </div>   
+
+      {% if settings.upsell_enable %}{% include 'ad-bar' %}{% endif %}  
+
   </header>
 

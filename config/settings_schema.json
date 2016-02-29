@@ -275,6 +275,28 @@
       },
       {
         "type": "header",
+        "content": "Upsell Bar"
+      },
+      {
+        "type": "color",
+        "id": "color_upsell_bg",
+        "label": "Background",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "color_upsell_text",
+        "label": "Text",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_upsell_link",
+        "label": "Link",
+        "default": "#204a80"
+      },
+      {
+        "type": "header",
         "content": "Header"
       },
       {
@@ -449,6 +471,12 @@
         "type": "checkbox",
         "id": "breadcrumb_enable",
         "label": "Show Breadcrumb",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "upsell_enable",
+        "label": "Show Upsell Bar",
         "default": true
       },
       {
