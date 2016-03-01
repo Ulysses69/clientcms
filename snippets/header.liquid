@@ -1,108 +1,117 @@
 
-        {% capture theLogo %}  
-            {% comment %}            
-              Use the uploaded logo from theme settings if enabled.
-              Site name gets precedence with H1 tag on homepage, div on other pages.
-            {% endcomment %}
-            {% if template == 'index' %}
-              <h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+  {% capture theLogo %} 
+      <div class="grid__item large--one-half logo"> 
+      {% comment %}            
+        Use the uploaded logo from theme settings if enabled.
+        Site name gets precedence with H1 tag on homepage, div on other pages.
+      {% endcomment %}
+      {% if template == 'index' %}
+        <h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+      {% else %}
+        <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+      {% endif %}
+        {% if settings.logo_use_image %}
+          <a href="/" itemprop="url" class="site-header__logo-link">
+            <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+          </a>
+        {% else %}
+          <a href="/" itemprop="url">{{ shop.name }}</a>
+        {% endif %}
+      {% if template == 'index' %}
+        </h1>
+      {% else %}
+        </div>
+      {% endif %}
+      </div> 
+  {% endcapture %}
+
+  {% capture thePhone %}
+      {% if settings.header_phone_enable %}
+      <span class="service-number">
+      {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' | t }} {{ shop.phone }}
+      </span>
+      {% endif %}  
+  {% endcapture %}  
+
+  {% capture theCart %}
+      {% comment %}
+        Show number of items in the cart and total cost in the /cart link
+        Ajax Cart Notes:
+          - #cartCount updates the total number of items in the cart
+          - #cartCost updates the total cost of the cart
+          - Documentation:  http://shopify.com/timber#ajax-cart
+      {% endcomment %}
+      {% if settings.store_mode == "commerce" %}
+      <div class="site-drawer">
+        <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+          {% if settings.cart_status_icon %}<span class="icon icon-cart" aria-hidden="true"></span>{% endif %}
+          {% if settings.cart_status_label %} {{ 'layout.cart.title' | t }}{% endif %}
+          {% if settings.cart_status_count %} <span id="CartCount">{{ cart.item_count }}</span>
+          {{ 'layout.cart.items_count' | t: count: cart.item_count }}{% endif %}
+          {% if settings.cart_status_count_title %} {{ 'layout.cart.items_count' }}{% endif %}
+          {% if settings.cart_status_total %} <span id="CartCost">{{ cart.total_price | money }}</span>{% endif %}
+        </a>
+      </div>
+      {% endif %}
+  {% endcapture %}
+
+  {% capture theAccounts %}
+      {% comment %}
+        If customer accounts are enabled, provide login and create account links
+      {% endcomment %}
+      {% if shop.customer_accounts_enabled %}
+        <div class="site-account">
+          {% if customer %}
+            {% if customer.first_name != blank %}
+              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
             {% else %}
-              <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+              <a href="/account">{{ 'layout.customer.account' | t }}</a>
             {% endif %}
-              {% if settings.logo_use_image %}
-                <a href="/" itemprop="url" class="site-header__logo-link">
-                  <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-                </a>
-              {% else %}
-                <a href="/" itemprop="url">{{ shop.name }}</a>
-              {% endif %}
-            {% if template == 'index' %}
-              </h1>
-            {% else %}
-              </div>
+            | {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          {% else %}
+            {{ 'layout.customer.log_in' | t | customer_login_link }}
+            {% if shop.customer_accounts_optional %}
+            | {{ 'layout.customer.create_account' | t | customer_register_link }}
             {% endif %}
-        {% endcapture %}
+          {% endif %}
+        </div>
+      {% endif %}  
+  {% endcapture %}
 
-        {% capture thePhone %}
-            {% if settings.header_phone_enable %}
-            <span class="service-number">
-            {% if settings.header_phone_icon %}<span class="icon icon-phone" aria-hidden="true"></span>{% endif %} {{ 'layout.header.phone_title' | t }} {{ shop.phone }}
-            </span>
-            {% endif %}  
-        {% endcapture %}  
+  {% capture theSearch %}
+      {% if settings.search_align == 'above_menu' %}
+      {% assign search_parent = '' %}
+      {% include 'search-bar' %}
+      {% endif %} 
+  {% endcapture %}
 
-        {% capture theCart %}
-            {% comment %}
-              Show number of items in the cart and total cost in the /cart link
-              Ajax Cart Notes:
-                - #cartCount updates the total number of items in the cart
-                - #cartCost updates the total cost of the cart
-                - Documentation:  http://shopify.com/timber#ajax-cart
-            {% endcomment %}
-            {% if settings.store_mode == "commerce" %}
-            <div class="site-drawer">
-              <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-                {% if settings.cart_status_icon %}<span class="icon icon-cart" aria-hidden="true"></span>{% endif %}
-                {% if settings.cart_status_label %} {{ 'layout.cart.title' | t }}{% endif %}
-                {% if settings.cart_status_count %} <span id="CartCount">{{ cart.item_count }}</span>
-                {{ 'layout.cart.items_count' | t: count: cart.item_count }}{% endif %}
-                {% if settings.cart_status_count_title %} {{ 'layout.cart.items_count' }}{% endif %}
-                {% if settings.cart_status_total %} <span id="CartCost">{{ cart.total_price | money }}</span>{% endif %}
-              </a>
-            </div>
-            {% endif %}
-        {% endcapture %}
-
-        {% capture theAccounts %}
-            {% comment %}
-              If customer accounts are enabled, provide login and create account links
-            {% endcomment %}
-            {% if shop.customer_accounts_enabled %}
-              <div class="site-account">
-                {% if customer %}
-                  {% if customer.first_name != blank %}
-                    {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                    {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-                  {% else %}
-                    <a href="/account">{{ 'layout.customer.account' | t }}</a>
-                  {% endif %}
-                  | {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                {% else %}
-                  {{ 'layout.customer.log_in' | t | customer_login_link }}
-                  {% if shop.customer_accounts_optional %}
-                  | {{ 'layout.customer.create_account' | t | customer_register_link }}
-                  {% endif %}
-                {% endif %}
-              </div>
-            {% endif %}  
-        {% endcapture %}
-
-        {% capture theSearch %}
-            {% if settings.search_align == 'above_menu' %}
-            {% assign search_parent = '' %}
-            {% include 'search-bar' %}
-            {% endif %} 
-        {% endcapture %}
+  {% capture theHead %}
+      <div class="wrapper">
+        {% unless settings.header_social_align == 'topbar' %}{{ theSocial }}{% endunless %}  
+        <div class="grid--full grid--table">          
+          {{ theLogo }}
+          <div class="grid__item large--one-half medium-down--hide meta">
+          <!-- <div class="grid__item large--one-half large--text-right medium-down--hide"> -->
+          {{ thePhone }}
+          {{ theCart }}
+          {{ theAccounts }}
+          {{ theSearch }}
+          </div>    
+        </div> 
+      </div>  
+  {% endcapture %}
 
   <header class="site-header" role="banner">
       {% if settings.box_site_enable %}{% include 'top-bar' %}{% endif %}      
-      <div class="wrapper">
-        {% unless settings.header_social_align == 'topbar' %}{{ theSocial }}{% endunless %}   
-        <div class="grid--full grid--table">
-          <div class="grid__item large--one-half logo">
-            {{ theLogo }}
-          </div> 
-          <div class="grid__item large--one-half medium-down--hide meta">
-          <!-- <div class="grid__item large--one-half large--text-right medium-down--hide"> -->
-            {{ thePhone }}
-            {{ theCart }}
-            {{ theAccounts }}
-            {{ theSearch }}
-          </div>    
-        </div> 
-      </div>   
+ 
+      {{ theHead }} 
 
-      {% if settings.upsell_enable %}{% include 'ad-bar' %}{% endif %}  
+      {% if settings.upsell_enable %}{% include 'ad-bar' %}{% endif %}
+
+      {% include 'nav-main' %}
 
   </header>
+
+  
 
