@@ -31,15 +31,6 @@
                     {{ link.title }}
                     {% if settings.header_submenu %}<span class="icon icon-arrow-down" aria-hidden="true"></span>{% endif %}
                   </a>
-                  {% capture subnav %}
-                  <ul{% if settings.header_submenu %} class="site-nav__dropdown"{% endif %}>
-                    {% for childlink in linklists[child_list_handle].links %}
-                      <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-                        <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                  {% endcapture %}
                   {% if settings.header_submenu %}{{ subnav }}{% endif %}
                 </li>
               {% else %}

@@ -2281,7 +2281,7 @@ label.error {
     padding-left: $gutter / 4;
   }
 
-  .site-nav--active > & {
+  .sidebar .site-nav--active > & {
     font-weight: bold;
   }
 
@@ -3889,6 +3889,7 @@ label.error {
   {% endunless %}
 
 }
+
 .sidebar .blog_list time {
   display: block;
   font-size: 80%;
@@ -4516,6 +4517,17 @@ label.error {
 
 
 
+
+.sidebar li.active > a,
+.sidebar li.active li.active > a{
+  font-weight: bold !important;
+}
+.sidebar .subnav {
+  display: none;
+}
+.sidebar .active .subnav {
+  display: block;
+}
 
 
 /*

@@ -1,12 +1,11 @@
 {% if settings.sidebar_enable or settings.sidebar_home_enable %}
 {% if template != 'index' or settings.sidebar_home_enable %}
+
 {% if settings.sidebar_linklist %}{% assign sidelist = true %}{% else %}{% assign sidelist = false %}{% endif %}
 {% if template contains 'collection' or template contains 'product' %}{% unless settings.collection_sidebar_linklist %}{% assign sidelist = false %}{% endunless %}{% endif %}
 {% if settings.sidebar_page %}{% assign sidepage = true %}{% else %}{% assign sidepage = false %}{% endif %}
 {% if template contains 'collection' or template contains 'product' %}{% unless settings.collection_sidebar_page %}{% assign sidepage = false %}{% endunless %}{% endif %}
-{% if settings.sidebar_toggle %}{% assign toggle = ' class="toggle"><span>+</span' %}{% assign toggleul = ' toggle_list' %}{% endif %}
-{% if settings.sidebar_divider_horizontal %}{% unless settings.sidebar_features_boxed %}{% assign divide_h = '<hr>' %}{% endunless %}{% endif %}
-{% unless settings.sidebar_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
+  
 <!-- Sidebar | Align: {{ sidebar }} -->
 <div id="sidecolumn">
 <div class="sidebar {{ sidebar }}" id="sidebar">
@@ -20,39 +19,6 @@
             {{ divide_h }}
         </div>	
 	{% endif %}
-
-    <!--                
-    <div class="grid__item">
-    <ul>
-    {% for link in linklists.main-menu.links %}           
-              {% assign child_list_handle = link.title | handleize %}
-              {% if linklists[child_list_handle].links != blank %}
-                <li class="{% if settings.header_submenu %}has-subnav {% endif %}{% if link.active %}subnav--active{% endif %}"{% if settings.header_submenu %} aria-haspopup="true"{% endif %}>
-                  <a href="{{ link.url }}" class="subnav__link">
-                    {{ link.title }}
-                    {% if settings.header_submenu %}<span class="icon icon-arrow-down" aria-hidden="true"></span>{% endif %}
-                  </a>
-                  {% capture subnav %}
-                  <ul class="subnav">
-                    {% for childlink in linklists[child_list_handle].links %}
-                      <li{% if childlink.active %} class="subnav--active"{% endif %}>
-                        <a href="{{ childlink.url }}" class="subnav__link">{{ childlink.title | escape }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                  {% endcapture %}
-                  {{ subnav }}
-                </li>
-              {% else %}
-                <li{% if link.active %} class="subnav--active"{% endif %}>
-                  <a href="{{ link.url }}" class="subnav__link">{{ link.title }}</a>
-                </li>
-              {% endif %}
-    {% endfor %}
-    </ul>
-    </div>
-    -->
-
 
 	{% if template contains 'blog' or template contains 'article' %}
 		<div class="grid__item">
@@ -98,43 +64,26 @@
 			</div>	
 		{% else %}
 		  {% if settings.sidebar_linklist != blank and sidelist == true %}
-		  	
-			    
-			    {% capture nav %}
-			    <ul class="blog_list{{ bullets }}{{ toggleul }}">
-			      {% for link in linklists[settings.sidebar_linklist].links %}			      
-			      {% assign toptitle = link.title %}
-			      {% assign tophandle = 'parent-' | append: link.handle %}     	
-			        <li class="{{ tophandle }}{% if link.active %} active{% assign activehandle = 'parent-' | append: link.handle %}{% assign activetitle = toptitle %}{% endif %}">
-			          <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>          
-			          {% if linklists[link.handle] != empty %}
-			            {% capture subnav %}
-			            {% assign display_sublinks = false %}		          
-			            {% for link in linklists[link.handle].links %}
-			              {% if link.active %}
-			                {% assign display_sublinks = true %}
-			              {% endif %}
-			            {% endfor %}
-			            {% if display_sublinks or link.active %}
-			              <ul class="blog_list{{ bullets }}{{ toggleul }}">
-			              {% for link in linklists[link.handle].links %}
-			                <li{% if link.active %} class="active"{% assign activehandle = tophandle %}{% assign activetitle = toptitle %}{% endif %}>
-			                  <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-			                </li>
-			              {% endfor %}
-			              </ul>
-			            {% endif %}
-			            {% endcapture %}
-			            [subnav]		            
-			          {% endif %}
-			        </li>
-			      {% endfor %}
-			    </ul>
-			    {% endcapture %}
+  
+  				{% assign nav = buildnav %}
+
 			    <!-- activehandle: {{ activehandle }} -->
-			    {% if activehandle != blank %}
+			    <!-- activetitle: {{ activetitle }} -->
+			    <!-- parenthandle: {{ parenthandle }} -->  
+                <!-- pageurl: {{ pageurl }} -->
+                <!-- linkurl: {{ linkurl }} -->
+			    
+			    {% if activehandle != blank %}  
+ 				{% assign subnav = subnav | replace: "site-nav__dropdown", "subnav" %}
+  				{% assign subnav = subnav | replace: "site-nav__link", "" %}  
 			    {% assign activeclass = activehandle | append: ' active' %}
 			    {% assign nav = nav | replace: activehandle, activeclass %}
+  				
+    			{% comment %} 
+  				{% assign subnav = subnav | replace: "site-nav--active", "" %}
+    			{% assign subnav = subnav | replace: ' class=""', '' %}
+ 				{% endcomment %}
+  
 			    <div class="grid__item">
 
 			    {% if settings.sidebar_linklist_parents %}

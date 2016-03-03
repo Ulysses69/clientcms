@@ -46,6 +46,47 @@
       {% endif %}
     {% endif %}
   {% endcapture %}
+
+  {% if settings.sidebar_toggle %}{% assign toggle = ' class="toggle"><span>+</span' %}{% assign toggleul = ' toggle_list' %}{% endif %}
+  {% if settings.sidebar_divider_horizontal %}{% unless settings.sidebar_features_boxed %}{% assign divide_h = '<hr>' %}{% endunless %}{% endif %}
+  {% unless settings.sidebar_bullets %}{% assign bullets = ' no-bullets' %}{% endunless %}
+
+  {% capture buildnav %}
+    <ul class="blog_list{{ bullets }}{{ toggleul }}">
+      {% for link in linklists[settings.sidebar_linklist].links %}            
+      {% assign toptitle = link.title %}
+      {% assign tophandle = 'parent-' | append: link.handle %}
+      {% assign topparent = link.url %}       
+        <li class="{{ tophandle }}{% if link.active %} active{% assign parenturl = topparent %}{% assign activehandle = 'parent-' | append: link.handle %}{% assign activetitle = toptitle %}{% endif %}">
+          <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title }}</a>      
+          {% if linklists[link.handle] != empty %}          
+            {% capture subnav %}
+                  {% assign display_sublinks = false %}             
+                  {% for link in linklists[link.handle].links %}
+                    {% if link.active %}
+                      {% assign display_sublinks = true %}
+                    {% endif %}
+                  {% endfor %}          
+                  <ul{% if settings.header_submenu %} class="site-nav__dropdown"{% endif %}>
+                    {% for link in linklists[link.handle].links %}
+                      {% if link.active %}{% assign parenturl = topparent %}{% assign activehandle = tophandle %}{% assign activetitle = toptitle %}{% endif %}
+                        {% assign pageurl = page.url %}
+                      {% assign linkurl = link.url %}
+                        <!-- pageurl: {{ pageurl }} -->
+                    <!-- linkurl: {{ linkurl }} -->
+                      <li{% if pageurl == linkurl %} class="active"{% else %}{% if link.active %} class="site-nav--active"{% endif %}{% endif %}>
+                        <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                  </ul>
+            {% endcapture %}          
+            [subnav]                
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endcapture %} 
+  
 </head>
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
