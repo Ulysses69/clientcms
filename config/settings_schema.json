@@ -414,7 +414,7 @@
   },
   {
     "name": "Header",
-    "settings": [      
+    "settings": [
       {
         "type": "header",
         "content": "Layout"
@@ -584,19 +584,19 @@
         "type": "textarea",
         "id": "upsell_content_first",
         "label": "First Upsell",
-        "default": "<a href=\"\">Next Day Delivery <br /><span>Order by 2pm</span></a>"
+        "default": "<a href=\"\">Next Day Delivery <br \/><span>Order by 2pm<\/span><\/a>"
       },
       {
         "type": "textarea",
         "id": "upsell_content_second",
         "label": "Second Upsell",
-        "default": "<a href=\"\">Reserve Online <br /><span>Pick up in one hour</span></a>"
+        "default": "<a href=\"\">Reserve Online <br \/><span>Pick up in one hour<\/span><\/a>"
       },
       {
         "type": "textarea",
         "id": "upsell_content_third",
         "label": "Third Upsell",
-        "default": "<a href=\"\">Find Your Nearest Store <br /><span>Open 7 days</span></a>"
+        "default": "<a href=\"\">Find Your Nearest Store <br \/><span>Open 7 days<\/span><\/a>"
       }
     ]
   },

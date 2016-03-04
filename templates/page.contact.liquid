@@ -23,9 +23,12 @@
       {% if settings.breadcrumb_align == 'content' %}{% include 'breadcrumb' %}{% endif %}
 
       <h1>{{ page.title }}</h1>
+      
+      {% if settings.contact_columns %}<div id="page-contact">{% endif %}
 
       {% capture addressModule %}
-      {% if settings.contact_address_enable %}      
+      {% if settings.contact_address_enable %}  
+      <div class="module">
       <!-- <p>Client Store Address Summary: {{ shop.address.summary }}</p> -->
       <p class="address">
       <span>{{ shop.name }} </span>
@@ -35,29 +38,34 @@
       <span>{{ shop.address.zip }} </span>
       <span>{{ shop.address.country }} </span>
       </p>
+      </div>  
       {% endif %}
       {% endcapture %}
 
       {% capture contentModule %}
       {% if settings.contact_content_enable %}
+      <div class="module">
       {{ page.content }}
+      </div>
       {% endif %}
       {% endcapture %}
 
       {% capture mapModule %}
       {% if settings.contact_map_enable %}
+      <div class="module">
       {% if settings.contact_address != blank %}
       {% assign address = settings.contact_address | replace: ", ", ' ' | replace: " ", "+" %}
       {% else %}
-      {% assign address = shop.address.summary shop.address.zip | replace: ", ", ' ' %}
+      {% assign address = shop.address.summary | append: shop.address.zip | replace: ", ", ' ' %}
       {% endif %}
-      {% if settings.map_width != blank and settings.map_height != blank %}
+      {% if settings.map_width != blank and settings.map_height != blank %}      
       <div class="map">
         <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q={{ address | replace: ' ', '+' }}&amp;z={{ settings.zoom_level }}&amp;output=embed"></iframe>
       </div>
       {% else %}
       <p>Configure map width and height settings</p>
       {% endif %}
+      </div>
       {% endif %}
       {% endcapture %}
 
@@ -66,7 +74,7 @@
         Contact form starts here
       {% endcomment %}
       {% if settings.contact_form_enable %}
-      <div class="form-vertical">
+      <div class="form-vertical module">
         {% form 'contact' %}
 
           {% comment %}
@@ -115,7 +123,9 @@
               {{ mapModule }}
           {% endcase %}
         {% endfor %}      
-      {% endif %}       
+      {% endif %}    
+      
+      {% if settings.contact_columns %}</div>{% endif %}
 
     </div>
 
