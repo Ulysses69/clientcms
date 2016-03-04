@@ -109,7 +109,12 @@
  
       {{ theHead }} 
 
-      {% if settings.upsell_enable %}{% include 'ad-bar' %}{% endif %}
+      {% if settings.upsell_enable %}
+      {% capture upsell %}
+      {% include 'ad-bar' %}
+      {% endcapture %}
+      <div id="sellrow">{{ upsell | replace: 'class="upsellbar', 'id="topsell" class="upsellbar' }}</div>
+      {% endif %}
 
       {% include 'nav-main' %}
 

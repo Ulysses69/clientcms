@@ -14,12 +14,16 @@ function jsUpdateSize(){
                  document.body.clientHeight;
 
     var sidebar = document.getElementById('sidebar');
+    var topsell = document.getElementById('topsell');
     if(width > small){      
-      var sidecolumn = document.getElementById('sidecolumn');
+      var sidecolumn = document.getElementById('sidecolumn');      
+      var sellrow = document.getElementById('sellrow');
       sidecolumn.insertBefore(sidebar, sidecolumn.firstChild);
+      sellrow.insertBefore(topsell, sellrow.firstChild);
     } else {
       var footcolumn = document.getElementById('footcolumn');
       footcolumn.insertBefore(sidebar, footcolumn.firstChild);
+      footcolumn.insertBefore(topsell, footcolumn.firstChild);
     }
 };
 window.onload = jsUpdateSize;
