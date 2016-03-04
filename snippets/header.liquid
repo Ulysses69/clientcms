@@ -86,6 +86,8 @@
       {% endif %} 
   {% endcapture %}
 
+  <!-- TO DO: Group Sections for Header Reordering -->
+  <!-- T: Top Bar | M: Menu | L: Logo | A: Ad Bar-->
   {% capture theHead %}
       <div class="wrapper">
         {% unless settings.header_social_align == 'topbar' %}{{ theSocial }}{% endunless %}  
