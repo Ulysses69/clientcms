@@ -2619,6 +2619,17 @@ label.error {
     border-color: {{ settings.color_footer_borders }};
   }
 
+  {% if settings.footer_bullets %}
+  ul {
+    list-style: disc !important;
+    margin-left: 1em !important;
+  }
+  ul.social-icons {
+    list-style: none !important;
+    margin-left: 0 !important;
+  }
+  {% endif %}
+
   .modules { 
     position: relative;
     display: flex;
@@ -2636,6 +2647,7 @@ label.error {
     }
     div {
       padding: 0;
+      text-align: left !important;
     }
     {% if settings.footer_divider_vertical %}
     &:after {
