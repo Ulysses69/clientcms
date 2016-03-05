@@ -7,7 +7,8 @@
                 MailChimp newsletter integration and requirement:
                  - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
               {% endcomment %}
-              <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
+              <div{{ newsletter }}>
+              <h3 class="{{ newsletter }}">{{ 'layout.footer.newsletter_title' | t }}</h3>
               {% if settings.newsletter_form_action != blank %}
                 {% assign form_action = settings.newsletter_form_action %}
               {% else %}
@@ -19,3 +20,5 @@
                   <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
                 </span>
               </form>
+              </div>
+              {% assign newsletter = ' class="duplicate"' %}

@@ -1843,24 +1843,6 @@ label.error {
 }
 .upsellbar.two ul li {
     width: 50%;
-    @include at-query ($max, $small) {
-      width: 100%;
-      float: none;
-      border-right: none; 
-      border-bottom: solid 1px #ccc;
-      padding-bottom: 1em;
-      padding-top: 0.5em;
-
-      &:first-of-type {
-        padding-top: 0;
-      }
-
-      &:last-of-type {
-        border-bottom: none;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-    }
 }
 .upsellbar.three ul li {
     width: 33.333%;
@@ -2641,10 +2623,6 @@ label.error {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    @include at-query ($max, $small) {
-      display: block;
-      flex-wrap: nowrap;
-    }
   }
 
   .modules div {
@@ -2655,10 +2633,6 @@ label.error {
     @include at-query ($max, $medium) {
       text-align: center;
       margin-bottom: 1em;
-    }
-    @include at-query ($max, $small) {
-      display: block;
-      flex-direction: row;
     }
     {% if settings.footer_divider_vertical %}
     &:after {
@@ -2692,7 +2666,6 @@ label.error {
       }    
     }
   }
-
   
   .modules div:last-of-type {  
     {% if settings.footer_align_last %}
@@ -2704,6 +2677,12 @@ label.error {
     {% endif %}
     &:after {
       display: none;
+    }
+  }
+
+  .modules .duplicate {
+    @include at-query ($max, $small) {
+      display: none !important;
     }
   }
   
@@ -2798,7 +2777,71 @@ label.error {
     color: $colorBtnPrimaryText;
   }
 
+  @include at-query ($max, $small) {
+    div,
+    #sidebar,
+    #sidebar div {
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+      flex-wrap: nowrap !important;
+      float: none !important;
+    }
+    > div,
+    #sidebar > div {
+      margin: 0 1em !important;
+
+      h2 {
+        margin: 2em 0 0 0 !important;
+      }
+    }
+  }
+  @include at-query ($max, $small) {
+    .sidebar {
+      position: relative;
+      width: auto;
+      display: block;
+      margin: 0 0 0 0 !important;
+      padding: 0 0 2em 0 !important;
+      left: auto;
+      float: none;
+      overflow: hidden !important;
+    }
+    #sidebar {
+      margin: 0 0 0 0 !important;
+      padding: 0 0 2em 0 !important;
+    }
+  }
+
+  @include at-query ($max, $small) {
+    .upsellbar {
+      padding-bottom: 2em !important;
+
+      ul li {      
+        width: 100%;
+        float: none;
+        border-right: none; 
+        border-bottom: solid 1px #ccc;
+        padding-bottom: 1em;
+        padding-top: 0.5em;
+
+        &:first-of-type {
+          padding-top: 0;
+        }
+
+        &:last-of-type {
+          border-bottom: solid 1px #ccc;
+          padding-bottom: 1em;
+          margin-bottom: 0;
+        }
+
+      }
+    }
+  }
+
 }
+
 
 
 /* #Product and Collection Grids
@@ -4446,17 +4489,6 @@ label.error {
       margin-top: -1%;
       padding-top: 0;
   }
-}
-
-.site-footer .sidebar {
-  position: relative;
-  width: auto;
-  display: block;
-  margin: -3em 0 0 0 !important;
-  padding: 0 0 2em 2em !important;
-  left: auto;
-  float: none;
-  overflow: hidden;
 }
 
 @include at-query ($max, $largeMax) {  
