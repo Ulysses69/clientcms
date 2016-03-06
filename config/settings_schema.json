@@ -2163,12 +2163,6 @@
     "name": "Home Page",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "dividers_enable",
-        "label": "Show Dividers",
-        "default": true
-      },
-      {
         "type": "header",
         "content": "Layout"
       },
@@ -2178,6 +2172,12 @@
         "default": "W-P-C-B",
         "label": "Order of features",
         "info": "Example: W-P-C-B. If this field is left blank, your home page will be empty."
+      },
+      {
+        "type": "checkbox",
+        "id": "dividers_enable",
+        "label": "Show Dividers",
+        "default": true
       },
       {
         "type": "header",
