@@ -420,30 +420,72 @@
         "content": "Layout"
       },
       {
+        "type": "text",
+        "id": "header_order",
+        "default": "L-U-M",
+        "label": "Order of features",
+        "info": "Example: L-U-M. If this field is left blank, your header will be empty."
+      },
+      {
+        "type": "header",
+        "content": "Top Bar"
+      },
+      {
+        "type": "textarea",
+        "id": "topbar_content",
+        "label": "Top Bar Content",
+        "default": "<span>Welcome to our website. <a href=\"\/account\/login\">Login<\/a><\/span>"
+      },
+      {
+        "type": "header",
+        "content": "Logo [L]"
+      },
+      {
         "type": "select",
-        "id": "header_layout_style",
-        "label": "Layout Style",
+        "id": "logo_align",
+        "label": "Logo Alignment",
         "options": [
           {
-            "value": "default",
-            "label": "Default"
+            "value": "left",
+            "label": "Left"
           },
           {
-            "value": "search",
-            "label": "Search"
-          },
-          {
-            "value": "logo",
-            "label": "Logo"
+            "value": "center",
+            "label": "Center"
           }
         ]
       },
       {
-        "type": "text",
-        "id": "header_order",
-        "default": "S-P-C-L-M",
-        "label": "Order of features",
-        "info": "Example: S-P-C-L-M. If this field is left blank, your header will be empty."
+        "type": "header",
+        "content": "Menu [M]"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_submenu",
+        "label": "Show Submenu",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Upsell Bar [U]"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_first",
+        "label": "First Upsell",
+        "default": "<a href=\"\">Next Day Delivery <br \/><span>Order by 2pm<\/span><\/a>"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_second",
+        "label": "Second Upsell",
+        "default": "<a href=\"\">Reserve Online <br \/><span>Pick up in one hour<\/span><\/a>"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_content_third",
+        "label": "Third Upsell",
+        "default": "<a href=\"\">Find Your Nearest Store <br \/><span>Open 7 days<\/span><\/a>"
       },
       {
         "type": "header",
@@ -471,12 +513,6 @@
         "type": "checkbox",
         "id": "upsell_enable",
         "label": "Show Upsell Bar",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "header_submenu",
-        "label": "Show Submenu",
         "default": true
       },
       {
@@ -565,38 +601,6 @@
             "label": "Within Top Bar"
           }
         ]
-      },
-      {
-        "type": "header",
-        "content": "Top Bar"
-      },
-      {
-        "type": "textarea",
-        "id": "topbar_content",
-        "label": "Top Bar Content",
-        "default": "<span>Welcome to our website. <a href=\"\/account\/login\">Login<\/a><\/span>"
-      },
-      {
-        "type": "header",
-        "content": "Upsell Bar"
-      },
-      {
-        "type": "textarea",
-        "id": "upsell_content_first",
-        "label": "First Upsell",
-        "default": "<a href=\"\">Next Day Delivery <br \/><span>Order by 2pm<\/span><\/a>"
-      },
-      {
-        "type": "textarea",
-        "id": "upsell_content_second",
-        "label": "Second Upsell",
-        "default": "<a href=\"\">Reserve Online <br \/><span>Pick up in one hour<\/span><\/a>"
-      },
-      {
-        "type": "textarea",
-        "id": "upsell_content_third",
-        "label": "Third Upsell",
-        "default": "<a href=\"\">Find Your Nearest Store <br \/><span>Open 7 days<\/span><\/a>"
       }
     ]
   },

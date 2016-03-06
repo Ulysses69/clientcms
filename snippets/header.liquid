@@ -105,18 +105,24 @@
   {% endcapture %}
 
   <header class="site-header" role="banner">
-      {% if settings.box_site_enable %}{% include 'top-bar' %}{% endif %}      
+      {% if settings.box_site_enable %}{% include 'top-bar' %}{% endif %}    
  
-      {{ theHead }} 
-
-      {% if settings.upsell_enable %}
-      {% capture upsell %}
-      {% include 'ad-bar' %}
-      {% endcapture %}
-      <div id="sellrow">{{ upsell | replace: 'class="upsellbar', 'id="topsell" class="upsellbar' }}</div>
-      {% endif %}
-
-      {% include 'nav-main' %}
+      {% assign modules = settings.header_order | split: "-" %}
+      {% for module in modules %}
+          {% case module %}
+            {% when 'L' %}
+              {{ theHead }} 
+            {% when 'U' %}
+              {% if settings.upsell_enable %}
+              {% capture upsell %}
+              {% include 'ad-bar' %}
+              {% endcapture %}
+              <div id="sellrow">{{ upsell | replace: 'class="upsellbar', 'id="topsell" class="upsellbar' }}</div>
+              {% endif %}
+            {% when 'M' %}
+              {% include 'nav-main' %}
+          {% endcase %}
+      {% endfor %}           
 
   </header>
 
