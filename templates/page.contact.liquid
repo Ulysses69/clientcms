@@ -56,7 +56,7 @@
       {% if settings.contact_address != blank %}
       {% assign address = settings.contact_address | replace: ", ", ' ' | replace: " ", "+" %}
       {% else %}
-      {% assign address = shop.address.summary | append: shop.address.zip | replace: ", ", ' ' %}
+      {% assign address = shop.address.summary | append: ', ' | append: shop.address.zip | replace: ", ", ' ' %}
       {% endif %}
       {% if settings.map_width != blank and settings.map_height != blank %}      
       <div class="map">
